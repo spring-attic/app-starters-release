@@ -1,0 +1,37 @@
+= Spring Cloud Stream App Starters Reference Guide
+Sabby Anandan; Artem Bilan; Marius Bogoevici; Eric Bottard; Mark Fisher; Ilayaperumal Gopinathan; Gunnar Hillert; Mark Pollack; Patrick Peralta; Glenn Renfro; Gary Russell; Thomas Risberg; David Turanski; Janne Valkealahti
+:doctype: book
+:toc:
+:toclevels: 4
+:source-highlighter: prettify
+:numbered:
+:icons: font
+:hide-uri-scheme:
+
+:app-starters-root:  https://raw.githubusercontent.com/spring-cloud/spring-cloud-stream-app-starters/master
+
+// Since the core projects will be at different release cadences, the following tokens need changed at the time of every release
+:scst-core-version: current-SNAPSHOT
+
+
+
+// ======================================================================================
+
+= Reference Guide
+include::overview.adoc[]
+
+[[starters]]
+= Starters
+include::sources.adoc[]
+
+include::processors.adoc[]
+
+include::sinks.adoc[]
+
+= Appendices
+[appendix]
+include::building.adoc[]
+
+include::contributing.adoc[]
+
+// ======================================================================================

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>app-starters-parent</artifactId>
+        <groupId>org.springframework.cloud.stream.app</groupId>
+        <version>1.1.0.BUILD-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>spring-cloud-stream-app-descriptor</artifactId>
+    <name>spring-cloud-stream-app-descriptor</name>
+    <packaging>jar</packaging>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>META-INF/kafka-apps-maven.properties</include>
+                    <include>META-INF/rabbit-apps-maven.properties</include>
+                    <include>META-INF/kafka-apps-docker.properties</include>
+                    <include>META-INF/rabbit-apps-docker.properties</include>
+                </includes>
+            </resource>
+        </resources>
+
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.gmaven</groupId>
+                <artifactId>gmaven-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>execute</goal>
+                        </goals>
+                        <configuration>
+                            <source><![CDATA[
+        pom.properties['docker.tag']=
+                "${project.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${project.version}";
+                ]]></source>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>1.8</version>
+                <executions>
+                    <execution>
+                        <id>attach-artifacts</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>attach-artifact</goal>
+                        </goals>
+                        <configuration>
+                            <artifacts>
+                                <artifact>
+                                    <file>target/classes/META-INF/kafka-apps-maven.properties</file>
+                                    <type>stream-apps-kafka-maven</type>
+                                    <!--<classifier>kafka-apps-maven.properties</classifier>-->
+                                </artifact>
+                                <artifact>
+                                    <file>target/classes/META-INF/kafka-apps-docker.properties</file>
+                                    <type>stream-apps-kafka-docker</type>
+                                </artifact>
+                                <artifact>
+                                    <file>target/classes/META-INF/rabbit-apps-maven.properties</file>
+                                    <type>stream-apps-rabbit-maven</type>
+                                </artifact>
+                                <artifact>
+                                    <file>target/classes/META-INF/rabbit-apps-docker.properties</file>
+                                    <type>stream-apps-rabbit-docker</type>
+                                </artifact>
+                            </artifacts>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+
+    </build>
+
+</project>

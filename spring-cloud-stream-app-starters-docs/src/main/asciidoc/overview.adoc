@@ -1,0 +1,481 @@
+[[overview]]
+
+This section will provide you with a detailed overview of Spring Cloud Stream Application Starters, their purpose, and how to use them.
+It assumes familiarity with general Spring Cloud Stream concepts, which can be found in the Spring Cloud Stream http://docs.spring.io/spring-cloud-stream/docs/{scst-core-version}/reference/htmlsingle/[reference documentation].
+
+== Introduction
+
+Spring Cloud Stream Application Starters provide you with predefined Spring Cloud Stream applications that you can run independently or with Spring Cloud Data Flow.
+You can also use the starters as a basis for creating your own applications.
+They include:
+
+* connectors (sources and sinks) for middleware including message brokers, storage (relational, non-relational, filesystem);
+* adapters for various network protocols;
+* generic processors that can be customized via http://docs.spring.io/spring/docs/4.2.x/spring-framework-reference/html/expressions.html[Spring Expression Language (SpEL)] or scripting.
+
+You can find a detailed listing of all the starters and as their options in the <<starters,corresponding>> section of this guide.
+
+=== Starters and pre-built applications
+
+As a user of Spring Cloud Stream Application Starters you have access to two types of artifacts.
+
+_Starters_ are libraries that contain the complete configuration of a Spring Cloud Stream application with a specific role (e.g. an _HTTP source_ that receives HTTP POST requests and forwards the data on its output channel to downstream Spring Cloud Stream applications).
+Starters are not executable applications, and are intended to be included in other Spring Boot applications, along with a Binder implementation.
+
+_Prebuilt applications_ are Spring Boot applications that include the starters and a Binder implementation.
+Prebuilt applications are http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#getting-started-first-application-executable-jar[uberjars] and include minimal code required to execute standalone.
+For each starter, the project provides a prebuilt version including the Kafka Binder and a  prebuilt version including the Rabbit MQ Binder.
+
+[NOTE]
+Only starters are present in the source code of the project.
+Prebuilt applications are generated according to the Maven plugin configuration.
+
+[[classification]]
+=== Classification
+
+Based on their target application type, starters can be either:
+
+* a _source_ that connects to an external resource to receive data that is sent on its sole output channel;
+* a _processor_ that receives data from a single input channel and processes it, sending the result on its single output channel;
+* a _sink_ that connects to an external resource to send data that is received on its sole input channel.
+
+You can easily identify the type and functionality of a starter based on its name.
+All starters are named following the convention `spring-cloud-starter-stream-<type>-<functionality>`.
+For example `spring-cloud-starter-stream-source-file` is a starter for a _file source_ that polls a directory and sends file data on the output channel (read <<spring-cloud-stream-modules-file-source,the reference documentation of the source>> for details).
+Conversely, `spring-cloud-starter-stream-sink-cassandra` is a starter for a _Cassandra sink_ that writes the data that it receives on the input channel to Cassandra (read <<spring-cloud-stream-modules-cassandra-sink,the reference documentation of the sink>> for details).
+
+The prebuilt applications follow a naming convention too: `<functionality>-<type>-<binder>`. For example, `cassandra-sink-kafka` is a _Cassandra sink_ using the Kafka binder.
+
+=== Using the artifacts
+
+You either get access to the artifacts produced by Spring Cloud Stream Application Starters via Maven, Docker, or building the artifacts yourself.
+
+==== Maven and Docker access
+
+Starters are available as Maven artifacts in the https://github.com/spring-projects/spring-framework/wiki/Spring-repository-FAQ[Spring repositories]. You can add them as dependencies to your application, as follows:
+
+[source,xml]
+----
+<dependency>
+  <groupId>org.springframework.cloud.stream.app</groupId>
+  <artifactId>spring-cloud-starter-stream-sink-cassandra</artifactId>
+  <version>1.0.0.BUILD-SNAPSHOT</version>
+</dependency>
+----
+
+From this, you can infer the coordinates for other starters found in this guide.
+While the version may vary, the group will always remain `org.springframework.cloud.stream.app` and the artifact id follows the naming convention `spring-cloud-starter-stream-<type>-<functionality>` described <<classification,previously>>.
+
+Prebuilt applications are available as Maven artifacts too.
+It is not encouraged to use them directly as dependencies, as starters should be used instead.
+Following the typical Maven `<group>:<artifactId>:<version>` convention, they can be referenced for example as:
+
+----
+org.springframework.cloud.stream.app:cassandra-sink-rabbit:1.0.0.BUILD-SNAPSHOT
+----
+
+Just as with the starters, you can infer the coordinates for other prebuilt applications found in the guide.
+The group will be always `org.springframework.cloud.stream.app`.
+The version may vary.
+The artifact id follows the format `<functionality>-<type>-<binder>` <<classification,previously described>>.
+
+The Docker versions of the applications are available in Docker Hub, at `https://hub.docker.com/r/springcloudstream/`. Naming and versioning follows the same general conventions as Maven, e.g.
+
+[source,bash]
+----
+docker pull springcloudstream/cassandra-sink-kafka
+----
+
+will pull the _latest_ Docker image of the _Cassandra sink_ with the Kafka binder.
+
+==== Building the artifacts
+
+You can also build the project and generate the artifacts (including the prebuilt applications) on your own.
+This is useful if you want to deploy the artifacts locally, for example for adding a new starter, or if you want to build the entire set of artifacts with a new binder.
+
+First, you need to generate the prebuilt applications.
+This is done by running the application generation Maven plugin.
+You can do so by simply invoking the corresponding script in the root of the project.
+
+[source,bash]
+----
+./generate.sh
+----
+
+For the each of the prebuilt applications, the script will generate the following items:
+
+* `pom.xml` file with the required dependencies (starter and binder)
+* a class that contains the `main` method of the application and imports the predefined configuration
+* generated integration test code that exercises the component against the configured binder.
+
+For example, `spring-cloud-starter-stream-sink-cassandra` will generate `cassandra-sink-rabbit` and `cassandra-sink-kafka` as completely functional applications.
+
+=== Creating custom artifacts
+
+Apart from accessing the sources, sinks and processors already provided by the project, in this section we will describe how to:
+
+* Use a different binder than Kafka or Rabbit
+* Create your own applications
+* Customize dependencies such as Hadoop distributions or JDBC drivers
+
+[[customizing-binder]]
+==== Using a different binder
+
+If you want to use one of the applications found in Spring Cloud Stream Application Starters and you want to use one of the predefined binders (i.e. Kafka or Rabbit), you can just use the prebuilt versions of the artifacts.
+But if you want to connect to a different middleware system, and you have a binder for it, you will create new artifacts.
+
+[source,xml]
+----
+<dependencies>
+  <!- other dependencies -->
+  <dependency>
+    <groupId>org.springframework.cloud.stream.app</groupId>
+    <artifactId>spring-cloud-starter-stream-sink-cassandra</artifactId>
+    <version>1.0.0.BUILD-SNAPSHOT</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-stream-binder-gemfire</artifactId>
+    <version>1.0.0.BUILD-SNAPSHOT</version>
+  </dependency>
+</dependencies>
+----
+
+The next step is to create the project's main class and import the configuration provided by the starter.
+For example, in the same case of the Cassandra sink it can look like the following:
+
+[source,java]
+----
+package org.springframework.cloud.stream.app.cassandra.sink.rabbit;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.stream.app.cassandra.sink.CassandraSinkConfiguration;
+import org.springframework.context.annotation.Import;
+
+
+@SpringBootApplication
+@Import(CassandraSinkConfiguration.class)
+public class CassandraSinkGemfireApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(CassandraSinkGemfireApplication.class, args);
+	}
+}
+----
+
+==== Creating your own applications
+
+Spring Cloud Stream Application Starters consists of regular Spring Cloud Stream applications with some additional conventions that facilitate generating prebuilt applications with the preconfigured binders.
+Sometimes, your solution may require additional applications that are not in the scope of Spring Cloud Stream Application Starters, or require additional tweaks and enhancements.
+In this section we will show you how to create custom applications that can be part of your solution, along with Spring Cloud Stream application starters.
+You have the following options:
+
+* create new Spring Cloud Stream applications;
+* use the starters to create customized versions;
+
+
+===== Using generic Spring Cloud Stream applications
+
+If you want to add your own custom applications to your solution, you can simply create a new Spring Cloud Stream project with the binder of your choice and run it the same way as the applications provided by Spring Cloud Stream Application Starters, independently or via Spring Cloud Data Flow.
+The process is described in the http://docs.spring.io/spring-cloud-stream/docs/current-SNAPSHOT/reference/htmlsingle/#_getting_started[Getting Started Guide] of Spring Cloud Stream.
+One restriction is that the applications must have:
+
+* a single inbound channel named `input` for sources - the simplest way to do so is by using the predefined interface `org.spring.cloud.stream.messaging.Source`;
+* a single outbound channel named `output` for sinks - the simplest way to do so is by using the predefined interface `org.spring.cloud.stream.messaging.Sink`;
+* both an inbound channel named `input` and an outbound channel named `output` for processors - the simplest way to do so is by using the predefined interface `org.spring.cloud.stream.messaging.Processor`.
+
+The other restriction is to use the same kind of binder as the rest of your solution.
+
+===== Using the starters to create custom components
+
+You can also reuse the starters provided by Spring Cloud Stream Application Starters to create custom components, enriching the behavior of the application.
+For example, you can add a Spring Security layer to your _HTTP source_, add additional configurations to the `ObjectMapper` used for JSON transformation wherever that happens, or change the JDBC driver or Hadoop distribution that the application is using.
+For doing so should set up your project following a process similar to <<customizing-binder,customizing a binder>>.
+In fact, customizing the binder is the simplest form of creating a custom component.
+
+As a reminder, this involves:
+
+* adding the starter to your project
+* choosing the binder
+* adding the main class and importing the starter configuration.
+
+After doing so, you can simply add the additional configuration for the extra features of your application.
+
+=== Patching pre-built applications
+
+If you're looking to patch the pre-built applications to accommodate addition of new dependencies, you can use the following example as the reference. Let's review the steps to add `mysql` driver to `jdbc-sink` application.  
+
+* Go to: http://start-scs.cfapps.io/
+* Select the appliation and binder dependencies [_`JDBC sink` and `Rabbit binder starter`_]
+* Generate and load the project in an IDE
+* Add `mysql` java-driver dependency
+
+[source,xml]
+----
+<dependencies>
+  <dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>5.1.37</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-stream-binder-rabbit</artifactId>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework.cloud.stream.app</groupId>
+    <artifactId>spring-cloud-starter-stream-sink-jdbc</artifactId>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-test</artifactId>
+    <scope>test</scope>
+  </dependency>
+</dependencies>
+----
+
+* Import the respective configuration _class_ to the generated Spring Boot application. In the case of `jdbc` sink, it is: `@Import(org.springframework.cloud.stream.app.jdbc.sink.JdbcSinkConfiguration.class)`. You can find the configuration _class_ for other applications in their respective https://github.com/spring-cloud/spring-cloud-stream-app-starters[packages].
+
+[source,java]
+----
+@SpringBootApplication
+@Import(org.springframework.cloud.stream.app.jdbc.sink.JdbcSinkConfiguration.class)
+public class DemoApplication {
+
+  public static void main(String[] args) {
+    SpringApplication.run(DemoApplication.class, args);
+  }
+}
+----
+
+* Build and install the application to desired maven repository
+* The patched copy of `jdbc-sink` application now includes `mysql` driver in it
+* This application can be run as standalone _uberjars_
+
+=== Contributing Stream Application Starters and Generating Artifacts
+
+In this section, we will explain how to develop a custom source/sink/processor application and then generate
+maven and docker artifacts for it with the necessary middleware bindings using the existing tooling provided by the
+spring cloud stream app starter infrastructure. For explanation purposes, we will assume that we are creating a new
+source application for a technology named foobar.
+
+* Create a new top level module named spring-cloud-starter-stream-source-foobar
+
+Please follow the instructions above for designing a proper Spring Cloud Stream Source. You may also look into the existing
+starters for how to structure a new one. The default naming for the main `@Configuration` class is
+`FoobarSourceConfiguration` and the default package for this `@Configuration`
+is `org.springfamework.cloud.stream.app.foobar.source`. If you have a different class/package name, see below for
+overriding that in the app generator. The technology/functionality name for which you create
+a starter can be a hyphenated stream of strings such as in `scriptable-transform` which is a processor type in the
+module `spring-cloud-starter-stream-processor-scriptable-transform`.
+
+The starters in `spring-cloud-stream-app-starters` are slightly different from the other starters in spring-boot and
+spring-cloud in that here we don't provide a way to auto configure any configuration through spring factories mechanism.
+Rather, we delegate this responsibility to the maven plugin that is generating the binder based apps. Therefore, you don't
+have to provide a spring.factories file that lists all your configuration classes.
+
+* Add the new foobar source module to the root pom of the repository
+
+* At the root of the repository build and install the new module into your local maven cache:
+
+`./mvnw clean install -pl :spring-cloud-starter-stream-source-foobar`
+
+* You need to add the new starter dependency to the `spring-cloud-stream-app-dependencies` bill of material (BOM) in the
+dependecy management section. For example,
+
+[source,xml]
+----
+<dependencyManagement>
+...
+...
+    <dependency>
+        <groupId>org.springframework.cloud.stream.app</groupId>
+        <artifactId>spring-cloud-starter-stream-source-foobar</artifactId>
+        <version>1.0.0.BUILD-SNAPSHOT</version>
+    </dependency>
+...
+...
+----
+
+* Build and install the newly updated bom:
+
+`./mvnw clean install -pl :spring-cloud-stream-app-dependencies`
+
+* At this point, you are ready to generate the binder based spring boot apps for foobar-source. Go to the
+`spring-cloud-stream-app-generator` module and start editing as below.
+
+The minimal configuration needed to generate the app is to add to plugin configuration in
+spring-cloud-stream-app-generator/pom.xml. There are other plugin options that customize the generated applications
+which are described in the plugin documentation (https://github.com/spring-cloud/spring-cloud-stream-app-maven-plugin).
+A few plugin features are described below.
+
+[source,xml]
+----
+<generatedApps>
+....
+    <foobar-source />
+....
+</generatedApps>
+----
+
+More information about the maven plugin used above can be found here:
+https://github.com/spring-cloud/spring-cloud-stream-app-maven-plugin
+
+If you did not follow the default convention expected by the plugin of where it is looking for the main configuration
+class, which is `org.springfamework.cloud.stream.app.foobar.source.FoobarSourceConfiguration`, you can override that in
+the configuration for the plugin. For example, if your main configuration class is `foo.bar.SpecialFooBarConfiguration.class`,
+this is how you can tell the plugin to override the default.
+
+[source,xml]
+----
+<foobar-source>
+    <autoConfigClass>foo.bar.SpecialFooBarConfiguration.class</autoConfigClass>
+</foobar-source>
+----
+
+* Go to the root of the repository and execute the script: `./generateApps.sh`
+
+This will generate the binder based foobar source apps in a directory named `apps` at the root of the repository.
+If you want to change the location where the apps are generated, for instance /tmp/scs-apps, you can do it in the
+configuration section of the plugin.
+
+[source,xml]
+----
+<configuration>
+    ...
+    <generatedProjectHome>/tmp/scs-apps</generatedProjectHome>
+    ...
+</configuration
+----
+
+By default, we generate apps for both Kafka and Rabbitmq binders - `spring-cloud-stream-binder-kafka` and
+`spring-cloud-stream-binder-rabbit`. Say, if you have a custom binder you created for some middleware (say JMS),
+which you need to generate apps for foobar source, you can add that binder to the binders list in the configuration
+section as in the following.
+
+[source,xml]
+----
+<binders>
+    <kafka />
+    <rabbit />
+    <jms />
+</binders>
+----
+
+Please note that this would only work, as long as there is a binder with the maven coordinates of
+`org.springframework.cloud.stream` as group id and `spring-cloud-stream-binder-jms` as artifact id.
+This artifact needs to be specified in the BOM above and available through a maven repository as well.
+
+If you have an artifact that is only available through a private internal maven repository (may be an enterprise wide
+Nexus repo that you use globally across teams), and you need that for your app, you can define that as part of the maven
+plugin configuration.
+
+For example,
+
+[source,xml]
+----
+<configuration>
+...
+    <extraRepositories>
+        <repository>
+            <id>private-internal-nexus</id>
+            <url>.../</url>
+            <name>...</name>
+            <snapshotEnabled>...</snapshotEnabled>
+        </repository>
+    </extraRepositories>
+</configuration>
+----
+
+Then you can define this as part of your app tag:
+
+[source,xml]
+----
+<foobar-source>
+    <extraRepositories>
+        <private-internal-nexus />
+    </extraRepositories>
+</foobar-source>
+----
+
+* cd into the directory where you generated the apps (`apps` at the root of the repository by default, unless you changed
+it elsewhere as described above).
+
+Here you will see both `foobar-source-kafka` and `foobar-source-rabbit` along with all the other out of the box apps that
+is generated. If you added more binders as described above, you would see that app as well here - for example foobar-source-jms.
+
+If you only care about the foobar-source apps and nothing else, you can cd into those particular foo-bar-[binder]
+directories and import them directly into your IDE of choice. Each of them is a self contained spring boot application project.
+For all the generated apps, the parent is `spring-boot-starter-parent` as required by the underlying Spring Initializr library.
+
+You can cd into these custom foobar-source directories and do the following to build the apps:
+
+`cd foo-source-kafka`
+
+`mvn clean install`
+
+This would install the foo-source-kafka into your local maven cache (~/.m2 by default).
+
+The app generation phase adds an integration test to the app project that is making sure that all the spring
+components and contexts are loaded properly. However, these tests are not run by default when you do a `mvn install`.
+You can force the running of these tests by doing the following:
+
+`mvn clean install -DskipTests=false`
+
+One important note about running these tests in generated apps: If your application's spring beans need to interact with
+some real services out there or expect some properties be present in the context, these tests would fail unless you make
+those things available. An example would be a Twitter Source, where the underlying spring beans are trying to create a
+twitter template and would fail if it can't find the credentials available through properties. One way to solve this and
+still run the generated context load tests would be to create a mock class that provides these properties or mock beans
+(for example, a mock twitter template) and tell the maven plugin about its existence. You can use the existing module
+`app-starters-test-support` for this purpose and add the mock class there.
+See the class `org.springframework.cloud.stream.app.test.twitter.TwitterTestConfiguration` for reference.
+You can create a similar class for your foobar source - `FoobarTestConfiguration` and add that to the plugin configuration.
+You only need to do this if you run into this particular issue of spring beans are not created properly in the
+integration test in the generated apps.
+
+[source,xml]
+----
+<foobar-source>
+    <extraTestConfigClass>org.springframework.cloud.stream.app.test.foobar.FoobarTestConfiguration.class</extraTestConfigClass>
+</foobar-source>
+----
+
+When you do the above, this test configuration will be automatically imported into the context of your test class.
+
+Also note that, you need to rerun the script for generating the apps each time you make a configuration change in the plugin.
+
+* Now that you built the applications, they are available under the `target` directories of the respective apps and also as
+maven artifacts in your local maven repository. Go to the `target` directory and run the following:
+
+`java -jar foobar-source-kafa.jar` [Ensure that you have kafka running locally when you do this]
+
+It should start the application up.
+
+* The generated apps also support the creation of docker images. You can cd into one of the foobar-source* app and do the
+following:
+
+`mvn clean package docker:build`
+
+This creates the docker image under the `target/docker/springcloudstream` directory. Please ensure that the Docker
+container is up and running and DOCKER_HOST environment variable is properly set before you try `docker:build`.
+
+All the generated apps from the repository are uploaded to https://hub.docker.com/u/springcloudstream/[Docker Hub]
+
+However, for a custom app that you build, this won't be uploaded to docker hub under `springcloudstream` repository.
+If you think that there is a general need for this app, you should try contributing this starter to the main repository
+and upon review, this app then can be uploaded to the above location in docker hub.
+
+If you still need to push this to docker hub under a different repository you can take the following steps.
+
+Go to the pom.xml of the generated app [ example - `foo-source-kafka/pom.xml`]
+Search for `springcloudstream`. Replace with your repository name.
+
+Then do this:
+
+`mvn clean package docker:build docker:push -Ddocker.username=[provide your username] -Ddocker.password=[provide password]`
+
+This would upload the docker image to the docker hub in your custom repository.
+
+
