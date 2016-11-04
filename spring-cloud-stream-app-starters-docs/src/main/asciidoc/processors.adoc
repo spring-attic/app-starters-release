@@ -4,34 +4,34 @@
 :leveloffset: +2
 
 [[spring-cloud-stream-modules-bridge-processor]]
-include::{app-starters-root}/processor/spring-cloud-starter-stream-processor-bridge/README.adoc[tags=ref-doc]
+include::{app-starters-root}/bridge/{branch}/spring-cloud-starter-stream-processor-bridge/README.adoc[tags=ref-doc]
 
 [[spring-cloud-stream-modules-filter-processor]]
-include::{app-starters-root}/processor/spring-cloud-starter-stream-processor-filter/README.adoc[tags=ref-doc]
+include::{app-starters-root}/filter/{branch}/spring-cloud-starter-stream-processor-filter/README.adoc[tags=ref-doc]
 
 [[spring-cloud-stream-modules-groovy-filter-processor]]
-include::{app-starters-root}/processor/spring-cloud-starter-stream-processor-groovy-filter/README.adoc[tags=ref-doc]
+include::{app-starters-root}/groovy-filter/{branch}/spring-cloud-starter-stream-processor-groovy-filter/README.adoc[tags=ref-doc]
 
 [[spring-cloud-stream-modules-groovy-transform-processor]]
-include::{app-starters-root}/processor/spring-cloud-starter-stream-processor-groovy-transform/README.adoc[tags=ref-doc]
+include::{app-starters-root}/groovy-transform/{branch}/spring-cloud-starter-stream-processor-groovy-transform/README.adoc[tags=ref-doc]
 
 [[spring-cloud-stream-modules-httpclient-processor]]
-include::{app-starters-root}/processor/spring-cloud-starter-stream-processor-httpclient/README.adoc[tags=ref-doc]
+include::{app-starters-root}/httpclient/{branch}/spring-cloud-starter-stream-processor-httpclient/README.adoc[tags=ref-doc]
 
 [[spring-cloud-stream-modules-pmml-processor]]
-include::{app-starters-root}/processor/spring-cloud-starter-stream-processor-pmml/README.adoc[tags=ref-doc]
+include::{app-starters-root}/pmml/{branch}/spring-cloud-starter-stream-processor-pmml/README.adoc[tags=ref-doc]
 
 [[spring-cloud-stream-modules-scriptable-transform]]
-include::{app-starters-root}/processor/spring-cloud-starter-stream-processor-scriptable-transform/README.adoc[tags=ref-doc]
+include::{app-starters-root}/scriptable-transform/{branch}/spring-cloud-starter-stream-processor-scriptable-transform/README.adoc[tags=ref-doc]
 
 [[spring-cloud-stream-modules-splitter]]
-include::{app-starters-root}/processor/spring-cloud-starter-stream-processor-splitter/README.adoc[tags=ref-doc]
+include::{app-starters-root}/splitter/{branch}/spring-cloud-starter-stream-processor-splitter/README.adoc[tags=ref-doc]
 
 [[spring-cloud-stream-modules-tcp-client-processor]]
-include::{app-starters-root}/tcp/spring-cloud-starter-stream-processor-tcp-client/README.adoc[tags=ref-doc]
+include::{app-starters-root}/tcp/{branch}/spring-cloud-starter-stream-processor-tcp-client/README.adoc[tags=ref-doc]
 
-[[spring-clound-stream-modules-transform-processor]]
-include::{app-starters-root}/processor/spring-cloud-starter-stream-processor-transform/README.adoc[tags=ref-doc]
+//[[spring-clound-stream-modules-transform-processor]]
+//include::{app-starters-root}/processor/{branch}/spring-cloud-starter-stream-processor-transform/README.adoc[tags=ref-doc]
 
 :leveloffset: -2
 
