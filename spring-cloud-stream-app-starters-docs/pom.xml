@@ -11,7 +11,7 @@
 	<description>Spring Cloud Stream App Starters Docs</description>
 	<properties>
 		<spring-cloud-starter-stream-file.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-file.verion>
-		<spring-cloud-starter-stream-time.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-time.verion>
+		<spring-cloud-starter-stream-time.verion>1.1.0.RC1</spring-cloud-starter-stream-time.verion>
 		<spring-cloud-starter-stream-log.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-log.verion>
 		<spring-cloud-starter-stream-httpclient.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-httpclient.verion>
 		<spring-cloud-starter-stream-tasklauncher-cloudfoundry.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-tasklauncher-cloudfoundry.verion>
