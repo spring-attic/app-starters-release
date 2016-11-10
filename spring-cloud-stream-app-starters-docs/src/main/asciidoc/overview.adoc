@@ -91,18 +91,18 @@ will pull the _latest_ Docker image of the _Cassandra sink_ with the Kafka binde
 ==== Building the artifacts
 
 You can also build the project and generate the artifacts (including the prebuilt applications) on your own.
-This is useful if you want to deploy the artifacts locally, for example for adding a new starter, or if you want to build the entire set of artifacts with a new binder.
+This is useful if you want to deploy the artifacts locally, for example for adding a new starter, or if you want to build the entire set of artifacts available in a starter repository with a new binder.
 
 First, you need to generate the prebuilt applications.
 This is done by running the application generation Maven plugin.
-You can do so by simply invoking the corresponding script in the root of the project.
+You can do so by simply invoking the maven build with the generateApps profile and install lifecycle.
 
 [source,bash]
 ----
-./generate.sh
+mvn clean install -PgenerateApps
 ----
 
-For the each of the prebuilt applications, the script will generate the following items:
+Each of the prebuilt applciation will contain:
 
 * `pom.xml` file with the required dependencies (starter and binder)
 * a class that contains the `main` method of the application and imports the predefined configuration
@@ -121,8 +121,8 @@ Apart from accessing the sources, sinks and processors already provided by the p
 [[customizing-binder]]
 ==== Using a different binder
 
-If you want to use one of the applications found in Spring Cloud Stream Application Starters and you want to use one of the predefined binders (i.e. Kafka or Rabbit), you can just use the prebuilt versions of the artifacts.
-But if you want to connect to a different middleware system, and you have a binder for it, you will create new artifacts.
+Prebuilt applications are provided for both kafka and rabbit binders.
+But if you want to connect to a different middleware system, and you have a binder for it, you will need to create new artifacts.
 
 [source,xml]
 ----
@@ -253,14 +253,16 @@ public class DemoApplication {
 * The patched copy of `jdbc-sink` application now includes `mysql` driver in it
 * This application can be run as standalone _uberjars_
 
-=== Contributing Stream Application Starters and Generating Artifacts
+=== Creating New Stream Application Starters and Generating Artifacts
 
 In this section, we will explain how to develop a custom source/sink/processor application and then generate
 maven and docker artifacts for it with the necessary middleware bindings using the existing tooling provided by the
 spring cloud stream app starter infrastructure. For explanation purposes, we will assume that we are creating a new
 source application for a technology named foobar.
 
-* Create a new top level module named spring-cloud-starter-stream-source-foobar
+* Create a repository called foobar in your local github account
+
+* The root artifact (something like foobar-app-starters-build) must inherit from `app-starters-build`
 
 Please follow the instructions above for designing a proper Spring Cloud Stream Source. You may also look into the existing
 starters for how to structure a new one. The default naming for the main `@Configuration` class is
@@ -275,14 +277,60 @@ spring-cloud in that here we don't provide a way to auto configure any configura
 Rather, we delegate this responsibility to the maven plugin that is generating the binder based apps. Therefore, you don't
 have to provide a spring.factories file that lists all your configuration classes.
 
-* Add the new foobar source module to the root pom of the repository
+* The starter module needs to inherit from the parent (`foobar-app-starters-build`)
 
-* At the root of the repository build and install the new module into your local maven cache:
+* Add the new foobar source module to the root pom of the new repository
 
-`./mvnw clean install -pl :spring-cloud-starter-stream-source-foobar`
+* In the pom.xml for the source module, add the following in the `build` section. This will add the necessary plugin configuration for app generation as well as generating proper documentation metadata.
 
-* You need to add the new starter dependency to the `spring-cloud-stream-app-dependencies` bill of material (BOM) in the
-dependecy management section. For example,
+[source,xml]
+----
+<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-app-starter-doc-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.springframework.cloud.stream.app.plugin</groupId>
+				<artifactId>spring-cloud-stream-app-maven-plugin</artifactId>
+				<configuration>
+					<generatedProjectHome>${session.executionRootDirectory}/apps</generatedProjectHome>
+					<generatedProjectVersion>${project.version}</generatedProjectVersion>
+					<bom>
+						<name>scs-bom</name>
+						<groupId>org.springframework.cloud.stream.app</groupId>
+						<artifactId>foobar-app-dependencies</artifactId>
+						<version>${project.version}</version>
+					</bom>
+					<generatedApps>
+						<foobar-source/>
+					</generatedApps>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+----
+
+More information about the maven plugin used above to generate the apps can be found here:
+https://github.com/spring-cloud/spring-cloud-stream-app-maven-plugin
+
+If you did not follow the default convention expected by the plugin of where it is looking for the main configuration
+class, which is `org.springfamework.cloud.stream.app.foobar.source.FoobarSourceConfiguration`, you can override that in
+the configuration for the plugin. For example, if your main configuration class is `foo.bar.SpecialFooBarConfiguration.class`,
+this is how you can tell the plugin to override the default.
+
+[source,xml]
+----
+<foobar-source>
+    <autoConfigClass>foo.bar.SpecialFooBarConfiguration.class</autoConfigClass>
+</foobar-source>
+----
+
+
+* Create a new module to manage dependencies for foobar (`foobar-app-dependencies`). This is the bom (bill of material) for this project. This bom needs to inherit from `app-starters-core-dependencies`. Please see other starter repositories for guidelines.
+
+* You need to add the new starter dependency the BOM in the dependency management section. For example,
 
 [source,xml]
 ----
@@ -298,43 +346,9 @@ dependecy management section. For example,
 ...
 ----
 
-* Build and install the newly updated bom:
+* At the root of the repository build, install and generate the apps:
 
-`./mvnw clean install -pl :spring-cloud-stream-app-dependencies`
-
-* At this point, you are ready to generate the binder based spring boot apps for foobar-source. Go to the
-`spring-cloud-stream-app-generator` module and start editing as below.
-
-The minimal configuration needed to generate the app is to add to plugin configuration in
-spring-cloud-stream-app-generator/pom.xml. There are other plugin options that customize the generated applications
-which are described in the plugin documentation (https://github.com/spring-cloud/spring-cloud-stream-app-maven-plugin).
-A few plugin features are described below.
-
-[source,xml]
-----
-<generatedApps>
-....
-    <foobar-source />
-....
-</generatedApps>
-----
-
-More information about the maven plugin used above can be found here:
-https://github.com/spring-cloud/spring-cloud-stream-app-maven-plugin
-
-If you did not follow the default convention expected by the plugin of where it is looking for the main configuration
-class, which is `org.springfamework.cloud.stream.app.foobar.source.FoobarSourceConfiguration`, you can override that in
-the configuration for the plugin. For example, if your main configuration class is `foo.bar.SpecialFooBarConfiguration.class`,
-this is how you can tell the plugin to override the default.
-
-[source,xml]
-----
-<foobar-source>
-    <autoConfigClass>foo.bar.SpecialFooBarConfiguration.class</autoConfigClass>
-</foobar-source>
-----
-
-* Go to the root of the repository and execute the script: `./generateApps.sh`
+`./mvnw clean install -PgenerateApps`
 
 This will generate the binder based foobar source apps in a directory named `apps` at the root of the repository.
 If you want to change the location where the apps are generated, for instance /tmp/scs-apps, you can do it in the
