@@ -9,49 +9,7 @@
 	<artifactId>spring-cloud-stream-app-starters-docs</artifactId>
 	<name>spring-cloud-stream-app-starters-docs</name>
 	<description>Spring Cloud Stream App Starters Docs</description>
-	<properties>
-		<spring-cloud-starter-stream-file.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-file.verion>
-		<spring-cloud-starter-stream-time.verion>1.1.0.RC1</spring-cloud-starter-stream-time.verion>
-		<spring-cloud-starter-stream-log.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-log.verion>
-		<spring-cloud-starter-stream-httpclient.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-httpclient.verion>
-		<spring-cloud-starter-stream-tasklauncher-cloudfoundry.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-tasklauncher-cloudfoundry.verion>
-		<spring-cloud-starter-stream-tasklauncher-yarn.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-tasklauncher-yarn.verion>
-		<spring-cloud-starter-stream-tasklauncher-local.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-tasklauncher-local.verion>
-		<spring-cloud-starter-stream-throughput.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-throughput.verion>
-		<spring-cloud-starter-stream-redis.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-redis.verion>
-		<spring-cloud-starter-stream-splitter.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-splitter.verion>
-		<spring-cloud-starter-stream-scriptable-transform.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-scriptable-transform.verion>
-		<spring-cloud-starter-stream-filter.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-filter.verion>
-		<spring-cloud-starter-stream-groovy-filter.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-groovy-filter.verion>
-		<spring-cloud-starter-stream-groovy-transform.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-groovy-transform.verion>
-		<spring-cloud-starter-stream-counter.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-counter.verion>
-		<spring-cloud-starter-stream-fieldvaluecounter.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-fieldvaluecounter.verion>
-		<spring-cloud-starter-stream-aggregatecounter.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-aggregatecounter.verion>
-		<spring-cloud-starter-stream-rabbit.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-rabbit.verion>
-		<spring-cloud-starter-stream-jms.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-jms.verion>
-		<spring-cloud-starter-stream-hdfs.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-hdfs.verion>
-		<spring-cloud-starter-stream-gemfire.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-gemfire.verion>
-		<spring-cloud-starter-stream-pmml.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-pmml.verion>
-		<spring-cloud-starter-stream-ftp.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-ftp.verion>
-		<spring-cloud-starter-stream-sftp.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-sftp.verion>
-		<spring-cloud-starter-stream-tcp.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-tcp.verion>
-		<spring-cloud-starter-stream-triggertask.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-triggertask.verion>
-		<spring-cloud-starter-stream-trigger.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-trigger.verion>
-		<spring-cloud-starter-stream-syslog.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-syslog.verion>
-		<spring-cloud-starter-stream-mongodb.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-mongodb.verion>
-		<spring-cloud-starter-stream-mail.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-mail.verion>
-		<spring-cloud-starter-stream-loggregator.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-loggregator.verion>
-		<spring-cloud-starter-stream-aws-s3.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-aws-s3.verion>
-		<spring-cloud-starter-stream-loadgenerator.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-loadgenerator.verion>
-		<spring-cloud-starter-stream-gpfdist.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-gpfdist.verion>
-		<spring-cloud-starter-stream-router.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-router.verion>
-		<spring-cloud-starter-stream-bridge.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-bridge.verion>
-		<spring-cloud-starter-stream-jdbc.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-jdbc.verion>
-		<spring-cloud-starter-stream-websocket.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-websocket.verion>
-		<spring-cloud-starter-stream-cassandra.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-cassandra.verion>
-		<spring-cloud-starter-stream-http.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-http.verion>
-		<spring-cloud-starter-stream-twitterstream.verion>1.1.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-twitterstream.verion>
-	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
@@ -85,305 +43,305 @@
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-sink-file</artifactId>
-			<version>${spring-cloud-starter-stream-file.verion}</version>
+			<version>${spring-cloud-starter-stream-file.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-source-file</artifactId>
-			<version>${spring-cloud-starter-stream-file.verion}</version>
+			<version>${spring-cloud-starter-stream-file.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-sink-log</artifactId>
-			<version>${spring-cloud-starter-stream-log.verion}</version>
+			<version>${spring-cloud-starter-stream-log.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-source-time</artifactId>
-			<version>${spring-cloud-starter-stream-time.verion}</version>
+			<version>${spring-cloud-starter-stream-time.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-processor-httpclient</artifactId>
-			<version>${spring-cloud-starter-stream-httpclient.verion}</version>
+			<version>${spring-cloud-starter-stream-httpclient.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-sink-task-launcher-cloudfoundry</artifactId>
-			<version>${spring-cloud-starter-stream-tasklauncher-cloudfoundry.verion}</version>
+			<version>${spring-cloud-starter-stream-tasklauncher-cloudfoundry.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-sink-task-launcher-yarn</artifactId>
-			<version>${spring-cloud-starter-stream-tasklauncher-yarn.verion}</version>
+			<version>${spring-cloud-starter-stream-tasklauncher-yarn.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-sink-task-launcher-local</artifactId>
-			<version>${spring-cloud-starter-stream-tasklauncher-local.verion}</version>
+			<version>${spring-cloud-starter-stream-tasklauncher-local.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-sink-throughput</artifactId>
-			<version>${spring-cloud-starter-stream-throughput.verion}</version>
+			<version>${spring-cloud-starter-stream-throughput.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-sink-redis</artifactId>
-			<version>${spring-cloud-starter-stream-redis.verion}</version>
+			<version>${spring-cloud-starter-stream-redis.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-processor-splitter</artifactId>
-			<version>${spring-cloud-starter-stream-splitter.verion}</version>
+			<version>${spring-cloud-starter-stream-splitter.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-processor-scriptable-transform</artifactId>
-			<version>${spring-cloud-starter-stream-scriptable-transform.verion}</version>
+			<version>${spring-cloud-starter-stream-scriptable-transform.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-processor-pmml</artifactId>
-			<version>${spring-cloud-starter-stream-pmml.verion}</version>
+			<version>${spring-cloud-starter-stream-pmml.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-processor-groovy-transform</artifactId>
-			<version>${spring-cloud-starter-stream-groovy-transform.verion}</version>
+			<version>${spring-cloud-starter-stream-groovy-transform.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-processor-groovy-filter</artifactId>
-			<version>${spring-cloud-starter-stream-groovy-filter.verion}</version>
+			<version>${spring-cloud-starter-stream-groovy-filter.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-processor-filter</artifactId>
-			<version>${spring-cloud-starter-stream-filter.verion}</version>
+			<version>${spring-cloud-starter-stream-filter.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-source-triggertask</artifactId>
-			<version>${spring-cloud-starter-stream-triggertask.verion}</version>
+			<version>${spring-cloud-starter-stream-triggertask.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-source-trigger</artifactId>
-			<version>${spring-cloud-starter-stream-trigger.verion}</version>
+			<version>${spring-cloud-starter-stream-trigger.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-source-syslog</artifactId>
-			<version>${spring-cloud-starter-stream-syslog.verion}</version>
+			<version>${spring-cloud-starter-stream-syslog.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-source-mongodb</artifactId>
-			<version>${spring-cloud-starter-stream-mongodb.verion}</version>
+			<version>${spring-cloud-starter-stream-mongodb.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-source-mail</artifactId>
-			<version>${spring-cloud-starter-stream-mail.verion}</version>
+			<version>${spring-cloud-starter-stream-mail.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-source-loggregator</artifactId>
-			<version>${spring-cloud-starter-stream-loggregator.verion}</version>
+			<version>${spring-cloud-starter-stream-loggregator.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>aws-s3-app-starters-common</artifactId>
-			<version>${spring-cloud-starter-stream-aws-s3.verion}</version>
+			<version>${spring-cloud-starter-stream-aws-s3.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-source-s3</artifactId>
-			<version>${spring-cloud-starter-stream-aws-s3.verion}</version>
+			<version>${spring-cloud-starter-stream-aws-s3.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-sink-s3</artifactId>
-			<version>${spring-cloud-starter-stream-aws-s3.verion}</version>
+			<version>${spring-cloud-starter-stream-aws-s3.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-source-load-generator</artifactId>
-			<version>${spring-cloud-starter-stream-loadgenerator.verion}</version>
+			<version>${spring-cloud-starter-stream-loadgenerator.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>tcp-app-starters-common</artifactId>
-			<version>${spring-cloud-starter-stream-tcp.verion}</version>
+			<version>${spring-cloud-starter-stream-tcp.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-source-tcp</artifactId>
-			<version>${spring-cloud-starter-stream-tcp.verion}</version>
+			<version>${spring-cloud-starter-stream-tcp.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-sink-tcp</artifactId>
-			<version>${spring-cloud-starter-stream-tcp.verion}</version>
+			<version>${spring-cloud-starter-stream-tcp.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-source-tcp-client</artifactId>
-			<version>${spring-cloud-starter-stream-tcp.verion}</version>
+			<version>${spring-cloud-starter-stream-tcp.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-processor-tcp-client</artifactId>
-			<version>${spring-cloud-starter-stream-tcp.verion}</version>
+			<version>${spring-cloud-starter-stream-tcp.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-sink-gpfdist</artifactId>
-			<version>${spring-cloud-starter-stream-gpfdist.verion}</version>
+			<version>${spring-cloud-starter-stream-gpfdist.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-sink-router</artifactId>
-			<version>${spring-cloud-starter-stream-router.verion}</version>
+			<version>${spring-cloud-starter-stream-router.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-processor-bridge</artifactId>
-			<version>${spring-cloud-starter-stream-bridge.verion}</version>
+			<version>${spring-cloud-starter-stream-bridge.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-source-rabbit</artifactId>
-			<version>${spring-cloud-starter-stream-rabbit.verion}</version>
+			<version>${spring-cloud-starter-stream-rabbit.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-sink-rabbit</artifactId>
-			<version>${spring-cloud-starter-stream-rabbit.verion}</version>
+			<version>${spring-cloud-starter-stream-rabbit.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-source-jms</artifactId>
-			<version>${spring-cloud-starter-stream-jms.verion}</version>
+			<version>${spring-cloud-starter-stream-jms.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-sink-field-value-counter</artifactId>
-			<version>${spring-cloud-starter-stream-fieldvaluecounter.verion}</version>
+			<version>${spring-cloud-starter-stream-fieldvaluecounter.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-sink-aggregate-counter</artifactId>
-			<version>${spring-cloud-starter-stream-aggregatecounter.verion}</version>
+			<version>${spring-cloud-starter-stream-aggregatecounter.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-sink-counter</artifactId>
-			<version>${spring-cloud-starter-stream-counter.verion}</version>
+			<version>${spring-cloud-starter-stream-counter.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-source-jdbc</artifactId>
-			<version>${spring-cloud-starter-stream-jdbc.verion}</version>
+			<version>${spring-cloud-starter-stream-jdbc.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-sink-jdbc</artifactId>
-			<version>${spring-cloud-starter-stream-jdbc.verion}</version>
+			<version>${spring-cloud-starter-stream-jdbc.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>sftp-app-starters-common</artifactId>
-			<version>${spring-cloud-starter-stream-sftp.verion}</version>
+			<version>${spring-cloud-starter-stream-sftp.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-source-sftp</artifactId>
-			<version>${spring-cloud-starter-stream-sftp.verion}</version>
+			<version>${spring-cloud-starter-stream-sftp.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-sink-sftp</artifactId>
-			<version>${spring-cloud-starter-stream-sftp.verion}</version>
+			<version>${spring-cloud-starter-stream-sftp.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-source-ftp</artifactId>
-			<version>${spring-cloud-starter-stream-ftp.verion}</version>
+			<version>${spring-cloud-starter-stream-ftp.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-sink-ftp</artifactId>
-			<version>${spring-cloud-starter-stream-ftp.verion}</version>
+			<version>${spring-cloud-starter-stream-ftp.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-sink-websocket</artifactId>
-			<version>${spring-cloud-starter-stream-websocket.verion}</version>
+			<version>${spring-cloud-starter-stream-websocket.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-sink-hdfs</artifactId>
-			<version>${spring-cloud-starter-stream-hdfs.verion}</version>
+			<version>${spring-cloud-starter-stream-hdfs.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-sink-hdfs-dataset</artifactId>
-			<version>${spring-cloud-starter-stream-hdfs.verion}</version>
+			<version>${spring-cloud-starter-stream-hdfs.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-sink-cassandra</artifactId>
-			<version>${spring-cloud-starter-stream-cassandra.verion}</version>
+			<version>${spring-cloud-starter-stream-cassandra.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-common-gemfire</artifactId>
-			<version>${spring-cloud-starter-stream-gemfire.verion}</version>
+			<version>${spring-cloud-starter-stream-gemfire.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-source-gemfire</artifactId>
-			<version>${spring-cloud-starter-stream-gemfire.verion}</version>
+			<version>${spring-cloud-starter-stream-gemfire.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-sink-gemfire</artifactId>
-			<version>${spring-cloud-starter-stream-gemfire.verion}</version>
+			<version>${spring-cloud-starter-stream-gemfire.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-source-gemfire-cq</artifactId>
-			<version>${spring-cloud-starter-stream-gemfire.verion}</version>
+			<version>${spring-cloud-starter-stream-gemfire.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>twitterstream-app-starters-common</artifactId>
-			<version>${spring-cloud-starter-stream-twitterstream.verion}</version>
+			<version>${spring-cloud-starter-stream-twitterstream.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-source-twitterstream</artifactId>
-			<version>${spring-cloud-starter-stream-twitterstream.verion}</version>
+			<version>${spring-cloud-starter-stream-twitterstream.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-source-http</artifactId>
-			<version>${spring-cloud-starter-stream-http.verion}</version>
+			<version>${spring-cloud-starter-stream-http.version}</version>
 		</dependency>
 
 	</dependencies>
