@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.springframework.cloud.stream.app</groupId>
 		<artifactId>app-starters-release-train-build</artifactId>
-		<version>Avogadro.RC1</version>
+		<version>Avogadro.BUILD-SNAPSHOT</version>
 	</parent>
 	<artifactId>spring-cloud-stream-app-starters-docs</artifactId>
 	<name>spring-cloud-stream-app-starters-docs</name>
