@@ -102,8 +102,8 @@
                 "${spring-cloud-starter-stream-splitter.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-splitter.version}";
         pom.properties['syslog-docker.tag']=
                 "${spring-cloud-starter-stream-syslog.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-syslog.version}";
-        pom.properties['tasklauncher-cloudfoundry-docker.tag']=
-                "${spring-cloud-starter-stream-tasklauncher-cloudfoundry.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-tasklauncher-cloudfoundry.version}";
+//        pom.properties['tasklauncher-cloudfoundry-docker.tag']=
+//                "${spring-cloud-starter-stream-tasklauncher-cloudfoundry.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-tasklauncher-cloudfoundry.version}";
         pom.properties['tasklauncher-yarn-docker.tag']=
                 "${spring-cloud-starter-stream-tasklauncher-yarn.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-tasklauncher-yarn.version}";
         pom.properties['tasklauncher-local-docker.tag']=
