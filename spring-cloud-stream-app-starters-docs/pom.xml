@@ -65,11 +65,11 @@
 			<artifactId>spring-cloud-starter-stream-processor-httpclient</artifactId>
 			<version>${spring-cloud-starter-stream-httpclient.version}</version>
 		</dependency>
-		<!--<dependency>-->
-			<!--<groupId>org.springframework.cloud.stream.app</groupId>-->
-			<!--<artifactId>spring-cloud-starter-stream-sink-task-launcher-cloudfoundry</artifactId>-->
-			<!--<version>${spring-cloud-starter-stream-tasklauncher-cloudfoundry.version}</version>-->
-		<!--</dependency>-->
+		<dependency>
+			<groupId>org.springframework.cloud.stream.app</groupId>
+			<artifactId>spring-cloud-starter-stream-sink-task-launcher-cloudfoundry</artifactId>
+			<version>${spring-cloud-starter-stream-tasklauncher-cloudfoundry.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-sink-task-launcher-yarn</artifactId>
