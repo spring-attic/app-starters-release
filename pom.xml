@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>app-starters-release-train-build</artifactId>
-	<version>Avogadro.RELEASE</version>
+	<version>Avogadro.SR1</version>
 	<packaging>pom</packaging>
 
 	<parent>
@@ -58,7 +58,7 @@
 		<spring-cloud-starter-stream-jdbc.version>1.1.1.RELEASE</spring-cloud-starter-stream-jdbc.version>
 		<spring-cloud-starter-stream-websocket.version>1.1.1.RELEASE</spring-cloud-starter-stream-websocket.version>
 		<spring-cloud-starter-stream-cassandra.version>1.1.1.RELEASE</spring-cloud-starter-stream-cassandra.version>
-		<spring-cloud-starter-stream-http.version>1.1.1.RELEASE</spring-cloud-starter-stream-http.version>
+		<spring-cloud-starter-stream-http.version>1.1.2.RELEASE</spring-cloud-starter-stream-http.version>
 		<spring-cloud-starter-stream-twitterstream.version>1.1.1.RELEASE</spring-cloud-starter-stream-twitterstream.version>
 		<spring-cloud-starter-stream-transform.version>1.1.1.RELEASE</spring-cloud-starter-stream-transform.version>
 	</properties>
