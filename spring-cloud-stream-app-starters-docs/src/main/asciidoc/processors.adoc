@@ -3,6 +3,9 @@
 
 :leveloffset: +2
 
+[[spring-cloud-stream-modules-aggregator-processor]]
+include::{app-starters-root}/aggregator/{branch}/spring-cloud-starter-stream-processor-aggregator/README.adoc[tags=ref-doc]
+
 [[spring-cloud-stream-modules-bridge-processor]]
 include::{app-starters-root}/bridge/{branch}/spring-cloud-starter-stream-processor-bridge/README.adoc[tags=ref-doc]
 
@@ -14,6 +17,9 @@ include::{app-starters-root}/groovy-filter/{branch}/spring-cloud-starter-stream-
 
 [[spring-cloud-stream-modules-groovy-transform-processor]]
 include::{app-starters-root}/groovy-transform/{branch}/spring-cloud-starter-stream-processor-groovy-transform/README.adoc[tags=ref-doc]
+
+[[spring-cloud-stream-modules-header-enricher-processor]]
+include::{app-starters-root}/header-enricher/{branch}/spring-cloud-starter-stream-processor-header-enricher/README.adoc[tags=ref-doc]
 
 [[spring-cloud-stream-modules-httpclient-processor]]
 include::{app-starters-root}/httpclient/{branch}/spring-cloud-starter-stream-processor-httpclient/README.adoc[tags=ref-doc]
