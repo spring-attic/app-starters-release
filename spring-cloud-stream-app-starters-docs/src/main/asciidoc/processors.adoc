@@ -4,7 +4,7 @@
 :leveloffset: +2
 
 [[spring-cloud-stream-modules-aggregator-processor]]
-include::{app-starters-root}/aggregator/{branch}/spring-cloud-starter-stream-processor-aggregator/README.adoc[tags=ref-doc]
+include::{app-starters-root}/aggregator/{branch}/spring-cloud-starter-stream-aggregator/README.adoc[tags=ref-doc]
 
 [[spring-cloud-stream-modules-bridge-processor]]
 include::{app-starters-root}/bridge/{branch}/spring-cloud-starter-stream-processor-bridge/README.adoc[tags=ref-doc]
