@@ -42,6 +42,12 @@ include::{app-starters-root}/log/{branch}/spring-cloud-starter-stream-sink-log/R
 [[spring-cloud-stream-modules-rabbit-sink]]
 include::{app-starters-root}/rabbit/{branch}/spring-cloud-starter-stream-sink-rabbit/README.adoc[tags=ref-doc]
 
+[[spring-cloud-stream-modules-mongodb-sink]]
+include::{app-starters-root}/mongodb/{branch}/spring-cloud-starter-stream-sink-mongodb/README.adoc[tags=ref-doc]
+
+[[spring-cloud-stream-modules-pgcopy-sink]]
+include::{app-starters-root}/jdbc/{branch}/spring-cloud-starter-stream-sink-pgcopy/README.adoc[tags=ref-doc]
+
 [[spring-cloud-stream-modules-redis-sink]]
 include::{app-starters-root}/redis-pubsub/{branch}/spring-cloud-starter-stream-sink-redis/README.adoc[tags=ref-doc]
 
