@@ -126,6 +126,10 @@
                 "${spring-cloud-starter-stream-twitterstream.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-twitterstream.version}";
         pom.properties['websocket-docker.tag']=
                 "${spring-cloud-starter-stream-websocket.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-websocket.version}";
+        pom.properties['aggregator-docker.tag']=
+                "${spring-cloud-starter-stream-aggregator.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-aggregator.version}";
+        pom.properties['header-enricher-docker.tag']=
+                "${spring-cloud-starter-stream-processor-header-enricher.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-processor-header-enricher.version}";
                 ]]></source>
                         </configuration>
                     </execution>
