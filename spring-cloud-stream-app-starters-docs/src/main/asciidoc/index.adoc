@@ -1,5 +1,5 @@
 = Spring Cloud Stream App Starters Reference Guide
-Sabby Anandan; Artem Bilan; Marius Bogoevici; Eric Bottard; Mark Fisher; Ilayaperumal Gopinathan; Gunnar Hillert; Mark Pollack; Patrick Peralta; Glenn Renfro; Gary Russell; Thomas Risberg; David Turanski; Janne Valkealahti
+Sabby Anandan; Artem Bilan; Marius Bogoevici; Eric Bottard; Mark Fisher; Ilayaperumal Gopinathan; Gunnar Hillert; Mark Pollack; Patrick Peralta; Glenn Renfro; Gary Russell; Thomas Risberg; David Turanski; Janne Valkealahti; Soby Chacko
 :doctype: book
 :toc:
 :toclevels: 4
