@@ -15,6 +15,8 @@ They include:
 
 You can find a detailed listing of all the starters and as their options in the <<starters,corresponding>> section of this guide.
 
+You can find all available app starter repositories in this https://github.com/spring-cloud-stream-app-starters[GitHub Organization].
+
 === Starters and pre-built applications
 
 As a user of Spring Cloud Stream Application Starters you have access to two types of artifacts.
@@ -24,11 +26,11 @@ Starters are not executable applications, and are intended to be included in oth
 
 _Prebuilt applications_ are Spring Boot applications that include the starters and a Binder implementation.
 Prebuilt applications are http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#getting-started-first-application-executable-jar[uberjars] and include minimal code required to execute standalone.
-For each starter, the project provides a prebuilt version including the Kafka Binder and a  prebuilt version including the Rabbit MQ Binder.
+For each starter, the project provides a prebuilt version including the Kafka Binder (one each for 0.9 and 0.10 versions of Kafka) and a  prebuilt version including the Rabbit MQ Binder.
 
 [NOTE]
 Only starters are present in the source code of the project.
-Prebuilt applications are generated according to the Maven plugin configuration.
+Prebuilt applications are generated according to the https://github.com/spring-cloud/spring-cloud-app-starters-maven-plugins/tree/master/spring-cloud-stream-app-maven-plugin[stream apps generator maven plugin].
 
 [[classification]]
 === Classification
@@ -44,7 +46,7 @@ All starters are named following the convention `spring-cloud-starter-stream-<ty
 For example `spring-cloud-starter-stream-source-file` is a starter for a _file source_ that polls a directory and sends file data on the output channel (read <<spring-cloud-stream-modules-file-source,the reference documentation of the source>> for details).
 Conversely, `spring-cloud-starter-stream-sink-cassandra` is a starter for a _Cassandra sink_ that writes the data that it receives on the input channel to Cassandra (read <<spring-cloud-stream-modules-cassandra-sink,the reference documentation of the sink>> for details).
 
-The prebuilt applications follow a naming convention too: `<functionality>-<type>-<binder>`. For example, `cassandra-sink-kafka` is a _Cassandra sink_ using the Kafka binder.
+The prebuilt applications follow a naming convention too: `<functionality>-<type>-<binder>`. For example, `cassandra-sink-kafka-10` is a _Cassandra sink_ using the Kafka binder that is running with Kafka version 0.10.
 
 === Using the artifacts
 
@@ -83,15 +85,15 @@ The Docker versions of the applications are available in Docker Hub, at `https:/
 
 [source,bash]
 ----
-docker pull springcloudstream/cassandra-sink-kafka
+docker pull springcloudstream/cassandra-sink-kafka-10
 ----
 
-will pull the _latest_ Docker image of the _Cassandra sink_ with the Kafka binder.
+will pull the _latest_ Docker image of the _Cassandra sink_ with the Kafka binder that is running with Kafka version 0.10.
 
 ==== Building the artifacts
 
 You can also build the project and generate the artifacts (including the prebuilt applications) on your own.
-This is useful if you want to deploy the artifacts locally, for example for adding a new starter, or if you want to build the entire set of artifacts available in a starter repository with a new binder.
+This is useful if you want to deploy the artifacts locally or add additional features.
 
 First, you need to generate the prebuilt applications.
 This is done by running the application generation Maven plugin.
@@ -108,7 +110,7 @@ Each of the prebuilt applciation will contain:
 * a class that contains the `main` method of the application and imports the predefined configuration
 * generated integration test code that exercises the component against the configured binder.
 
-For example, `spring-cloud-starter-stream-sink-cassandra` will generate `cassandra-sink-rabbit` and `cassandra-sink-kafka` as completely functional applications.
+For example, `spring-cloud-starter-stream-sink-cassandra` will generate `cassandra-sink-rabbit`, `cassandra-sink-kafka-09` and `cassandra-sink-kafka-10` as completely functional applications.
 
 === Creating custom artifacts
 
@@ -142,7 +144,6 @@ But if you want to connect to a different middleware system, and you have a bind
 ----
 
 The next step is to create the project's main class and import the configuration provided by the starter.
-For example, in the same case of the Cassandra sink it can look like the following:
 
 [source,java]
 ----
@@ -166,32 +167,33 @@ public class CassandraSinkGemfireApplication {
 
 ==== Creating your own applications
 
-Spring Cloud Stream Application Starters consists of regular Spring Cloud Stream applications with some additional conventions that facilitate generating prebuilt applications with the preconfigured binders.
-Sometimes, your solution may require additional applications that are not in the scope of Spring Cloud Stream Application Starters, or require additional tweaks and enhancements.
+Spring Cloud Stream Application consists of regular Spring Boot applications with some additional conventions that facilitate generating prebuilt applications with the preconfigured binders.
+Sometimes, your solution may require additional applications that are not in the scope of out of the box Spring Cloud Stream Application Starters, or require additional tweaks and enhancements.
 In this section we will show you how to create custom applications that can be part of your solution, along with Spring Cloud Stream application starters.
 You have the following options:
 
 * create new Spring Cloud Stream applications;
 * use the starters to create customized versions;
 
-
 ===== Using generic Spring Cloud Stream applications
 
-If you want to add your own custom applications to your solution, you can simply create a new Spring Cloud Stream project with the binder of your choice and run it the same way as the applications provided by Spring Cloud Stream Application Starters, independently or via Spring Cloud Data Flow.
+If you want to add your own custom applications to your solution, you can simply create a new Spring Cloud Stream app project with the binder of your choice and run it the same way as the applications provided by Spring Cloud Stream Application Starters, independently or via Spring Cloud Data Flow.
 The process is described in the http://docs.spring.io/spring-cloud-stream/docs/current-SNAPSHOT/reference/htmlsingle/#_getting_started[Getting Started Guide] of Spring Cloud Stream.
-One restriction is that the applications must have:
+
+An alternative way to bootstrap your application is to go to the http://start.spring.io[Spring Initializr] and choose a Spring Cloud Stream Binder of your choice.
+This way you already have the necessary infrastructure ready to go and mainly focus on the specifics of the application.
+
+The following requirements need to be followed when you go with this option:
 
 * a single inbound channel named `input` for sources - the simplest way to do so is by using the predefined interface `org.spring.cloud.stream.messaging.Source`;
 * a single outbound channel named `output` for sinks - the simplest way to do so is by using the predefined interface `org.spring.cloud.stream.messaging.Sink`;
 * both an inbound channel named `input` and an outbound channel named `output` for processors - the simplest way to do so is by using the predefined interface `org.spring.cloud.stream.messaging.Processor`.
 
-The other restriction is to use the same kind of binder as the rest of your solution.
-
 ===== Using the starters to create custom components
 
 You can also reuse the starters provided by Spring Cloud Stream Application Starters to create custom components, enriching the behavior of the application.
 For example, you can add a Spring Security layer to your _HTTP source_, add additional configurations to the `ObjectMapper` used for JSON transformation wherever that happens, or change the JDBC driver or Hadoop distribution that the application is using.
-For doing so should set up your project following a process similar to <<customizing-binder,customizing a binder>>.
+In order to do this, you should set up your project following a process similar to <<customizing-binder,customizing a binder>>.
 In fact, customizing the binder is the simplest form of creating a custom component.
 
 As a reminder, this involves:
@@ -235,7 +237,7 @@ If you're looking to patch the pre-built applications to accommodate addition of
 </dependencies>
 ----
 
-* Import the respective configuration _class_ to the generated Spring Boot application. In the case of `jdbc` sink, it is: `@Import(org.springframework.cloud.stream.app.jdbc.sink.JdbcSinkConfiguration.class)`. You can find the configuration _class_ for other applications in their respective https://github.com/spring-cloud/spring-cloud-stream-app-starters[packages].
+* Import the respective configuration _class_ to the generated Spring Boot application. In the case of `jdbc` sink, it is: `@Import(org.springframework.cloud.stream.app.jdbc.sink.JdbcSinkConfiguration.class)`. You can find the configuration _class_ for other applications in their respective https://github.com/spring-cloud-stream-app-starters[repositories].
 
 [source,java]
 ----
@@ -251,7 +253,7 @@ public class DemoApplication {
 
 * Build and install the application to desired maven repository
 * The patched copy of `jdbc-sink` application now includes `mysql` driver in it
-* This application can be run as standalone _uberjars_
+* This application can be run as a standalone _uberjar_
 
 === Creating New Stream Application Starters and Generating Artifacts
 
@@ -282,6 +284,7 @@ have to provide a spring.factories file that lists all your configuration classe
 * Add the new foobar source module to the root pom of the new repository
 
 * In the pom.xml for the source module, add the following in the `build` section. This will add the necessary plugin configuration for app generation as well as generating proper documentation metadata.
+Please ensure that your root pom inherits https://github.com/spring-cloud-stream-app-starters/core/blob/master/pom.xml[app-starters-build] as the base configuration for the plugins is specified there.
 
 [source,xml]
 ----
@@ -315,7 +318,7 @@ have to provide a spring.factories file that lists all your configuration classe
 More information about the maven plugin used above to generate the apps can be found here:
 https://github.com/spring-cloud/spring-cloud-stream-app-maven-plugin
 
-If you did not follow the default convention expected by the plugin of where it is looking for the main configuration
+If you did not follow the default convention expected by the plugin for where it is looking for the main configuration
 class, which is `org.springfamework.cloud.stream.app.foobar.source.FoobarSourceConfiguration`, you can override that in
 the configuration for the plugin. For example, if your main configuration class is `foo.bar.SpecialFooBarConfiguration.class`,
 this is how you can tell the plugin to override the default.
@@ -328,9 +331,9 @@ this is how you can tell the plugin to override the default.
 ----
 
 
-* Create a new module to manage dependencies for foobar (`foobar-app-dependencies`). This is the bom (bill of material) for this project. This bom needs to inherit from `app-starters-core-dependencies`. Please see other starter repositories for guidelines.
+* Create a new module to manage dependencies for foobar (`foobar-app-dependencies`). This is the bom (bill of material) for this project. It is advised that this bom is inherited from `spring-cloud-dependencies-parent`. Please see other starter repositories for guidelines.
 
-* You need to add the new starter dependency the BOM in the dependency management section. For example,
+* You need to add the new starter dependency to the BOM in the dependency management section. For example,
 
 [source,xml]
 ----
@@ -351,7 +354,7 @@ this is how you can tell the plugin to override the default.
 `./mvnw clean install -PgenerateApps`
 
 This will generate the binder based foobar source apps in a directory named `apps` at the root of the repository.
-If you want to change the location where the apps are generated, for instance /tmp/scs-apps, you can do it in the
+If you want to change the location where the apps are generated, for instance ``/tmp/scs-apps`, you can do it in the
 configuration section of the plugin.
 
 [source,xml]
@@ -363,7 +366,7 @@ configuration section of the plugin.
 </configuration
 ----
 
-By default, we generate apps for both Kafka and Rabbitmq binders - `spring-cloud-stream-binder-kafka` and
+By default, we generate apps for both Kafka 09/10 and Rabbitmq binders - `spring-cloud-stream-binder-kafka` and
 `spring-cloud-stream-binder-rabbit`. Say, if you have a custom binder you created for some middleware (say JMS),
 which you need to generate apps for foobar source, you can add that binder to the binders list in the configuration
 section as in the following.
@@ -371,8 +374,6 @@ section as in the following.
 [source,xml]
 ----
 <binders>
-    <kafka />
-    <rabbit />
     <jms />
 </binders>
 ----
@@ -416,20 +417,19 @@ Then you can define this as part of your app tag:
 * cd into the directory where you generated the apps (`apps` at the root of the repository by default, unless you changed
 it elsewhere as described above).
 
-Here you will see both `foobar-source-kafka` and `foobar-source-rabbit` along with all the other out of the box apps that
-is generated. If you added more binders as described above, you would see that app as well here - for example foobar-source-jms.
+Here you will see `foobar-source-kafka-09`, `foobar-source-kafka-10` and `foobar-source-rabbit`.
+If you added more binders as described above, you would see that app as well here - for example foobar-source-jms.
 
-If you only care about the foobar-source apps and nothing else, you can cd into those particular foo-bar-[binder]
-directories and import them directly into your IDE of choice. Each of them is a self contained spring boot application project.
-For all the generated apps, the parent is `spring-boot-starter-parent` as required by the underlying Spring Initializr library.
+You can import these apps directly into your IDE of choice if you further want to do any customizations on them. Each of them is a self contained spring boot application project.
+For the generated apps, the parent is `spring-boot-starter-parent` as required by the underlying Spring Initializr library.
 
 You can cd into these custom foobar-source directories and do the following to build the apps:
 
-`cd foo-source-kafka`
+`cd foo-source-kafka-10`
 
 `mvn clean install`
 
-This would install the foo-source-kafka into your local maven cache (~/.m2 by default).
+This would install the foo-source-kafka-10 into your local maven cache (~/.m2 by default).
 
 The app generation phase adds an integration test to the app project that is making sure that all the spring
 components and contexts are loaded properly. However, these tests are not run by default when you do a `mvn install`.
@@ -437,10 +437,12 @@ You can force the running of these tests by doing the following:
 
 `mvn clean install -DskipTests=false`
 
-One important note about running these tests in generated apps: If your application's spring beans need to interact with
-some real services out there or expect some properties be present in the context, these tests would fail unless you make
+**One important note about running these tests in generated apps:**
+
+If your application's spring beans need to interact with
+some real services out there or expect some properties to be present in the context, these tests will fail unless you make
 those things available. An example would be a Twitter Source, where the underlying spring beans are trying to create a
-twitter template and would fail if it can't find the credentials available through properties. One way to solve this and
+twitter template and will fail if it can't find the credentials available through properties. One way to solve this and
 still run the generated context load tests would be to create a mock class that provides these properties or mock beans
 (for example, a mock twitter template) and tell the maven plugin about its existence. You can use the existing module
 `app-starters-test-support` for this purpose and add the mock class there.
@@ -458,12 +460,12 @@ integration test in the generated apps.
 
 When you do the above, this test configuration will be automatically imported into the context of your test class.
 
-Also note that, you need to rerun the script for generating the apps each time you make a configuration change in the plugin.
+Also note that, you need to regenerate the apps each time you make a configuration change in the plugin.
 
 * Now that you built the applications, they are available under the `target` directories of the respective apps and also as
 maven artifacts in your local maven repository. Go to the `target` directory and run the following:
 
-`java -jar foobar-source-kafa.jar` [Ensure that you have kafka running locally when you do this]
+`java -jar foobar-source-kafa-10.jar` [Ensure that you have kafka running locally when you do this]
 
 It should start the application up.
 
@@ -475,13 +477,13 @@ following:
 This creates the docker image under the `target/docker/springcloudstream` directory. Please ensure that the Docker
 container is up and running and DOCKER_HOST environment variable is properly set before you try `docker:build`.
 
-All the generated apps from the repository are uploaded to https://hub.docker.com/u/springcloudstream/[Docker Hub]
+All the generated apps from the various app repositories are uploaded to https://hub.docker.com/u/springcloudstream/[Docker Hub]
 
 However, for a custom app that you build, this won't be uploaded to docker hub under `springcloudstream` repository.
-If you think that there is a general need for this app, you should try contributing this starter to the main repository
-and upon review, this app then can be uploaded to the above location in docker hub.
+If you think that there is a general need for this app, you should try contributing this starter as a new repository to https://github.com/spring-cloud-stream-app-starters[Spring Cloud Stream App Starters].
+Upon review, this app then can be eventually available through the above location in docker hub.
 
-If you still need to push this to docker hub under a different repository you can take the following steps.
+If you still need to push this to docker hub under a different repository (may be an enterprise repo that you manage for your organization) you can take the following steps.
 
 Go to the pom.xml of the generated app [ example - `foo-source-kafka/pom.xml`]
 Search for `springcloudstream`. Replace with your repository name.
@@ -492,4 +494,158 @@ Then do this:
 
 This would upload the docker image to the docker hub in your custom repository.
 
+=== General faq on Spring Cloud Stream App Starters
+
+In the following sections, you can find a brief faq on various things that we discussed above and a few other infrastructure related topics.
+
+. What are Spring Cloud Stream Application Starters? +
+Spring Cloud Stream Application Starters are Spring Boot based Spring Integration applications that provide integration with external systems. GitHub: http://github.com/spring-cloud-stream-app-starters +
+Project page: http://cloud.spring.io/spring-cloud-stream-app-starters/
+
+
+. What is the parent for stream app starters? +
+The parent for all app starters is `app-starters-build` which is coming from the core project. https://github.com/spring-cloud-stream-app-starters/core
+For example:
++
+[source,xml,subs=attributes]
+----
+&lt;parent&gt;
+    &lt;groupId&gt;org.springframework.cloud.stream.app&lt;/groupId&gt;
+    &lt;artifactId&gt;app-starters-build&lt;/artifactId&gt;
+    &lt;version&gt;{app-starters-build-version}&lt;/version&gt;
+    &lt;relativePath/&gt;
+&lt;/parent&gt;
+----
+
+. Why is there a BOM in the core proejct? +
+Core defines a BOM which contains all the dependency management for common artifacts. This BOM is named as `app-starters-core-dependencies`.
+ We need this bom during app generation to pull down all the core dependencies.
+
+. What are the contents of the core BOM? +
+In addition to the common artifacts in core, the app-starters-core-dependencies BOM also adds dependency management for spring-cloud-dependencies which will include spring-cloud-stream transitively.
+
+. Where is the core BOM used? +
+There are two places where the core BOM is used. It is used to provide compile time dependency management for all the starters.
+This is defined in the `app-starters-build` artfiact. This same BOM is referenced through the maven plugin configuration for the app generation.
+The generated apps thus will include this bom also in their pom.xml files.
+
+. What spring cloud stream artifacts does the parent artifact (`app-starters-build`) include? +
+* spring-cloud-stream
+* Spring-cloud-stream-test-support-internal
+* spring-cloud-stream-test-support
+
+. What other artfiacts are available through the parent `app-starters-build` and where are they coming from? +
+In addition to the above artifacts, the artifacts below also included in `app-starters-build` by default.
+* json-path
+* spring-integration-xml
+* spring-boot-starter-logging
+* spring boot-starter-security +
+Spring-cloud-build is the parent for app-starters-build. Spring-cloud-build imports spring-boot-dependencies and that is from where these artifacts are coming from.
+
+. I did not see any other Spring Integration components used in the above 2 lists. Where are those dependencies coming from for individual starters? +
+Spring-integration bom is imported in the spring-boot-dependencies bom and this is where the default SI dependencies are coming for SCSt app starters.
+
+. Can you summarize all the BOM's that SCSt app starters depend on? +
+All SCSt app starters have access to dependencies defined in the following BOM’s and other dependencies from any other BOM’s these three boms import transitively as in the case of Spring Integration:
+    * app-starters-core-dependencies
+    * spring-cloud-dependencies
+    * spring-boot-dependencies
+
+.  Each app starter has `app-starter-build` as the parent which in turn has `spring-cloud-build` as parent. The above documentation states that the
+generated apps have `spring-boot-starter` as the parent. Why the mismatch? +
+There is no mismatch per se, but a slight subtlety. As the question frames, each app starter has access to artifacts managed all the way through `spring-cloud-build` at compile time.
+However, this is not the case for the generated apps at runtime. Generated apps are managed by boot. Their parent is `spring-boot-starter` that imports `spring-boot-dependencies` bom that includes a majority of the components that these apps need.
+The additional dependencies that the generated application needs are managed by including a BOM specific to each application starter.
+
+.  Why is there an app starter specific BOM in each app starer repositories? For example, `time-app-dependencies`. +
+This is an important BOM. At runtime, the generated apps get the versions used in their dependencies through a BOM that is managing the dependencies. Since all the boms
+that we specified above only for the helper artifacts, we need a place to manage the starters themselves. This is where the app specific BOM comes into play.
+In addition to this need, as it becomes clear below, there are other uses for this BOM such as dependency overrides etc. But in a nutshell, all the starter dependencies go to this BOM.
+For instance, take TCP repo as an example. It has a starter for source, sink, client processor etc. All these dependencies are managed through the app specific `tcp-app-dependencies` bom.
+This bom is provided to the app generator maven plugin in addition to the core bom. This app specific bom has `spring-cloud-dependencies-parent` as parent.
+
+.  How do I create a new app starter project? +
+If you have a general purpose starter that can be provided as an of of the box app, create an issue for that in https://github.com/spring-cloud-stream-app-starters/app-starters-release[app-starters-release].
+If there is a consensus, then a repository can be created in the `spring-cloud-stream-app-starters` organization where you can start contributing the starters and other components.
+
+.  I created a new starter according to the guidelines above, now how do I generate binder specific apps for the new starters? +
+By default, the app-starters-build in core is configured with the common configuration needed for the app generator maven plugin. It is configured for generating apps for kafka-09, kafka-10 and rabbitmq binders.
+In your starter you already have the configuration specified for the plugin from the parent. Modify the configuration for your starter accordingly. Refer to an existing starter for guidelines.
+Here is an example of modifying such a configuration : https://github.com/spring-cloud-stream-app-starters/time/blob/master/spring-cloud-starter-stream-source-time/pom.xml
+Look for spring-cloud-stream-app-maven-plugin in the plugins section under build.
+You generate binder based apps using the generateApps maven profile. You need the maven install lifecycle to generate the apps.
+
+
+.  How do I override Spring Integration version that is coming from spring-boot-dependencies by default? +
+The following solution only works if the versions you want to override are available through a new Spring Integration BOM.
+Go to your app starter specific bom. Override the property as following:
+
+ <spring-integration.version>VERSION GOES HERE</spring-integration.version>
+
+ Then add the following in the dependencies management section in the BOM.
+
+ <dependency>
+	<groupId>org.springframework.integration</groupId>
+	<artifactId>spring-integration-bom</artifactId>
+	<version>${spring-integration.version}</version>
+	<scope>import</scope>
+	<type>pom</type>
+</dependency>
+
+
+.  How do I override spring-cloud-stream artifacts coming by default in spring-cloud-dependencies defined in core BOM? +
+The following solution only works if the versions you want to override are available through a new Spring-Cloud-Dependencies BOM.
+Go to your app starter specific bom. Override the property as following:
+
+ <spring-cloud-dependencies.version>VERSION GOES HERE</spring-cloud-dependencies.version>
+
+ Then add the following in the dependencies management section in the BOM.
+
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>${spring-cloud-dependencies.version}</version>
+        <scope>import</scope>
+        <type>pom</type>
+    </dependency>
+
+
+.  What if there is no spring-cloud-dependencies BOM available that contains my versions of spring-cloud-stream, but there is a spring-cloud-stream BOM available? +
+Go to your app starter specific BOM. Override the property as below.
+
+ <spring-cloud-stream.version>VERSION GOES HERE</spring-cloud-stream.version>
+
+ Then add the following in the dependencies management section in the BOM.
+
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-stream-dependencies</artifactId>
+        <version>${spring-cloud-stream.version}</version>
+        <scope>import</scope>
+        <type>pom</type>
+    </dependency>
+
+.  What if I want to override a single artifact that is provided through a bom? For example spring-integration-java-dsl? +
+Go to your app starter BOM and add the following property with the version you want to override:
+
+ <spring-integration-java-dsl.version>VERSION GOES HERE</spring-integration-java-dsl.version>
+
+ Then in the dependency management section add the following:
+
+    <dependency>
+        <groupId>org.springframework.integration</groupId>
+        <artifactId>spring-integration-java-dsl</artifactId>
+        <version>${spring-integration-java-dsl.version}</version>
+    </dependency>
+
+.  How do I override the boot version used in a particular app? +
+When you generate the app, override the boot version as follows.
+
+  ./mvnw clean install -PgenerateApps -DbootVersion=<boot version to override>
+
+  For example: ./mvnw clean install -PgenerateApps -DbootVersion=2.0.0.BUILD-SNAPSHOT
+
+You can also override the boot version more permanently by overriding the following property in your starter pom.
+
+    <bootVersion>2.0.0.BUILD-SNAPSHOT</bootVersion>
 

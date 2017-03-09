@@ -18,6 +18,7 @@
 	</modules>
 
 	<properties>
+		<app-starters-build.version>1.2.0.BUILD-SNAPSHOT</app-starters-build.version>
 		<spring-cloud-starter-stream-file.version>1.2.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-file.version>
 		<spring-cloud-starter-stream-time.version>1.2.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-time.version>
 		<spring-cloud-starter-stream-log.version>1.2.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-log.version>
