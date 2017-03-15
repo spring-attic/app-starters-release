@@ -374,12 +374,12 @@ section as in the following.
 [source,xml]
 ----
 <binders>
-    <hazelcast />
+    <jms />
 </binders>
 ----
 
 Please note that this would only work, as long as there is a binder with the maven coordinates of
-`org.springframework.cloud.stream` as group id and `spring-cloud-stream-binder-hazelcast` as artifact id.
+`org.springframework.cloud.stream` as group id and `spring-cloud-stream-binder-jms` as artifact id.
 This artifact needs to be specified in the BOM above and available through a maven repository as well.
 
 If you have an artifact that is only available through a private internal maven repository (may be an enterprise wide
@@ -418,7 +418,7 @@ Then you can define this as part of your app tag:
 it elsewhere as described above).
 
 Here you will see `foobar-source-kafka-09`, `foobar-source-kafka-10` and `foobar-source-rabbit`.
-If you added more binders as described above, you would see that app as well here - for example foobar-source-hazelcast.
+If you added more binders as described above, you would see that app as well here - for example foobar-source-jms.
 
 You can import these apps directly into your IDE of choice if you further want to do any customizations on them. Each of them is a self contained spring boot application project.
 For the generated apps, the parent is `spring-boot-starter-parent` as required by the underlying Spring Initializr library.
@@ -506,12 +506,12 @@ Project page: http://cloud.spring.io/spring-cloud-stream-app-starters/
 
 . What is the parent for stream app starters? +
 The parent for all app starters is `app-starters-build` which is coming from the core project. https://github.com/spring-cloud-stream-app-starters/core
-For example:
+For example:{parent-version}
 
     <parent>
         <groupId>org.springframework.cloud.stream.app</groupId>
         <artifactId>app-starters-build</artifactId>
-        <version>1.2.0.BUILD-SNAPSHOT</version>
+        <version>{app-starters-build.version}</version>
         <relativePath/>
     </parent>
 
@@ -527,7 +527,7 @@ There are two places where the core BOM is used. It is used to provide compile t
 This is defined in the `app-starters-build` artfiact. This same BOM is referenced through the maven plugin configuration for the app generation.
 The generated apps thus will include this bom also in their pom.xml files.
 
-. What spring cloud stream artifacts that the parent artifact (`app-starters-build`) include? +
+. What spring cloud stream artifacts does the parent artifact (`app-starters-build`) include? +
 * spring-cloud-stream
 * Spring-cloud-stream-test-support-internal
 * spring-cloud-stream-test-support
@@ -550,11 +550,10 @@ All SCSt app starters have access to dependencies defined in the following BOMâ€
     * spring-boot-dependencies
 
 .  Each app starter has `app-starter-build` as the parent which in turn has `spring-cloud-build` as parent. The above documentation states that the
-generated apps have `spring-boot-starter` as the parent. Why is the mismatch? +
+generated apps have `spring-boot-starter` as the parent. Why the mismatch? +
 There is no mismatch per se, but a slight subtlety. As the question frames, each app starter has access to artifacts managed all the way through `spring-cloud-build` at compile time.
 However, this is not the case for the generated apps at runtime. Generated apps are managed by boot. Their parent is `spring-boot-starter` that imports `spring-boot-dependencies` bom that includes a majority of the components that these apps need.
-The question then is what if the starter used an artifact managed through the `app-starter-build` or `spring-cloud-build`.
-This is coming from `core-app-starter-dependencies` bom which includes the `spring-cloud-dependencies` bom.
+The additional dependencies that the generated application needs are managed by including a BOM specific to each application starter.
 
 .  Why is there an app starter specific BOM in each app starer repositories? For example, `time-app-dependencies`. +
 This is an important BOM. At runtime, the generated apps get the versions used in their dependencies through a BOM that is managing the dependencies. Since all the boms
