@@ -23,6 +23,7 @@
                     <include>META-INF/kafka-09-apps-docker.properties</include>
                     <include>META-INF/kafka-10-apps-docker.properties</include>
                     <include>META-INF/rabbit-apps-docker.properties</include>
+                    <include>META-INF/stream-app-starters-coordinates.properties</include>
                 </includes>
             </resource>
         </resources>
@@ -173,6 +174,10 @@
                                 <artifact>
                                     <file>target/classes/META-INF/rabbit-apps-docker.properties</file>
                                     <type>stream-apps-rabbit-docker</type>
+                                </artifact>
+                                <artifact>
+                                    <file>target/classes/META-INF/stream-app-starters-coordinates.properties</file>
+                                    <type>stream-app-starters-coordinates.properties</type>
                                 </artifact>
                             </artifacts>
                         </configuration>
