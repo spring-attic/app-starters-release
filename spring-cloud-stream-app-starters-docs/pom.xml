@@ -403,7 +403,7 @@
 										<docinfo>true</docinfo>
 										<project-version>${project.version}</project-version>
 										<project-artifactId>${project.artifactId}</project-artifactId>
-										<app-starters-build.version>${parent.parent.version}</app-starters-build.version>
+										<app-starters-build-version>${app-starters-build.version}</app-starters-build-version>
 										<allow-uri-read>true</allow-uri-read>
 										<attribute-missing>warn</attribute-missing>
 									</attributes>

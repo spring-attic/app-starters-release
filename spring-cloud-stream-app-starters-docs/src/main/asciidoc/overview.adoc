@@ -498,7 +498,6 @@ This would upload the docker image to the docker hub in your custom repository.
 
 In the following sections, you can find a brief faq on various things that we discussed above and a few other infrastructure related topics.
 
-
 . What are Spring Cloud Stream Application Starters? +
 Spring Cloud Stream Application Starters are Spring Boot based Spring Integration applications that provide integration with external systems. GitHub: http://github.com/spring-cloud-stream-app-starters +
 Project page: http://cloud.spring.io/spring-cloud-stream-app-starters/
@@ -507,13 +506,16 @@ Project page: http://cloud.spring.io/spring-cloud-stream-app-starters/
 . What is the parent for stream app starters? +
 The parent for all app starters is `app-starters-build` which is coming from the core project. https://github.com/spring-cloud-stream-app-starters/core
 For example:
-
-    <parent>
-        <groupId>org.springframework.cloud.stream.app</groupId>
-        <artifactId>app-starters-build</artifactId>
-        <version>{app-starters-build.version}</version>
-        <relativePath/>
-    </parent>
++
+[source,xml,subs=attributes]
+----
+&lt;parent&gt;
+    &lt;groupId&gt;org.springframework.cloud.stream.app&lt;/groupId&gt;
+    &lt;artifactId&gt;app-starters-build&lt;/artifactId&gt;
+    &lt;version&gt;{app-starters-build-version}&lt;/version&gt;
+    &lt;relativePath/&gt;
+&lt;/parent&gt;
+----
 
 . Why is there a BOM in the core proejct? +
 Core defines a BOM which contains all the dependency management for common artifacts. This BOM is named as `app-starters-core-dependencies`.
