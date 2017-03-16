@@ -23,7 +23,9 @@
                     <include>META-INF/kafka-09-apps-docker.properties</include>
                     <include>META-INF/kafka-10-apps-docker.properties</include>
                     <include>META-INF/rabbit-apps-docker.properties</include>
-                    <include>META-INF/stream-app-starters-coordinates.properties</include>
+                    <include>META-INF/kafka-09-apps-maven-repo-url.properties</include>
+                    <include>META-INF/kafka-10-apps-maven-repo-url.properties</include>
+                    <include>META-INF/rabbit-apps-maven-repo-url.properties</include>
                 </includes>
             </resource>
         </resources>
@@ -41,6 +43,9 @@
                         </goals>
                         <configuration>
                             <source><![CDATA[
+        pom.properties['repo-spring-io']=
+                "${spring-cloud-starter-stream-aggregatecounter.version}".contains('BUILD-SNAPSHOT') ? 'repo.spring.io/snapshot' :
+                        "${spring-cloud-starter-stream-aggregatecounter.version}".contains('RELEASE') ? 'repo.spring.io/release' : 'repo.spring.io/milestone';
         pom.properties['aggregate-counter-docker.tag']=
                 "${spring-cloud-starter-stream-aggregatecounter.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-aggregatecounter.version}";
         pom.properties['aws-s3-docker.tag']=
@@ -176,8 +181,16 @@
                                     <type>stream-apps-rabbit-docker</type>
                                 </artifact>
                                 <artifact>
-                                    <file>target/classes/META-INF/stream-app-starters-coordinates.properties</file>
-                                    <type>stream-app-starters-coordinates.properties</type>
+                                    <file>target/classes/META-INF/kafka-09-apps-maven-repo-url.properties</file>
+                                    <type>kafka-09-apps-maven-repo-url.properties</type>
+                                </artifact>
+                                <artifact>
+                                    <file>target/classes/META-INF/kafka-10-apps-maven-repo-url.properties</file>
+                                    <type>kafka-10-apps-maven-repo-url.properties</type>
+                                </artifact>
+                                <artifact>
+                                    <file>target/classes/META-INF/rabbit-apps-maven-repo-url.properties</file>
+                                    <type>rabbit-apps-maven-repo-url.properties</type>
                                 </artifact>
                             </artifacts>
                         </configuration>
