@@ -506,7 +506,7 @@ Project page: http://cloud.spring.io/spring-cloud-stream-app-starters/
 
 . What is the parent for stream app starters? +
 The parent for all app starters is `app-starters-build` which is coming from the core project. https://github.com/spring-cloud-stream-app-starters/core
-For example:{parent-version}
+For example:
 
     <parent>
         <groupId>org.springframework.cloud.stream.app</groupId>
