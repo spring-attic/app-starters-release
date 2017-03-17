@@ -81,6 +81,8 @@ The group will be always `org.springframework.cloud.stream.app`.
 The version may vary.
 The artifact id follows the format `<functionality>-<type>-<binder>` <<classification,previously described>>.
 
+You can download the executable jar artifacts from the Spring Maven repositories.  The root directory of the Maven repository that hosts release versions is http://repo.spring.io/release/org/springframework/cloud/stream/app/.  From there you can navigate to the latest release version of a specific app, for example link:http://repo.spring.io/release/org/springframework/cloud/stream/app/log-sink-rabbit/1.1.1.RELEASE/log-sink-rabbit-1.1.1.RELEASE.jar[log-sink-rabbit-1.1.1.RELEASE.jar].  Use the link:http://repo.spring.io/milestone/org/springframework/cloud/stream/app[Milestone] and link:http://repo.spring.io/snapshot/org/springframework/cloud/stream/app[Snapshot] repository locations for Milestone and Snapshot executuable jar artifacts.
+
 The Docker versions of the applications are available in Docker Hub, at `https://hub.docker.com/r/springcloudstream/`. Naming and versioning follows the same general conventions as Maven, e.g.
 
 [source,bash]
