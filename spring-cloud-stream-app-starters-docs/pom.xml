@@ -348,7 +348,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
-			<artifactId>spring-cloud-starter-stream-aggregator</artifactId>
+			<artifactId>spring-cloud-starter-stream-processor-aggregator</artifactId>
 			<version>${spring-cloud-starter-stream-aggregator.version}</version>
 		</dependency>
 
