@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.springframework.cloud.stream.app</groupId>
 		<artifactId>app-starters-release-train-build</artifactId>
-		<version>Bacon.BUILD-SNAPSHOT</version>
+		<version>Bacon.RELEASE</version>
 	</parent>
 	<artifactId>spring-cloud-stream-app-starters-docs</artifactId>
 	<name>spring-cloud-stream-app-starters-docs</name>
@@ -257,11 +257,6 @@
 			<version>${spring-cloud-starter-stream-jdbc.version}</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.cloud.stream.app</groupId>
-			<artifactId>sftp-app-starters-common</artifactId>
-			<version>${spring-cloud-starter-stream-sftp.version}</version>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-source-sftp</artifactId>

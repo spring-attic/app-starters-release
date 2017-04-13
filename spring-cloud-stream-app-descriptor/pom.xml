@@ -3,7 +3,7 @@
     <parent>
         <artifactId>app-starters-release-train-build</artifactId>
         <groupId>org.springframework.cloud.stream.app</groupId>
-        <version>Bacon.BUILD-SNAPSHOT</version>
+        <version>Bacon.RELEASE</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
