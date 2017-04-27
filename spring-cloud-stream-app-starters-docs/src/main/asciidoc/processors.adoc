@@ -39,6 +39,9 @@ include::{app-starters-root}/tcp/{branch}/spring-cloud-starter-stream-processor-
 [[spring-clound-stream-modules-transform-processor]]
 include::{app-starters-root}/transform/{branch}/spring-cloud-starter-stream-processor-transform/README.adoc[tags=ref-doc]
 
+[[spring-cloud-stream-modules-tensorflow-processor]]
+include::{app-starters-root}/tensorflow/{branch}/spring-cloud-starter-stream-processor-tensorflow/README.adoc[tags=ref-doc]
+
 :leveloffset: -2
 
 

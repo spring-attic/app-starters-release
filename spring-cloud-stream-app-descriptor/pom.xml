@@ -138,6 +138,8 @@
                 "${spring-cloud-starter-stream-processor-header-enricher.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-processor-header-enricher.version}";
         pom.properties['pgcopy-sink-docker.tag']=
                 "${spring-cloud-starter-stream-jdbc.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-jdbc.version}";
+        pom.properties['tensorflow-docker.tag']=
+                "${spring-cloud-starter-stream-tensorflow.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-tensorflow.version}";
                 ]]></source>
                         </configuration>
                     </execution>

@@ -346,6 +346,11 @@
 			<artifactId>spring-cloud-starter-stream-processor-aggregator</artifactId>
 			<version>${spring-cloud-starter-stream-aggregator.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud.stream.app</groupId>
+			<artifactId>spring-cloud-starter-stream-processor-tensorflow</artifactId>
+			<version>${spring-cloud-starter-stream-tensorflow.version}</version>
+		</dependency>
 
 	</dependencies>
 	<profiles>
