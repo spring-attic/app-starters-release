@@ -64,6 +64,7 @@
 		<spring-cloud-starter-stream-transform.version>1.2.1.BUILD-SNAPSHOT</spring-cloud-starter-stream-transform.version>
 		<spring-cloud-starter-stream-processor-header-enricher.version>1.2.1.BUILD-SNAPSHOT</spring-cloud-starter-stream-processor-header-enricher.version>
 		<spring-cloud-starter-stream-aggregator.version>1.2.1.BUILD-SNAPSHOT</spring-cloud-starter-stream-aggregator.version>
+		<spring-cloud-starter-stream-tensorflow.version>1.0.0.BUILD-SNAPSHOT</spring-cloud-starter-stream-tensorflow.version>
 	</properties>
 <profiles>
 		<profile>
