@@ -42,6 +42,9 @@ include::{app-starters-root}/transform/{branch}/spring-cloud-starter-stream-proc
 [[spring-cloud-stream-modules-tensorflow-processor]]
 include::{app-starters-root}/tensorflow/{branch}/spring-cloud-starter-stream-processor-tensorflow/README.adoc[tags=ref-doc]
 
+[[spring-cloud-stream-modules-twitter-sentiment-processor]]
+include::{app-starters-root}/tensorflow/{branch}/spring-cloud-starter-stream-processor-twitter-sentiment/README.adoc[tags=ref-doc]
+
 :leveloffset: -2
 
 
