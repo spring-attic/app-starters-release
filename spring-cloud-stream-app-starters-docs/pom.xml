@@ -356,6 +356,16 @@
 			<artifactId>spring-cloud-starter-stream-processor-twitter-sentiment</artifactId>
 			<version>${spring-cloud-starter-stream-tensorflow.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud.stream.app</groupId>
+			<artifactId>spring-cloud-starter-stream-source-mqtt</artifactId>
+			<version>${spring-cloud-starter-stream-mqtt.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud.stream.app</groupId>
+			<artifactId>spring-cloud-starter-stream-sink-mqtt</artifactId>
+			<version>${spring-cloud-starter-stream-mqtt.version}</version>
+		</dependency>
 
 	</dependencies>
 	<profiles>

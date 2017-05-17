@@ -140,6 +140,8 @@
                 "${spring-cloud-starter-stream-jdbc.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-jdbc.version}";
         pom.properties['tensorflow-docker.tag']=
                 "${spring-cloud-starter-stream-tensorflow.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-tensorflow.version}";
+        pom.properties['mqtt-docker.tag']=
+                "${spring-cloud-starter-stream-mqtt.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-mqtt.version}";
                 ]]></source>
                         </configuration>
                     </execution>

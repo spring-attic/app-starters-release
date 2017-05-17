@@ -33,6 +33,9 @@ include::{app-starters-root}/mail/{branch}/spring-cloud-starter-stream-source-ma
 [[spring-cloud-stream-modules-mongodb-source]]
 include::{app-starters-root}/mongodb/{branch}/spring-cloud-starter-stream-source-mongodb/README.adoc[tags=ref-doc]
 
+[[spring-cloud-stream-modules-mqtt-source]]
+include::{app-starters-root}/mqtt/{branch}/spring-cloud-starter-stream-source-mqtt/README.adoc[tags=ref-doc]
+
 [[spring-cloud-stream-modules-rabbit-source]]
 include::{app-starters-root}/rabbit/{branch}/spring-cloud-starter-stream-source-rabbit/README.adoc[tags=ref-doc]
 
