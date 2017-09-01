@@ -27,6 +27,12 @@ include::{app-starters-root}/httpclient/{branch}/spring-cloud-starter-stream-pro
 [[spring-cloud-stream-modules-pmml-processor]]
 include::{app-starters-root}/pmml/{branch}/spring-cloud-starter-stream-processor-pmml/README.adoc[tags=ref-doc]
 
+[[spring-cloud-stream-modules-python-http-processor]]
+include::{app-starters-root}/python/{branch}/spring-cloud-starter-stream-processor-python-http/README.adoc[tags=ref-doc]
+
+[[spring-cloud-stream-modules-python-jython-processor]]
+include::{app-starters-root}/python/{branch}/spring-cloud-starter-stream-processor-python-jython/README.adoc[tags=ref-doc]
+
 [[spring-cloud-stream-modules-scriptable-transform]]
 include::{app-starters-root}/scriptable-transform/{branch}/spring-cloud-starter-stream-processor-scriptable-transform/README.adoc[tags=ref-doc]
 
