@@ -17,13 +17,10 @@
                 <directory>src/main/resources</directory>
                 <filtering>true</filtering>
                 <includes>
-                    <include>META-INF/kafka-09-apps-maven.properties</include>
                     <include>META-INF/kafka-10-apps-maven.properties</include>
                     <include>META-INF/rabbit-apps-maven.properties</include>
-                    <include>META-INF/kafka-09-apps-docker.properties</include>
                     <include>META-INF/kafka-10-apps-docker.properties</include>
                     <include>META-INF/rabbit-apps-docker.properties</include>
-                    <include>META-INF/kafka-09-apps-maven-repo-url.properties</include>
                     <include>META-INF/kafka-10-apps-maven-repo-url.properties</include>
                     <include>META-INF/rabbit-apps-maven-repo-url.properties</include>
                 </includes>
@@ -142,6 +139,8 @@
                 "${spring-cloud-starter-stream-tensorflow.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-tensorflow.version}";
         pom.properties['mqtt-docker.tag']=
                 "${spring-cloud-starter-stream-mqtt.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-mqtt.version}";
+        pom.properties['python-docker.tag']=
+                "${spring-cloud-starter-stream-python.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-python.version}";
                 ]]></source>
                         </configuration>
                     </execution>
@@ -161,14 +160,6 @@
                         <configuration>
                             <artifacts>
                                 <artifact>
-                                    <file>target/classes/META-INF/kafka-09-apps-maven.properties</file>
-                                    <type>stream-apps-kafka-09-maven</type>
-                                </artifact>
-                                <artifact>
-                                    <file>target/classes/META-INF/kafka-09-apps-docker.properties</file>
-                                    <type>stream-apps-kafka-09-docker</type>
-                                </artifact>
-                                <artifact>
                                     <file>target/classes/META-INF/kafka-10-apps-maven.properties</file>
                                     <type>stream-apps-kafka-10-maven</type>
                                 </artifact>
@@ -183,10 +174,6 @@
                                 <artifact>
                                     <file>target/classes/META-INF/rabbit-apps-docker.properties</file>
                                     <type>stream-apps-rabbit-docker</type>
-                                </artifact>
-                                <artifact>
-                                    <file>target/classes/META-INF/kafka-09-apps-maven-repo-url.properties</file>
-                                    <type>kafka-09-apps-maven-repo-url.properties</type>
                                 </artifact>
                                 <artifact>
                                     <file>target/classes/META-INF/kafka-10-apps-maven-repo-url.properties</file>
