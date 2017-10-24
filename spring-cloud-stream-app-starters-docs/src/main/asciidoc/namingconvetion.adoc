@@ -7,7 +7,7 @@ and pom attributes.
 
 The following diagram aims to provide a unified view on all resources involved in the convention
 
-image:images/app-starter-naming-conventions.png[NamingConvention, scaledwidth="50%"]
+image::{app-starters-asciidoc}/images/app-starter-naming-conventions.png[NamingConvention, scaledwidth="100%"]
 
 The `[type]` placeholder represents the application type and must be either `Source`, `Processor` or `Sink` values.
 The `[my-app-name]` placeholder represents the name of your app starter project.
