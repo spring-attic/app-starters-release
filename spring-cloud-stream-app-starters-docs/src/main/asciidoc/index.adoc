@@ -36,6 +36,7 @@ include::sinks.adoc[]
 [appendix]
 include::building.adoc[]
 include::pom-dependencies.adoc[]
+include::namingconvetion.adoc[]
 
 include::contributing.adoc[]
 
