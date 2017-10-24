@@ -1,11 +1,11 @@
 [[namingconvention]]
 == App Starter Naming Conventions
 
-The `spring-cloud-stream-app-maven-plugin` plugin (used to  generate the apps) defins certain naming conventions
+The `spring-cloud-stream-app-maven-plugin` plugin (used to  generate the apps) defines certain naming conventions
 about app starter resources. This convention is spread across numerous folder names, package and class names, properties
 and pom attributes.
 
-Following diagram aim to provide an unified view on all resources involved in the convention
+The following diagram aims to provide a unified view on all resources involved in the convention
 
 image:images/app-starter-naming-conventions.png[NamingConvention, scaledwidth="50%"]
 
