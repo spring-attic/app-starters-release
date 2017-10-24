@@ -1,0 +1,27 @@
+[[namingconvention]]
+== App Starter Naming Conventions
+
+The `spring-cloud-stream-app-maven-plugin` plugin (used to  generate the apps) defins certain naming conventions
+about app starter resources. This convention is spread across numerous folder names, package and class names, properties
+and pom attributes.
+
+Following diagram aim to provide an unified view on all resources involved in the convention
+
+image:images/app-starter-naming-conventions.png[NamingConvention, scaledwidth="50%"]
+
+The `[type]` placeholder represents the application type and must be either `Source`, `Processor` or `Sink` values.
+The `[my-app-name]` placeholder represents the name of your app starter project.
+For multi-word app names, the hyphens (`-`) is used as word delimiter (e.g. `my-app-name`). Mind that for `package names`
+ the hyphen delimiter is replaced by (`.`) character (e.g. `o.s.c.s.a.my.app.name`). Class name convention expects
+CamelCase names in place of any delimiters (e.g. `MyAppNameSourceConfiguration`.
+
+The capital letters in the placeholders are relevant. For example the `[type]` refers to lower case names such as
+`source`, `processor` or `sink` types, while capitalized placeholder `[Type]` refers to names like `Source`,
+`Processor` and `Sink`.
+
+The `Configuration` and `Properties` class suffixes are expected as well.
+
+
+With the help of the maven plugin configuration all default conventions can be customized or replaced.
+More information about the maven plugin can be found here: https://github.com/spring-cloud/spring-cloud-stream-app-maven-plugin
+
