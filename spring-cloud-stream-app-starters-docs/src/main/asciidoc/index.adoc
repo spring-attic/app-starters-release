@@ -1,5 +1,5 @@
 = Spring Cloud Stream App Starters Reference Guide
-Sabby Anandan; Artem Bilan; Marius Bogoevici; Eric Bottard; Mark Fisher; Ilayaperumal Gopinathan; Gunnar Hillert; Mark Pollack; Patrick Peralta; Glenn Renfro; Gary Russell; Thomas Risberg; David Turanski; Janne Valkealahti; Soby Chacko
+Sabby Anandan; Artem Bilan; Marius Bogoevici; Eric Bottard; Mark Fisher; Ilayaperumal Gopinathan; Gunnar Hillert; Mark Pollack; Patrick Peralta; Glenn Renfro; Gary Russell; Thomas Risberg; David Turanski; Janne Valkealahti; Soby Chacko; Christian Tzolov;
 :doctype: book
 :toc:
 :toclevels: 4
@@ -13,6 +13,7 @@ Sabby Anandan; Artem Bilan; Marius Bogoevici; Eric Bottard; Mark Fisher; Ilayape
 :app-starters-root:  https://raw.githubusercontent.com/spring-cloud-stream-app-starters
 :branch: master
 
+:app-starters-asciidoc: https://raw.githubusercontent.com/spring-cloud-stream-app-starters/app-starters-release/master/spring-cloud-stream-app-starters-docs/src/main/asciidoc
 
 // Since the core projects will be at different release cadences, the following tokens need changed at the time of every release
 :scst-core-version: current-SNAPSHOT

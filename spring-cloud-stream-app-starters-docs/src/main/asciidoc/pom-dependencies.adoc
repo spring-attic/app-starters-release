@@ -3,7 +3,7 @@
 
 Following diagram highlights the important App Starter POM dependencies.
 
-image:images/starters-pom-dependencies.png[PomDependencies, scaledwidth="75%"]
+image::{app-starters-asciidoc}/images/starters-pom-dependencies.png[PomDependencies, scaledwidth="100%"]
 
 The dependencies are grouped in three categories:
 
