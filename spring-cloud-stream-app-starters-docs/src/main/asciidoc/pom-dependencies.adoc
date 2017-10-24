@@ -8,7 +8,7 @@ image:images/starters-pom-dependencies.png[PomDependencies, scaledwidth="75%"]
 The dependencies are grouped in three categories:
 
 * *Core Spring Dependencies* - represent the core framework libraries such as `Spring Boot`, `Spring Integration`,
-`Spring Cloud`. The "Bill Of Materials" (BOM) patterns is actively used thought the stack to decouple the
+`Spring Cloud`. The "Bill Of Materials" (BOM) patterns is actively used throughout the stack to decouple the
 dependency management for plugins and lifecycle configurations.
 The `app-starters-build` and  the `app-starters-core-dependencies` BOM provide the generic `compile-time` dependencies
 for the App Starters projects.
