@@ -1,30 +1,23 @@
 [[pom-dependencies]]
 == App Starter POM Dependencies
 
-Following diagram highlights the important App Starter POM dependencies.
+Following diagram highlights some of the important `Stream App` and `Stream App Starter` POM dependencies.
 
 image::{app-starters-asciidoc}/images/starters-pom-dependencies.png[PomDependencies, scaledwidth="100%"]
 
 The dependencies are grouped in three categories:
 
-* *Core Spring Dependencies* - represent the core framework libraries such as `Spring Boot`, `Spring Integration`,
-`Spring Cloud`. The "Bill Of Materials" (BOM) patterns is actively used throughout the stack to decouple the
-dependency management for plugins and lifecycle configurations.
-The `app-starters-build` and  the `app-starters-core-dependencies` BOM provide the generic `compile-time` dependencies
-for the App Starters projects.
+* *Core Spring libraries* - represent the core framework libraries such as `Spring Boot`, `Spring Integration`,
+`Spring Cloud`. The "Bill Of Materials" (BOM) patterns is used throughout the stack to decouple the dependency
+management from the lifecycle configurations.
+The `app-starters-build` parent POM and  the `app-starters-core-dependencies` BOM use inherit by all app starters.
 
-* *Specific App Starter Dependencies* - represent the starter applications. The root
-`[my-app-name]-app-starters-build` pom inherits all compile-time configurations and BOM from the core parent
-`app-starters-build`, while the `[my-app-name]-app-dependencies` BOM offers a place to manage the app specific dependencies.
-In addition to the external libraries, the `[my-app-name]-app-dependencies` BOM manages the Apps projects dependencies
-too (e.g. `spring-cloud-starters-stream-[type]-[my-app-name]`).
-It is important to realize that the App Starter projects are not Spring Boot applications but used as seeds for the auto-generated Apps.
+* *App Starters* - libraries that contain the complete configuration of a Spring Cloud Stream application with a specific role
+Starters are not executable applications, and are intended to be included in the `Pre-build Apps`, along with a Binder
+implementation.
+The App Starter root pom (`[my-app-name]-app-starters-build`) inherit all compile-tme configuration for its parent
+the core `app-starters-build`. Starer's BOM `[my-app-name]-app-dependencies` is used to manage starter's own dependencies.
 
-* *Generated Starter App* - represents the `run-time` starter artifacts generated from the Specific App Starters and
-managed as `Spring Boot` applications. The `run-time` starter extends from Spring Boot parent and merges the configurations
-of the `specific app`, `core app` as well as the `boot` BOMs (e.g. `[my-app-name]-app-dependencies`,
-`app-starters-core-dependencies`, `spring-boot-dependencies`). The generated starter also includes specific starter
-implementation as well as the required [binder] starter.
-
+* *Pre-build App* - pre-build Spring Boot applications that include the app starters and a Binder implementation.
 
 
