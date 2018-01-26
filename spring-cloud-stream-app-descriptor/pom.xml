@@ -17,11 +17,11 @@
                 <directory>src/main/resources</directory>
                 <filtering>true</filtering>
                 <includes>
-                    <include>META-INF/kafka-1.0.0-apps-maven.properties</include>
+                    <include>META-INF/kafka-apps-maven.properties</include>
                     <include>META-INF/rabbit-apps-maven.properties</include>
-                    <include>META-INF/kafka-1.0.0-apps-docker.properties</include>
+                    <include>META-INF/kafka-apps-docker.properties</include>
                     <include>META-INF/rabbit-apps-docker.properties</include>
-                    <include>META-INF/kafka-1.0.0-apps-maven-repo-url.properties</include>
+                    <include>META-INF/kafka-apps-maven-repo-url.properties</include>
                     <include>META-INF/rabbit-apps-maven-repo-url.properties</include>
                 </includes>
             </resource>
@@ -160,11 +160,11 @@
                         <configuration>
                             <artifacts>
                                 <artifact>
-                                    <file>target/classes/META-INF/kafka-10-apps-maven.properties</file>
+                                    <file>target/classes/META-INF/kafka-apps-maven.properties</file>
                                     <type>stream-apps-kafka-10-maven</type>
                                 </artifact>
                                 <artifact>
-                                    <file>target/classes/META-INF/kafka-10-apps-docker.properties</file>
+                                    <file>target/classes/META-INF/kafka-apps-docker.properties</file>
                                     <type>stream-apps-kafka-10-docker</type>
                                 </artifact>
                                 <artifact>
@@ -176,7 +176,7 @@
                                     <type>stream-apps-rabbit-docker</type>
                                 </artifact>
                                 <artifact>
-                                    <file>target/classes/META-INF/kafka-10-apps-maven-repo-url.properties</file>
+                                    <file>target/classes/META-INF/kafka-apps-maven-repo-url.properties</file>
                                     <type>kafka-10-apps-maven-repo-url.properties</type>
                                 </artifact>
                                 <artifact>
