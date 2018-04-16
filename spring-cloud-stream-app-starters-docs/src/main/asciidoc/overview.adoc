@@ -5,11 +5,12 @@ It assumes familiarity with general Spring Cloud Stream concepts, which can be f
 
 == Introduction
 
-Spring Cloud Stream Application Starters provide you with predefined Spring Cloud Stream applications that you can run independently or with Spring Cloud Data Flow.
+Spring Cloud Stream Application Starters provide you with out-of-the-box Spring Cloud Stream uility applications that you can run independently or with Spring Cloud Data Flow.
 You can also use the starters as a basis for creating your own applications.
+
 They include:
 
-* connectors (sources and sinks) for middleware including message brokers, storage (relational, non-relational, filesystem);
+* connectors (sources, processors, and sinks) for a variety of middleware technologies including message brokers, storage (relational, non-relational, filesystem);
 * adapters for various network protocols;
 * generic processors that can be customized via http://docs.spring.io/spring/docs/4.2.x/spring-framework-reference/html/expressions.html[Spring Expression Language (SpEL)] or scripting.
 
@@ -17,16 +18,15 @@ You can find a detailed listing of all the starters and as their options in the 
 
 You can find all available app starter repositories in this https://github.com/spring-cloud-stream-app-starters[GitHub Organization].
 
-=== Starters and pre-built applications
+=== Pre-built applications
 
 As a user of Spring Cloud Stream Application Starters you have access to two types of artifacts.
 
 _Starters_ are libraries that contain the complete configuration of a Spring Cloud Stream application with a specific role (e.g. an _HTTP source_ that receives HTTP POST requests and forwards the data on its output channel to downstream Spring Cloud Stream applications).
-Starters are not executable applications, and are intended to be included in other Spring Boot applications, along with a Binder implementation.
+Starters are _not_ executable applications, and are intended to be included in other Spring Boot applications, along with an available Binder implementation of your choice.
 
-_Prebuilt applications_ are Spring Boot applications that include the starters and a Binder implementation.
-Prebuilt applications are http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#getting-started-first-application-executable-jar[uberjars] and include minimal code required to execute standalone.
-For each starter, the project provides a prebuilt version including the Kafka Binder (one each for 0.9 and 0.10 versions of Kafka) and a  prebuilt version including the Rabbit MQ Binder.
+_Out-of-the-box applications_ are Spring Boot applications that include the starters and a Binder implementation - a fully functional uber-jar.
+These http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#getting-started-first-application-executable-jar[uber-jar's] include minimal code required to execute standalone. For each starter application, the project provides a prebuilt version for Apache Kafka and Rabbit MQ Binders.
 
 [NOTE]
 Only starters are present in the source code of the project.
@@ -37,9 +37,9 @@ Prebuilt applications are generated according to the https://github.com/spring-c
 
 Based on their target application type, starters can be either:
 
-* a _source_ that connects to an external resource to receive data that is sent on its sole output channel;
-* a _processor_ that receives data from a single input channel and processes it, sending the result on its single output channel;
-* a _sink_ that connects to an external resource to send data that is received on its sole input channel.
+* a _source_ that connects to an external resource to poll and receive data that is published to the default "output" channel;
+* a _processor_ that receives data from an "input" channel and processes it, sending the result on the default "output" channel;
+* a _sink_ that connects to an external resource to send the received data to the default "input" channel.
 
 You can easily identify the type and functionality of a starter based on its name.
 All starters are named following the convention `spring-cloud-starter-stream-<type>-<functionality>`.
@@ -48,7 +48,7 @@ Conversely, `spring-cloud-starter-stream-sink-cassandra` is a starter for a _Cas
 
 The prebuilt applications follow a naming convention too: `<functionality>-<type>-<binder>`. For example, `cassandra-sink-kafka-10` is a _Cassandra sink_ using the Kafka binder that is running with Kafka version 0.10.
 
-=== Using the artifacts
+=== Using the Artifacts
 
 You either get access to the artifacts produced by Spring Cloud Stream Application Starters via Maven, Docker, or building the artifacts yourself.
 
@@ -76,11 +76,6 @@ Following the typical Maven `<group>:<artifactId>:<version>` convention, they ca
 org.springframework.cloud.stream.app:cassandra-sink-rabbit:1.0.0.BUILD-SNAPSHOT
 ----
 
-Just as with the starters, you can infer the coordinates for other prebuilt applications found in the guide.
-The group will be always `org.springframework.cloud.stream.app`.
-The version may vary.
-The artifact id follows the format `<functionality>-<type>-<binder>` <<classification,previously described>>.
-
 You can download the executable jar artifacts from the Spring Maven repositories.  The root directory of the Maven repository that hosts release versions is http://repo.spring.io/release/org/springframework/cloud/stream/app/.  From there you can navigate to the latest release version of a specific app, for example link:http://repo.spring.io/release/org/springframework/cloud/stream/app/log-sink-rabbit/1.1.1.RELEASE/log-sink-rabbit-1.1.1.RELEASE.jar[log-sink-rabbit-1.1.1.RELEASE.jar].  Use the link:http://repo.spring.io/milestone/org/springframework/cloud/stream/app[Milestone] and link:http://repo.spring.io/snapshot/org/springframework/cloud/stream/app[Snapshot] repository locations for Milestone and Snapshot executuable jar artifacts.
 
 The Docker versions of the applications are available in Docker Hub, at `https://hub.docker.com/r/springcloudstream/`. Naming and versioning follows the same general conventions as Maven, e.g.
@@ -92,9 +87,9 @@ docker pull springcloudstream/cassandra-sink-kafka-10
 
 will pull the _latest_ Docker image of the _Cassandra sink_ with the Kafka binder that is running with Kafka version 0.10.
 
-==== Building the artifacts
+==== Building the Artifacts
 
-You can also build the project and generate the artifacts (including the prebuilt applications) on your own.
+You can build the project and generate the artifacts (including the prebuilt applications) on your own.
 This is useful if you want to deploy the artifacts locally or add additional features.
 
 First, you need to generate the prebuilt applications.
@@ -110,11 +105,11 @@ Each of the prebuilt applciation will contain:
 
 * `pom.xml` file with the required dependencies (starter and binder)
 * a class that contains the `main` method of the application and imports the predefined configuration
-* generated integration test code that exercises the component against the configured binder.
+* generated integration test code that validates the component against the configured binder.
 
-For example, `spring-cloud-starter-stream-sink-cassandra` will generate `cassandra-sink-rabbit`, `cassandra-sink-kafka-09` and `cassandra-sink-kafka-10` as completely functional applications.
+For example, `spring-cloud-starter-stream-sink-cassandra` will generate `cassandra-sink-rabbit` and `cassandra-sink-kafka-10` as completely functional applications.
 
-=== Creating custom artifacts
+=== Custom Artifacts
 
 Apart from accessing the sources, sinks and processors already provided by the project, in this section we will describe how to:
 
@@ -167,17 +162,17 @@ public class CassandraSinkGemfireApplication {
 }
 ----
 
-==== Creating your own applications
+==== New Applications
 
-Spring Cloud Stream Application consists of regular Spring Boot applications with some additional conventions that facilitate generating prebuilt applications with the preconfigured binders.
-Sometimes, your solution may require additional applications that are not in the scope of out of the box Spring Cloud Stream Application Starters, or require additional tweaks and enhancements.
+Spring Cloud Stream Application Starters consists of regular Spring Boot applications with some additional conventions that facilitate generating prebuilt applications with the preconfigured binders.
+Sometimes, your solution may require additional applications that are not in the scope of out-of-the-box Spring Cloud Stream Application Starters, or require additional tweaks and enhancements.
 In this section we will show you how to create custom applications that can be part of your solution, along with Spring Cloud Stream application starters.
 You have the following options:
 
 * create new Spring Cloud Stream applications;
 * use the starters to create customized versions;
 
-===== Using generic Spring Cloud Stream applications
+===== Generic Applications
 
 If you want to add your own custom applications to your solution, you can simply create a new Spring Cloud Stream app project with the binder of your choice and run it the same way as the applications provided by Spring Cloud Stream Application Starters, independently or via Spring Cloud Data Flow.
 The process is described in the http://docs.spring.io/spring-cloud-stream/docs/current-SNAPSHOT/reference/htmlsingle/#_getting_started[Getting Started Guide] of Spring Cloud Stream.
@@ -191,7 +186,7 @@ The following requirements need to be followed when you go with this option:
 * a single outbound channel named `output` for sinks - the simplest way to do so is by using the predefined interface `org.spring.cloud.stream.messaging.Sink`;
 * both an inbound channel named `input` and an outbound channel named `output` for processors - the simplest way to do so is by using the predefined interface `org.spring.cloud.stream.messaging.Processor`.
 
-===== Using the starters to create custom components
+===== Customize Starter Applications
 
 You can also reuse the starters provided by Spring Cloud Stream Application Starters to create custom components, enriching the behavior of the application.
 For example, you can add a Spring Security layer to your _HTTP source_, add additional configurations to the `ObjectMapper` used for JSON transformation wherever that happens, or change the JDBC driver or Hadoop distribution that the application is using.
@@ -206,12 +201,12 @@ As a reminder, this involves:
 
 After doing so, you can simply add the additional configuration for the extra features of your application.
 
-=== Patching pre-built applications
+=== Patching Pre-built Applications
 
-If you're looking to patch the pre-built applications to accommodate addition of new dependencies, you can use the following example as the reference. Let's review the steps to add `mysql` driver to `jdbc-sink` application.  
+If you're looking to patch the pre-built applications to accommodate the addition of new dependencies, you can use the following example as the reference. Let's review the steps to add `mysql` driver to `jdbc-sink` application.  
 
 * Go to: http://start-scs.cfapps.io/
-* Select the appliation and binder dependencies [_`JDBC sink` and `Rabbit binder starter`_]
+* Select the application and binder dependencies [_`JDBC sink` and `Rabbit binder starter`_]
 * Generate and load the project in an IDE
 * Add `mysql` java-driver dependency
 
