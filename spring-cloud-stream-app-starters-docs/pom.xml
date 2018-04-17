@@ -199,11 +199,6 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
-			<artifactId>spring-cloud-starter-stream-sink-gpfdist</artifactId>
-			<version>${spring-cloud-starter-stream-gpfdist.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-sink-router</artifactId>
 			<version>${spring-cloud-starter-stream-router.version}</version>
 		</dependency>
@@ -290,17 +285,11 @@
 			<artifactId>spring-cloud-starter-stream-sink-hdfs</artifactId>
 			<version>${spring-cloud-starter-stream-hdfs.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud.stream.app</groupId>
-			<artifactId>spring-cloud-starter-stream-sink-hdfs-dataset</artifactId>
-			<version>${spring-cloud-starter-stream-hdfs.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud.stream.app</groupId>
-			<artifactId>spring-cloud-starter-stream-sink-cassandra</artifactId>
-			<version>${spring-cloud-starter-stream-cassandra.version}</version>
-		</dependency>
-
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.cloud.stream.app</groupId>-->
+			<!--<artifactId>spring-cloud-starter-stream-sink-hdfs-dataset</artifactId>-->
+			<!--<version>${spring-cloud-starter-stream-hdfs.version}</version>-->
+		<!--</dependency>-->
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-common-gemfire</artifactId>
@@ -341,11 +330,11 @@
 			<artifactId>spring-cloud-starter-stream-processor-header-enricher</artifactId>
 			<version>${spring-cloud-starter-stream-processor-header-enricher.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud.stream.app</groupId>
-			<artifactId>spring-cloud-starter-stream-processor-aggregator</artifactId>
-			<version>${spring-cloud-starter-stream-aggregator.version}</version>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.cloud.stream.app</groupId>-->
+			<!--<artifactId>spring-cloud-starter-stream-processor-aggregator</artifactId>-->
+			<!--<version>${spring-cloud-starter-stream-aggregator.version}</version>-->
+		<!--</dependency>-->
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-processor-tensorflow</artifactId>
@@ -407,19 +396,6 @@
 									</links>
 								</configuration>
 							</execution>
-							<execution>
-                                <id>generate-html5</id>
-                                <phase>prepare-package</phase>
-                                <goals>
-                                    <goal>process-asciidoc</goal>
-                                </goals>
-                                <configuration>
-                                    <backend>html5</backend>
-                                    <attributes>
-                                        <toc2 />
-                                    </attributes>
-                                </configuration>
-                            </execution>
 						</executions>
 					</plugin>
 					<plugin>
