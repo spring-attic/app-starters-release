@@ -30,9 +30,6 @@ include::{app-starters-root}/gpfdist/{branch}/spring-cloud-starter-stream-sink-g
 [[spring-cloud-stream-modules-hdfs-sink]]
 include::{app-starters-root}/hdfs/{branch}/spring-cloud-starter-stream-sink-hdfs/README.adoc[tags=ref-doc]
 
-[[spring-cloud-stream-modules-hdfs-dataset-sink]]
-include::{app-starters-root}/hdfs/{branch}/spring-cloud-starter-stream-sink-hdfs-dataset/README.adoc[tags=ref-doc]
-
 [[spring-cloud-stream-modules-jdbc-sink]]
 include::{app-starters-root}/jdbc/{branch}/spring-cloud-starter-stream-sink-jdbc/README.adoc[tags=ref-doc]
 
