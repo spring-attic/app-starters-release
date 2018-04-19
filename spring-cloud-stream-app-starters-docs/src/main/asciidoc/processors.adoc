@@ -18,6 +18,9 @@ include::{app-starters-root}/groovy-filter/{branch}/spring-cloud-starter-stream-
 [[spring-cloud-stream-modules-groovy-transform-processor]]
 include::{app-starters-root}/groovy-transform/{branch}/spring-cloud-starter-stream-processor-groovy-transform/README.adoc[tags=ref-doc]
 
+[[spring-cloud-stream-modules-grpc-processor]]
+include::{app-starters-root}/grpc/{branch}/spring-cloud-starter-stream-processor-grpc/README.adoc[tags=ref-doc]
+
 [[spring-cloud-stream-modules-header-enricher-processor]]
 include::{app-starters-root}/header-enricher/{branch}/spring-cloud-starter-stream-processor-header-enricher/README.adoc[tags=ref-doc]
 

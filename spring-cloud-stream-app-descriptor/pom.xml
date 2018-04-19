@@ -137,6 +137,8 @@
                 "${spring-cloud-starter-stream-mqtt.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-mqtt.version}";
         pom.properties['python-docker.tag']=
                 "${spring-cloud-starter-stream-python.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-python.version}";
+        pom.properties['grpc-docker.tag']=
+                "${spring-cloud-starter-stream-grpc.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-grpc.version}";
                 ]]></source>
                         </configuration>
                     </execution>

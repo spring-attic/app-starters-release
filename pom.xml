@@ -67,6 +67,7 @@
 		<spring-cloud-starter-stream-tensorflow.version>2.0.0.M1</spring-cloud-starter-stream-tensorflow.version>
 		<spring-cloud-starter-stream-mqtt.version>2.0.0.M1</spring-cloud-starter-stream-mqtt.version>
 		<spring-cloud-starter-stream-python.version>2.0.0.M1</spring-cloud-starter-stream-python.version>
+		<spring-cloud-starter-stream-grpc.version>2.0.0.M1</spring-cloud-starter-stream-grpc.version>
 	</properties>
 <profiles>
 		<profile>
