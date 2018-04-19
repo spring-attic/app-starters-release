@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.springframework.cloud.stream.app</groupId>
 		<artifactId>app-starters-release-train-build</artifactId>
-		<version>Darwin.BUILD-SNAPSHOT</version>
+		<version>Darwin.M1</version>
 	</parent>
 	<artifactId>spring-cloud-stream-app-starters-docs</artifactId>
 	<name>spring-cloud-stream-app-starters-docs</name>
@@ -325,11 +325,11 @@
 			<artifactId>spring-cloud-starter-stream-processor-header-enricher</artifactId>
 			<version>${spring-cloud-starter-stream-processor-header-enricher.version}</version>
 		</dependency>
-		<!--<dependency>-->
-			<!--<groupId>org.springframework.cloud.stream.app</groupId>-->
-			<!--<artifactId>spring-cloud-starter-stream-processor-aggregator</artifactId>-->
-			<!--<version>${spring-cloud-starter-stream-aggregator.version}</version>-->
-		<!--</dependency>-->
+		<dependency>
+			<groupId>org.springframework.cloud.stream.app</groupId>
+			<artifactId>spring-cloud-starter-stream-processor-aggregator</artifactId>
+			<version>${spring-cloud-starter-stream-aggregator.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-processor-tensorflow</artifactId>

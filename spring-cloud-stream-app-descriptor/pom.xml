@@ -3,7 +3,7 @@
     <parent>
         <artifactId>app-starters-release-train-build</artifactId>
         <groupId>org.springframework.cloud.stream.app</groupId>
-        <version>Darwin.BUILD-SNAPSHOT</version>
+        <version>Darwin.M1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -125,6 +125,8 @@
                 "${spring-cloud-starter-stream-twitterstream.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-twitterstream.version}";
         pom.properties['websocket-docker.tag']=
                 "${spring-cloud-starter-stream-websocket.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-websocket.version}";
+        pom.properties['aggregator-docker.tag']=
+                "${spring-cloud-starter-stream-aggregator.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-aggregator.version}";
         pom.properties['header-enricher-docker.tag']=
                 "${spring-cloud-starter-stream-processor-header-enricher.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-processor-header-enricher.version}";
         pom.properties['pgcopy-sink-docker.tag']=
