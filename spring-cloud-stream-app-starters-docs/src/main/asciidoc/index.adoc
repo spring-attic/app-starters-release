@@ -11,9 +11,9 @@ Sabby Anandan; Artem Bilan; Marius Bogoevici; Eric Bottard; Mark Fisher; Ilayape
 //:app-starters-root:  https://raw.githubusercontent.com/spring-cloud/spring-cloud-stream-app-starters/master
 
 :app-starters-root:  https://raw.githubusercontent.com/spring-cloud-stream-app-starters
-:branch: master
+:branch: 1.3.x
 
-:app-starters-asciidoc: https://raw.githubusercontent.com/spring-cloud-stream-app-starters/app-starters-release/master/spring-cloud-stream-app-starters-docs/src/main/asciidoc
+:app-starters-asciidoc: https://raw.githubusercontent.com/spring-cloud-stream-app-starters/app-starters-release/Celsius/spring-cloud-stream-app-starters-docs/src/main/asciidoc
 
 // Since the core projects will be at different release cadences, the following tokens need changed at the time of every release
 :scst-core-version: current-SNAPSHOT

@@ -46,7 +46,7 @@ include::{app-starters-root}/rabbit/{branch}/spring-cloud-starter-stream-sink-ra
 include::{app-starters-root}/mongodb/{branch}/spring-cloud-starter-stream-sink-mongodb/README.adoc[tags=ref-doc]
 
 [[spring-cloud-stream-modules-mqtt-sink]]
-include::{app-starters-root}/mqtt/{branch}/spring-cloud-starter-stream-sink-mqtt/README.adoc[tags=ref-doc]
+include::{app-starters-root}/mqtt/1.0.x/spring-cloud-starter-stream-sink-mqtt/README.adoc[tags=ref-doc]
 
 [[spring-cloud-stream-modules-pgcopy-sink]]
 include::{app-starters-root}/jdbc/{branch}/spring-cloud-starter-stream-sink-pgcopy/README.adoc[tags=ref-doc]
