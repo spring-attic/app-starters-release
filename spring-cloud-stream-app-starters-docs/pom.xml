@@ -151,21 +151,21 @@
 			<version>${spring-cloud-starter-stream-loggregator.version}</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.cloud.stream.app</groupId>
-			<artifactId>aws-s3-app-starters-common</artifactId>
-			<version>${spring-cloud-starter-stream-aws-s3.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud.stream.app</groupId>
-			<artifactId>spring-cloud-starter-stream-source-s3</artifactId>
-			<version>${spring-cloud-starter-stream-aws-s3.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud.stream.app</groupId>
-			<artifactId>spring-cloud-starter-stream-sink-s3</artifactId>
-			<version>${spring-cloud-starter-stream-aws-s3.version}</version>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.cloud.stream.app</groupId>-->
+			<!--<artifactId>aws-s3-app-starters-common</artifactId>-->
+			<!--<version>${spring-cloud-starter-stream-aws-s3.version}</version>-->
+		<!--</dependency>-->
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.cloud.stream.app</groupId>-->
+			<!--<artifactId>spring-cloud-starter-stream-source-s3</artifactId>-->
+			<!--<version>${spring-cloud-starter-stream-aws-s3.version}</version>-->
+		<!--</dependency>-->
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.cloud.stream.app</groupId>-->
+			<!--<artifactId>spring-cloud-starter-stream-sink-s3</artifactId>-->
+			<!--<version>${spring-cloud-starter-stream-aws-s3.version}</version>-->
+		<!--</dependency>-->
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-source-load-generator</artifactId>
