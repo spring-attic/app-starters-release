@@ -54,6 +54,12 @@ include::{app-starters-root}/tensorflow/{branch}/spring-cloud-starter-stream-pro
 [[spring-cloud-stream-modules-twitter-sentiment-processor]]
 include::{app-starters-root}/tensorflow/{branch}/spring-cloud-starter-stream-processor-twitter-sentiment/README.adoc[tags=ref-doc]
 
+[[spring-cloud-stream-modules-image-recognition-processor]]
+include::{app-starters-root}/tensorflow/{branch}/spring-cloud-starter-stream-processor-image-recognition/README.adoc[tags=ref-doc]
+
+[[spring-cloud-stream-modules-object-detection-processor]]
+include::{app-starters-root}/tensorflow/{branch}/spring-cloud-starter-stream-processor-object-detection/README.adoc[tags=ref-doc]
+
 :leveloffset: -2
 
 

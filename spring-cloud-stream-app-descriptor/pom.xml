@@ -3,7 +3,7 @@
     <parent>
         <artifactId>app-starters-release-train-build</artifactId>
         <groupId>org.springframework.cloud.stream.app</groupId>
-        <version>Darwin.BUILD-SNAPSHOT</version>
+        <version>Darwin.SR1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -159,11 +159,11 @@
                             <artifacts>
                                 <artifact>
                                     <file>target/classes/META-INF/kafka-apps-maven.properties</file>
-                                    <type>stream-apps-kafka-10-maven</type>
+                                    <type>stream-apps-kafka-maven</type>
                                 </artifact>
                                 <artifact>
                                     <file>target/classes/META-INF/kafka-apps-docker.properties</file>
-                                    <type>stream-apps-kafka-10-docker</type>
+                                    <type>stream-apps-kafka-docker</type>
                                 </artifact>
                                 <artifact>
                                     <file>target/classes/META-INF/rabbit-apps-maven.properties</file>
