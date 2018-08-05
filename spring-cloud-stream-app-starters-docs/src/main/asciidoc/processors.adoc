@@ -60,6 +60,10 @@ include::{app-starters-root}/tensorflow/{branch}/spring-cloud-starter-stream-pro
 [[spring-cloud-stream-modules-object-detection-processor]]
 include::{app-starters-root}/tensorflow/{branch}/spring-cloud-starter-stream-processor-object-detection/README.adoc[tags=ref-doc]
 
+[[spring-cloud-stream-modules-pose-estimation-processor]]
+include::{app-starters-root}/tensorflow/{branch}/spring-cloud-starter-stream-processor-pose-estimation/README.adoc[tags=ref-doc]
+
+
 :leveloffset: -2
 
 
