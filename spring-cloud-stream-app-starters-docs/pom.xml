@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.springframework.cloud.stream.app</groupId>
 		<artifactId>app-starters-release-train-build</artifactId>
-		<version>Darwin.BUILD-SNAPSHOT</version>
+		<version>Darwin.SR2</version>
 	</parent>
 	<artifactId>spring-cloud-stream-app-starters-docs</artifactId>
 	<name>spring-cloud-stream-app-starters-docs</name>
@@ -151,21 +151,21 @@
 			<version>${spring-cloud-starter-stream-loggregator.version}</version>
 		</dependency>
 
-		<!--<dependency>-->
-			<!--<groupId>org.springframework.cloud.stream.app</groupId>-->
-			<!--<artifactId>aws-s3-app-starters-common</artifactId>-->
-			<!--<version>${spring-cloud-starter-stream-aws-s3.version}</version>-->
-		<!--</dependency>-->
-		<!--<dependency>-->
-			<!--<groupId>org.springframework.cloud.stream.app</groupId>-->
-			<!--<artifactId>spring-cloud-starter-stream-source-s3</artifactId>-->
-			<!--<version>${spring-cloud-starter-stream-aws-s3.version}</version>-->
-		<!--</dependency>-->
-		<!--<dependency>-->
-			<!--<groupId>org.springframework.cloud.stream.app</groupId>-->
-			<!--<artifactId>spring-cloud-starter-stream-sink-s3</artifactId>-->
-			<!--<version>${spring-cloud-starter-stream-aws-s3.version}</version>-->
-		<!--</dependency>-->
+		<dependency>
+			<groupId>org.springframework.cloud.stream.app</groupId>
+			<artifactId>aws-s3-app-starters-common</artifactId>
+			<version>${spring-cloud-starter-stream-aws-s3.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud.stream.app</groupId>
+			<artifactId>spring-cloud-starter-stream-source-s3</artifactId>
+			<version>${spring-cloud-starter-stream-aws-s3.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud.stream.app</groupId>
+			<artifactId>spring-cloud-starter-stream-sink-s3</artifactId>
+			<version>${spring-cloud-starter-stream-aws-s3.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-source-load-generator</artifactId>
