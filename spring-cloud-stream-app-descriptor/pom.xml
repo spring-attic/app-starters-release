@@ -3,7 +3,7 @@
     <parent>
         <artifactId>app-starters-release-train-build</artifactId>
         <groupId>org.springframework.cloud.stream.app</groupId>
-        <version>Darwin.SR2</version>
+        <version>Darwin.BUILD-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
