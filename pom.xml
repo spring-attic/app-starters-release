@@ -23,9 +23,9 @@
 		<spring-cloud-starter-stream-time.version>2.1.0.M1</spring-cloud-starter-stream-time.version>
 		<spring-cloud-starter-stream-log.version>2.1.0.M1</spring-cloud-starter-stream-log.version>
 		<spring-cloud-starter-stream-httpclient.version>2.1.0.M1</spring-cloud-starter-stream-httpclient.version>
-		<!--<spring-cloud-starter-stream-tasklauncher-cloudfoundry.version>2.1.0.M1</spring-cloud-starter-stream-tasklauncher-cloudfoundry.version>-->
+		<spring-cloud-starter-stream-tasklauncher-cloudfoundry.version>2.1.0.M1</spring-cloud-starter-stream-tasklauncher-cloudfoundry.version>
 		<spring-cloud-starter-stream-tasklauncher-yarn.version>2.1.0.M1</spring-cloud-starter-stream-tasklauncher-yarn.version>
-		<!--<spring-cloud-starter-stream-tasklauncher-local.version>2.1.0.M1</spring-cloud-starter-stream-tasklauncher-local.version>-->
+		<spring-cloud-starter-stream-tasklauncher-local.version>2.1.0.M1</spring-cloud-starter-stream-tasklauncher-local.version>
 		<spring-cloud-starter-stream-tasklaunchrequest-transform.version>2.1.0.M1</spring-cloud-starter-stream-tasklaunchrequest-transform.version>
 		<spring-cloud-starter-stream-throughput.version>2.1.0.M1</spring-cloud-starter-stream-throughput.version>
 		<spring-cloud-starter-stream-redis.version>2.1.0.M1</spring-cloud-starter-stream-redis.version>
