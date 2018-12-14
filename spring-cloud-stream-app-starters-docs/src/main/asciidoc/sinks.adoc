@@ -69,4 +69,10 @@ include::{app-starters-root}/throughput/{branch}/spring-cloud-starter-stream-sin
 [[spring-cloud-stream-modules-websocket-sink]]
 include::{app-starters-root}/websocket/{branch}/spring-cloud-starter-stream-sink-websocket/README.adoc[tags=ref-doc]
 
+[[spring-cloud-stream-modules-task-launcher-yarn-sink]]
+include::{app-starters-root}/tasklauncher-yarn/{branch}/spring-cloud-starter-stream-sink-task-launcher-yarn/README.adoc[tags=ref-doc]
+
+[[spring-cloud-stream-modules-task-launcher-dataflow-sink]]
+include::{app-starters-root}/tasklauncher-dataflow/{branch}/spring-cloud-starter-stream-sink-task-launcher-dataflow/README.adoc[tags=ref-doc]
+
 :leveloffset: -2
