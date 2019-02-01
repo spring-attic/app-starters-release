@@ -3,7 +3,7 @@
     <parent>
         <artifactId>app-starters-release-train-build</artifactId>
         <groupId>org.springframework.cloud.stream.app</groupId>
-        <version>Einstein.BUILD-SNAPSHOT</version>
+        <version>Einstein.RC1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -49,6 +49,8 @@
                 "${spring-cloud-starter-stream-aws-s3.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-aws-s3.version}";
         pom.properties['bridge-docker.tag']=
                 "${spring-cloud-starter-stream-bridge.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-bridge.version}";
+        pom.properties['cassandra-docker.tag']=
+                "${spring-cloud-starter-stream-cassandra.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-cassandra.version}";
         pom.properties['counter-docker.tag']=
                 "${spring-cloud-starter-stream-counter.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-counter.version}";
         pom.properties['field-value-counter-docker.tag']=
