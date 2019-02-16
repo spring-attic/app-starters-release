@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.springframework.cloud.stream.app</groupId>
 		<artifactId>app-starters-release-train-build</artifactId>
-		<version>Einstein.BUILD-SNAPSHOT</version>
+		<version>Einstein.RELEASE</version>
 	</parent>
 	<artifactId>spring-cloud-stream-app-starters-docs</artifactId>
 	<name>spring-cloud-stream-app-starters-docs</name>
@@ -230,19 +230,24 @@
 			<version>${spring-cloud-starter-stream-jms.version}</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.cloud.stream.app</groupId>
-			<artifactId>spring-cloud-starter-stream-sink-field-value-counter</artifactId>
-			<version>${spring-cloud-starter-stream-fieldvaluecounter.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud.stream.app</groupId>
-			<artifactId>spring-cloud-starter-stream-sink-aggregate-counter</artifactId>
-			<version>${spring-cloud-starter-stream-aggregatecounter.version}</version>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.cloud.stream.app</groupId>-->
+			<!--<artifactId>spring-cloud-starter-stream-sink-field-value-counter</artifactId>-->
+			<!--<version>${spring-cloud-starter-stream-fieldvaluecounter.version}</version>-->
+		<!--</dependency>-->
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.cloud.stream.app</groupId>-->
+			<!--<artifactId>spring-cloud-starter-stream-sink-aggregate-counter</artifactId>-->
+			<!--<version>${spring-cloud-starter-stream-aggregatecounter.version}</version>-->
+		<!--</dependency>-->
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
 			<artifactId>spring-cloud-starter-stream-sink-counter</artifactId>
+			<version>${spring-cloud-starter-stream-counter.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud.stream.app</groupId>
+			<artifactId>spring-cloud-starter-stream-processor-counter</artifactId>
 			<version>${spring-cloud-starter-stream-counter.version}</version>
 		</dependency>
 

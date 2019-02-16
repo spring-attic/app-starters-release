@@ -3,7 +3,7 @@
     <parent>
         <artifactId>app-starters-release-train-build</artifactId>
         <groupId>org.springframework.cloud.stream.app</groupId>
-        <version>Einstein.BUILD-SNAPSHOT</version>
+        <version>Einstein.RELEASE</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -41,10 +41,10 @@
                         <configuration>
                             <source><![CDATA[
         pom.properties['repo-spring-io']=
-                "${spring-cloud-starter-stream-aggregatecounter.version}".contains('BUILD-SNAPSHOT') ? 'repo.spring.io/snapshot' :
-                        "${spring-cloud-starter-stream-aggregatecounter.version}".contains('RELEASE') ? 'repo.spring.io/release' : 'repo.spring.io/milestone';
-        pom.properties['aggregate-counter-docker.tag']=
-                "${spring-cloud-starter-stream-aggregatecounter.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-aggregatecounter.version}";
+                "${spring-cloud-starter-stream-time.version}".contains('BUILD-SNAPSHOT') ? 'repo.spring.io/snapshot' :
+                        "${spring-cloud-starter-stream-time.version}".contains('RELEASE') ? 'repo.spring.io/release' : 'repo.spring.io/milestone';
+//        pom.properties['aggregate-counter-docker.tag']=
+//                "${spring-cloud-starter-stream-aggregatecounter.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-aggregatecounter.version}";
         pom.properties['aws-s3-docker.tag']=
                 "${spring-cloud-starter-stream-aws-s3.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-aws-s3.version}";
         pom.properties['bridge-docker.tag']=
@@ -53,8 +53,8 @@
                 "${spring-cloud-starter-stream-cassandra.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-cassandra.version}";
         pom.properties['counter-docker.tag']=
                 "${spring-cloud-starter-stream-counter.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-counter.version}";
-        pom.properties['field-value-counter-docker.tag']=
-                "${spring-cloud-starter-stream-fieldvaluecounter.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-fieldvaluecounter.version}";
+//        pom.properties['field-value-counter-docker.tag']=
+//                "${spring-cloud-starter-stream-fieldvaluecounter.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-fieldvaluecounter.version}";
         pom.properties['file-docker.tag']=
                 "${spring-cloud-starter-stream-file.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-file.version}";
         pom.properties['filter-docker.tag']=

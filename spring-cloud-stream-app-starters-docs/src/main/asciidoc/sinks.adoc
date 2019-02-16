@@ -3,17 +3,17 @@
 
 :leveloffset: +2
 
-[[spring-cloud-stream-modules-aggregate-counter-sink]]
-include::{app-starters-root}/aggregate-counter/{branch}/spring-cloud-starter-stream-sink-aggregate-counter/README.adoc[tags=ref-doc]
+//[[spring-cloud-stream-modules-aggregate-counter-sink]]
+//include::{app-starters-root}/aggregate-counter/{branch}/spring-cloud-starter-stream-sink-aggregate-counter/README.adoc[tags=ref-doc]
 
 [[spring-cloud-stream-modules-cassandra-sink]]
 include::{app-starters-root}/cassandra/{branch}/spring-cloud-starter-stream-sink-cassandra/README.adoc[tags=ref-doc]
 
 [[spring-cloud-stream-modules-counter-sink]]
-include::{app-starters-root}/counter/{branch}/spring-cloud-starter-stream-sink-counter/README.adoc[tags=ref-doc]
+include::{app-starters-root}/analytics/{branch}/spring-cloud-starter-stream-sink-counter/README.adoc[tags=ref-doc]
 
-[[spring-cloud-stream-modules-field-value-counter-sink]]
-include::{app-starters-root}/field-value-counter/{branch}/spring-cloud-starter-stream-sink-field-value-counter/README.adoc[tags=ref-doc]
+//[[spring-cloud-stream-modules-field-value-counter-sink]]
+//include::{app-starters-root}/field-value-counter/{branch}/spring-cloud-starter-stream-sink-field-value-counter/README.adoc[tags=ref-doc]
 
 [[spring-cloud-stream-modules-file-sink]]
 include::{app-starters-root}/file/{branch}/spring-cloud-starter-stream-sink-file/README.adoc[tags=ref-doc]

@@ -9,6 +9,9 @@ include::{app-starters-root}/aggregator/{branch}/spring-cloud-starter-stream-pro
 [[spring-cloud-stream-modules-bridge-processor]]
 include::{app-starters-root}/bridge/{branch}/spring-cloud-starter-stream-processor-bridge/README.adoc[tags=ref-doc]
 
+[[spring-cloud-stream-modules-counter-processor]]
+include::{app-starters-root}/analytics/{branch}/spring-cloud-starter-stream-processor-counter/README.adoc[tags=ref-doc]
+
 [[spring-cloud-stream-modules-filter-processor]]
 include::{app-starters-root}/filter/{branch}/spring-cloud-starter-stream-processor-filter/README.adoc[tags=ref-doc]
 
