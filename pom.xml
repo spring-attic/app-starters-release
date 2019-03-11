@@ -42,7 +42,7 @@
 		<spring-cloud-starter-stream-hdfs.version>2.1.0.RELEASE</spring-cloud-starter-stream-hdfs.version>
 		<spring-cloud-starter-stream-gemfire.version>2.1.1.RELEASE</spring-cloud-starter-stream-gemfire.version>
 		<spring-cloud-starter-stream-pmml.version>2.1.0.RELEASE</spring-cloud-starter-stream-pmml.version>
-		<spring-cloud-starter-stream1-ftp.version>2.1.0.RELEASE</spring-cloud-starter-stream1-ftp.version>
+		<spring-cloud-starter-stream-ftp.version>2.1.0.RELEASE</spring-cloud-starter-stream-ftp.version>
 		<spring-cloud-starter-stream-sftp.version>2.1.0.RELEASE</spring-cloud-starter-stream-sftp.version>
 		<spring-cloud-starter-stream-tcp.version>2.1.0.RELEASE</spring-cloud-starter-stream-tcp.version>
 		<spring-cloud-starter-stream-triggertask.version>2.1.0.RELEASE</spring-cloud-starter-stream-triggertask.version>
