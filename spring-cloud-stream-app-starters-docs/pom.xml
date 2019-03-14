@@ -269,7 +269,12 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud.stream.app</groupId>
-			<artifactId>spring-cloud-starter-stream-sink-sftp</artifactId>
+			<artifactId>spring-cloud-starter-stream-source-sftp-dataflow</artifactId>
+			<version>${spring-cloud-starter-stream-sftp.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud.stream.app</groupId>
+			<artifactId>spring-cloud-starter-stream-sink-sftp-dataflow</artifactId>
 			<version>${spring-cloud-starter-stream-sftp.version}</version>
 		</dependency>
 

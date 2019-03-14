@@ -48,6 +48,9 @@ include::{app-starters-root}/aws-s3/{branch}/spring-cloud-starter-stream-source-
 [[spring-cloud-stream-modules-sftp-source]]
 include::{app-starters-root}/sftp/{branch}/spring-cloud-starter-stream-source-sftp/README.adoc[tags=ref-doc]
 
+[[spring-cloud-stream-modules-sftp-dataflow-source]]
+include::{app-starters-root}/sftp/{branch}/spring-cloud-starter-stream-source-sftp-dataflow/README.adoc[tags=ref-doc]
+
 [[spring-cloud-stream-modules-syslog-source]]
 include::{app-starters-root}/syslog/{branch}/spring-cloud-starter-stream-source-syslog/README.adoc[tags=ref-doc]
 
