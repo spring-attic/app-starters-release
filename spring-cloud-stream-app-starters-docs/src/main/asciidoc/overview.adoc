@@ -1,7 +1,7 @@
 [[overview]]
 
 This section will provide you with a detailed overview of Spring Cloud Stream Application Starters, their purpose, and how to use them.
-It assumes familiarity with general Spring Cloud Stream concepts, which can be found in the Spring Cloud Stream http://docs.spring.io/spring-cloud-stream/docs/{scst-core-version}/reference/htmlsingle/[reference documentation].
+It assumes familiarity with general Spring Cloud Stream concepts, which can be found in the Spring Cloud Stream https://docs.spring.io/spring-cloud-stream/docs/{scst-core-version}/reference/htmlsingle/[reference documentation].
 
 == Introduction
 
@@ -11,7 +11,7 @@ They include:
 
 * connectors (sources and sinks) for middleware including message brokers, storage (relational, non-relational, filesystem);
 * adapters for various network protocols;
-* generic processors that can be customized via http://docs.spring.io/spring/docs/4.2.x/spring-framework-reference/html/expressions.html[Spring Expression Language (SpEL)] or scripting.
+* generic processors that can be customized via https://docs.spring.io/spring/docs/4.2.x/spring-framework-reference/html/expressions.html[Spring Expression Language (SpEL)] or scripting.
 
 You can find a detailed listing of all the starters and as their options in the <<starters,corresponding>> section of this guide.
 
@@ -25,7 +25,7 @@ _Starters_ are libraries that contain the complete configuration of a Spring Clo
 Starters are not executable applications, and are intended to be included in other Spring Boot applications, along with a Binder implementation.
 
 _Prebuilt applications_ are Spring Boot applications that include the starters and a Binder implementation.
-Prebuilt applications are http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#getting-started-first-application-executable-jar[uberjars] and include minimal code required to execute standalone.
+Prebuilt applications are https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#getting-started-first-application-executable-jar[uberjars] and include minimal code required to execute standalone.
 For each starter, the project provides a prebuilt version including the Kafka Binder (one each for 0.9 and 0.10 versions of Kafka) and a  prebuilt version including the Rabbit MQ Binder.
 
 [NOTE]
@@ -81,7 +81,7 @@ The group will be always `org.springframework.cloud.stream.app`.
 The version may vary.
 The artifact id follows the format `<functionality>-<type>-<binder>` <<classification,previously described>>.
 
-You can download the executable jar artifacts from the Spring Maven repositories.  The root directory of the Maven repository that hosts release versions is http://repo.spring.io/release/org/springframework/cloud/stream/app/.  From there you can navigate to the latest release version of a specific app, for example link:http://repo.spring.io/release/org/springframework/cloud/stream/app/log-sink-rabbit/1.1.1.RELEASE/log-sink-rabbit-1.1.1.RELEASE.jar[log-sink-rabbit-1.1.1.RELEASE.jar].  Use the link:http://repo.spring.io/milestone/org/springframework/cloud/stream/app[Milestone] and link:http://repo.spring.io/snapshot/org/springframework/cloud/stream/app[Snapshot] repository locations for Milestone and Snapshot executuable jar artifacts.
+You can download the executable jar artifacts from the Spring Maven repositories.  The root directory of the Maven repository that hosts release versions is https://repo.spring.io/release/org/springframework/cloud/stream/app/.  From there you can navigate to the latest release version of a specific app, for example link:https://repo.spring.io/release/org/springframework/cloud/stream/app/log-sink-rabbit/1.1.1.RELEASE/log-sink-rabbit-1.1.1.RELEASE.jar[log-sink-rabbit-1.1.1.RELEASE.jar].  Use the link:https://repo.spring.io/milestone/org/springframework/cloud/stream/app[Milestone] and link:https://repo.spring.io/snapshot/org/springframework/cloud/stream/app[Snapshot] repository locations for Milestone and Snapshot executuable jar artifacts.
 
 The Docker versions of the applications are available in Docker Hub, at `https://hub.docker.com/r/springcloudstream/`. Naming and versioning follows the same general conventions as Maven, e.g.
 
@@ -180,9 +180,9 @@ You have the following options:
 ===== Using generic Spring Cloud Stream applications
 
 If you want to add your own custom applications to your solution, you can simply create a new Spring Cloud Stream app project with the binder of your choice and run it the same way as the applications provided by Spring Cloud Stream Application Starters, independently or via Spring Cloud Data Flow.
-The process is described in the http://docs.spring.io/spring-cloud-stream/docs/current-SNAPSHOT/reference/htmlsingle/#_getting_started[Getting Started Guide] of Spring Cloud Stream.
+The process is described in the https://docs.spring.io/spring-cloud-stream/docs/current-SNAPSHOT/reference/htmlsingle/#_getting_started[Getting Started Guide] of Spring Cloud Stream.
 
-An alternative way to bootstrap your application is to go to the http://start.spring.io[Spring Initializr] and choose a Spring Cloud Stream Binder of your choice.
+An alternative way to bootstrap your application is to go to the https://start.spring.io[Spring Initializr] and choose a Spring Cloud Stream Binder of your choice.
 This way you already have the necessary infrastructure ready to go and mainly focus on the specifics of the application.
 
 The following requirements need to be followed when you go with this option:
@@ -210,7 +210,7 @@ After doing so, you can simply add the additional configuration for the extra fe
 
 If you're looking to patch the pre-built applications to accommodate addition of new dependencies, you can use the following example as the reference. Let's review the steps to add `mysql` driver to `jdbc-sink` application.  
 
-* Go to: http://start-scs.cfapps.io/
+* Go to: https://start-scs.cfapps.io/
 * Select the appliation and binder dependencies [_`JDBC sink` and `Rabbit binder starter`_]
 * Generate and load the project in an IDE
 * Add `mysql` java-driver dependency
@@ -501,8 +501,8 @@ This would upload the docker image to the docker hub in your custom repository.
 In the following sections, you can find a brief faq on various things that we discussed above and a few other infrastructure related topics.
 
 . What are Spring Cloud Stream Application Starters? +
-Spring Cloud Stream Application Starters are Spring Boot based Spring Integration applications that provide integration with external systems. GitHub: http://github.com/spring-cloud-stream-app-starters +
-Project page: http://cloud.spring.io/spring-cloud-stream-app-starters/
+Spring Cloud Stream Application Starters are Spring Boot based Spring Integration applications that provide integration with external systems. GitHub: https://github.com/spring-cloud-stream-app-starters +
+Project page: https://cloud.spring.io/spring-cloud-stream-app-starters/
 
 
 . What is the parent for stream app starters? +
