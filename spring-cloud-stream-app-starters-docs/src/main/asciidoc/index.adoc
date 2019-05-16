@@ -15,7 +15,7 @@ Sabby Anandan; Artem Bilan; Marius Bogoevici; Eric Bottard; Mark Fisher; Ilayape
 :app-starters-asciidoc: https://raw.githubusercontent.com/spring-cloud-stream-app-starters/app-starters-release/master/spring-cloud-stream-app-starters-docs/src/main/asciidoc
 
 // Since the core projects will be at different release cadences, the following tokens need changed at the time of every release
-:scst-core-version: 2.1.1.RELEASE
+:scst-core-version: 2.1.2.RELEASE
 
 ifdef::backend-html5[]
 
