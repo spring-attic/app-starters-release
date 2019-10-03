@@ -2,13 +2,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>app-starters-release-train-build</artifactId>
-	<version>Einstein.SR4</version>
+	<version>Einstein.BUILD-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<parent>
 		<groupId>org.springframework.cloud.stream.app</groupId>
 		<artifactId>app-starters-build</artifactId>
-		<version>2.1.2.RELEASE</version>
+		<version>2.1.3.BUILD-SNAPSHOT</version>
 		<relativePath/>
 	</parent>
 
@@ -18,57 +18,57 @@
 	</modules>
 
 	<properties>
-		<app-starters-build.version>2.1.2.RELEASE</app-starters-build.version>
-		<spring-cloud-starter-stream-file.version>2.1.1.RELEASE</spring-cloud-starter-stream-file.version>
-		<spring-cloud-starter-stream-time.version>2.1.1.RELEASE</spring-cloud-starter-stream-time.version>
-		<spring-cloud-starter-stream-log.version>2.1.2.RELEASE</spring-cloud-starter-stream-log.version>
-		<spring-cloud-starter-stream-httpclient.version>2.1.2.RELEASE</spring-cloud-starter-stream-httpclient.version>
-		<!--<spring-cloud-starter-stream-tasklauncher-cloudfoundry.version>2.1.1.RELEASE</spring-cloud-starter-stream-tasklauncher-cloudfoundry.version>-->
-		<!--<spring-cloud-starter-stream-tasklauncher-yarn.version>2.1.1.RELEASE</spring-cloud-starter-stream-tasklauncher-yarn.version>-->
-		<!--<spring-cloud-starter-stream-tasklauncher-local.version>2.1.1.RELEASE</spring-cloud-starter-stream-tasklauncher-local.version>-->
-		<spring-cloud-starter-stream-tasklaunchrequest-transform.version>2.1.1.RELEASE</spring-cloud-starter-stream-tasklaunchrequest-transform.version>
-		<spring-cloud-starter-stream-throughput.version>2.1.1.RELEASE</spring-cloud-starter-stream-throughput.version>
-		<spring-cloud-starter-stream-redis.version>2.1.1.RELEASE</spring-cloud-starter-stream-redis.version>
-		<spring-cloud-starter-stream-splitter.version>2.1.1.RELEASE</spring-cloud-starter-stream-splitter.version>
-		<spring-cloud-starter-stream-scriptable-transform.version>2.1.1.RELEASE</spring-cloud-starter-stream-scriptable-transform.version>
-		<spring-cloud-starter-stream-filter.version>2.1.1.RELEASE</spring-cloud-starter-stream-filter.version>
-		<spring-cloud-starter-stream-groovy-filter.version>2.1.1.RELEASE</spring-cloud-starter-stream-groovy-filter.version>
-		<spring-cloud-starter-stream-groovy-transform.version>2.1.1.RELEASE</spring-cloud-starter-stream-groovy-transform.version>
-		<spring-cloud-starter-stream-counter.version>2.1.1.RELEASE</spring-cloud-starter-stream-counter.version>
-		<!--<spring-cloud-starter-stream-fieldvaluecounter.version>2.1.1.RELEASE</spring-cloud-starter-stream-fieldvaluecounter.version>-->
-		<!--<spring-cloud-starter-stream-aggregatecounter.version>2.1.1.RELEASE</spring-cloud-starter-stream-aggregatecounter.version>-->
-		<spring-cloud-starter-stream-rabbit.version>2.1.2.RELEASE</spring-cloud-starter-stream-rabbit.version>
-		<spring-cloud-starter-stream-jms.version>2.1.1.RELEASE</spring-cloud-starter-stream-jms.version>
-		<spring-cloud-starter-stream-hdfs.version>2.1.1.RELEASE</spring-cloud-starter-stream-hdfs.version>
-		<spring-cloud-starter-stream-gemfire.version>2.1.2.RELEASE</spring-cloud-starter-stream-gemfire.version>
-		<spring-cloud-starter-stream-pmml.version>2.1.1.RELEASE</spring-cloud-starter-stream-pmml.version>
-		<spring-cloud-starter-stream-ftp.version>2.1.1.RELEASE</spring-cloud-starter-stream-ftp.version>
-		<spring-cloud-starter-stream-sftp.version>2.1.1.RELEASE</spring-cloud-starter-stream-sftp.version>
-		<spring-cloud-starter-stream-tcp.version>2.1.1.RELEASE</spring-cloud-starter-stream-tcp.version>
-		<spring-cloud-starter-stream-triggertask.version>2.1.1.RELEASE</spring-cloud-starter-stream-triggertask.version>
-		<spring-cloud-starter-stream-trigger.version>2.1.1.RELEASE</spring-cloud-starter-stream-trigger.version>
-		<spring-cloud-starter-stream-syslog.version>2.1.1.RELEASE</spring-cloud-starter-stream-syslog.version>
-		<spring-cloud-starter-stream-mongodb.version>2.1.1.RELEASE</spring-cloud-starter-stream-mongodb.version>
-		<spring-cloud-starter-stream-mail.version>2.1.1.RELEASE</spring-cloud-starter-stream-mail.version>
-		<spring-cloud-starter-stream-loggregator.version>2.1.1.RELEASE</spring-cloud-starter-stream-loggregator.version>
-		<spring-cloud-starter-stream-aws-s3.version>2.1.1.RELEASE</spring-cloud-starter-stream-aws-s3.version>
-		<spring-cloud-starter-stream-loadgenerator.version>2.1.1.RELEASE</spring-cloud-starter-stream-loadgenerator.version>
-		<!--<spring-cloud-starter-stream-gpfdist.version>2.1.1.RELEASE</spring-cloud-starter-stream-gpfdist.version>-->
-		<spring-cloud-starter-stream-router.version>2.1.2.RELEASE</spring-cloud-starter-stream-router.version>
-		<spring-cloud-starter-stream-bridge.version>2.1.1.RELEASE</spring-cloud-starter-stream-bridge.version>
-		<spring-cloud-starter-stream-jdbc.version>2.1.3.RELEASE</spring-cloud-starter-stream-jdbc.version>
-		<spring-cloud-starter-stream-websocket.version>2.1.1.RELEASE</spring-cloud-starter-stream-websocket.version>
-		<spring-cloud-starter-stream-cassandra.version>2.1.1.RELEASE</spring-cloud-starter-stream-cassandra.version>
-		<spring-cloud-starter-stream-http.version>2.1.1.RELEASE</spring-cloud-starter-stream-http.version>
-		<spring-cloud-starter-stream-twitterstream.version>2.1.1.RELEASE</spring-cloud-starter-stream-twitterstream.version>
-		<spring-cloud-starter-stream-transform.version>2.1.1.RELEASE</spring-cloud-starter-stream-transform.version>
-		<spring-cloud-starter-stream-processor-header-enricher.version>2.1.2.RELEASE</spring-cloud-starter-stream-processor-header-enricher.version>
-		<spring-cloud-starter-stream-aggregator.version>2.1.1.RELEASE</spring-cloud-starter-stream-aggregator.version>
-		<spring-cloud-starter-stream-tensorflow.version>2.1.1.RELEASE</spring-cloud-starter-stream-tensorflow.version>
-		<spring-cloud-starter-stream-mqtt.version>2.1.1.RELEASE</spring-cloud-starter-stream-mqtt.version>
-		<spring-cloud-starter-stream-python.version>2.1.1.RELEASE</spring-cloud-starter-stream-python.version>
-		<spring-cloud-starter-stream-grpc.version>2.1.1.RELEASE</spring-cloud-starter-stream-grpc.version>
-		<spring-cloud-starter-stream-tasklauncher-dataflow.version>1.0.1.RELEASE</spring-cloud-starter-stream-tasklauncher-dataflow.version>
+		<app-starters-build.version>2.1.3.BUILD-SNAPSHOT</app-starters-build.version>
+		<spring-cloud-starter-stream-file.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-file.version>
+		<spring-cloud-starter-stream-time.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-time.version>
+		<spring-cloud-starter-stream-log.version>2.1.3.BUILD-SNAPSHOT</spring-cloud-starter-stream-log.version>
+		<spring-cloud-starter-stream-httpclient.version>2.1.3.BUILD-SNAPSHOT</spring-cloud-starter-stream-httpclient.version>
+		<!--<spring-cloud-starter-stream-tasklauncher-cloudfoundry.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-tasklauncher-cloudfoundry.version>-->
+		<!--<spring-cloud-starter-stream-tasklauncher-yarn.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-tasklauncher-yarn.version>-->
+		<!--<spring-cloud-starter-stream-tasklauncher-local.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-tasklauncher-local.version>-->
+		<spring-cloud-starter-stream-tasklaunchrequest-transform.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-tasklaunchrequest-transform.version>
+		<spring-cloud-starter-stream-throughput.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-throughput.version>
+		<spring-cloud-starter-stream-redis.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-redis.version>
+		<spring-cloud-starter-stream-splitter.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-splitter.version>
+		<spring-cloud-starter-stream-scriptable-transform.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-scriptable-transform.version>
+		<spring-cloud-starter-stream-filter.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-filter.version>
+		<spring-cloud-starter-stream-groovy-filter.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-groovy-filter.version>
+		<spring-cloud-starter-stream-groovy-transform.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-groovy-transform.version>
+		<spring-cloud-starter-stream-counter.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-counter.version>
+		<!--<spring-cloud-starter-stream-fieldvaluecounter.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-fieldvaluecounter.version>-->
+		<!--<spring-cloud-starter-stream-aggregatecounter.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-aggregatecounter.version>-->
+		<spring-cloud-starter-stream-rabbit.version>2.1.3.BUILD-SNAPSHOT</spring-cloud-starter-stream-rabbit.version>
+		<spring-cloud-starter-stream-jms.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-jms.version>
+		<spring-cloud-starter-stream-hdfs.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-hdfs.version>
+		<spring-cloud-starter-stream-gemfire.version>2.1.3.BUILD-SNAPSHOT</spring-cloud-starter-stream-gemfire.version>
+		<spring-cloud-starter-stream-pmml.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-pmml.version>
+		<spring-cloud-starter-stream-ftp.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-ftp.version>
+		<spring-cloud-starter-stream-sftp.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-sftp.version>
+		<spring-cloud-starter-stream-tcp.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-tcp.version>
+		<spring-cloud-starter-stream-triggertask.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-triggertask.version>
+		<spring-cloud-starter-stream-trigger.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-trigger.version>
+		<spring-cloud-starter-stream-syslog.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-syslog.version>
+		<spring-cloud-starter-stream-mongodb.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-mongodb.version>
+		<spring-cloud-starter-stream-mail.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-mail.version>
+		<spring-cloud-starter-stream-loggregator.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-loggregator.version>
+		<spring-cloud-starter-stream-aws-s3.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-aws-s3.version>
+		<spring-cloud-starter-stream-loadgenerator.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-loadgenerator.version>
+		<!--<spring-cloud-starter-stream-gpfdist.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-gpfdist.version>-->
+		<spring-cloud-starter-stream-router.version>2.1.3.BUILD-SNAPSHOT</spring-cloud-starter-stream-router.version>
+		<spring-cloud-starter-stream-bridge.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-bridge.version>
+		<spring-cloud-starter-stream-jdbc.version>2.1.4.BUILD-SNAPSHOT</spring-cloud-starter-stream-jdbc.version>
+		<spring-cloud-starter-stream-websocket.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-websocket.version>
+		<spring-cloud-starter-stream-cassandra.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-cassandra.version>
+		<spring-cloud-starter-stream-http.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-http.version>
+		<spring-cloud-starter-stream-twitterstream.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-twitterstream.version>
+		<spring-cloud-starter-stream-transform.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-transform.version>
+		<spring-cloud-starter-stream-processor-header-enricher.version>2.1.3.BUILD-SNAPSHOT</spring-cloud-starter-stream-processor-header-enricher.version>
+		<spring-cloud-starter-stream-aggregator.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-aggregator.version>
+		<spring-cloud-starter-stream-tensorflow.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-tensorflow.version>
+		<spring-cloud-starter-stream-mqtt.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-mqtt.version>
+		<spring-cloud-starter-stream-python.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-python.version>
+		<spring-cloud-starter-stream-grpc.version>2.1.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-grpc.version>
+		<spring-cloud-starter-stream-tasklauncher-dataflow.version>1.0.2.BUILD-SNAPSHOT</spring-cloud-starter-stream-tasklauncher-dataflow.version>
 	</properties>
 <profiles>
 		<profile>
