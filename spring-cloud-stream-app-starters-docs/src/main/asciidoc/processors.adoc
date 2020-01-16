@@ -3,72 +3,8 @@
 
 :leveloffset: +2
 
-[[spring-cloud-stream-modules-aggregator-processor]]
-include::{app-starters-root}/aggregator/{branch}/spring-cloud-starter-stream-processor-aggregator/README.adoc[tags=ref-doc]
-
-[[spring-cloud-stream-modules-bridge-processor]]
-include::{app-starters-root}/bridge/{branch}/spring-cloud-starter-stream-processor-bridge/README.adoc[tags=ref-doc]
-
-[[spring-cloud-stream-modules-counter-processor]]
-include::{app-starters-root}/analytics/{branch}/spring-cloud-starter-stream-processor-counter/README.adoc[tags=ref-doc]
-
-[[spring-cloud-stream-modules-filter-processor]]
-include::{app-starters-root}/filter/{branch}/spring-cloud-starter-stream-processor-filter/README.adoc[tags=ref-doc]
-
-[[spring-cloud-stream-modules-groovy-filter-processor]]
-include::{app-starters-root}/groovy-filter/{branch}/spring-cloud-starter-stream-processor-groovy-filter/README.adoc[tags=ref-doc]
-
-[[spring-cloud-stream-modules-groovy-transform-processor]]
-include::{app-starters-root}/groovy-transform/{branch}/spring-cloud-starter-stream-processor-groovy-transform/README.adoc[tags=ref-doc]
-
-[[spring-cloud-stream-modules-grpc-processor]]
-include::{app-starters-root}/grpc/{branch}/spring-cloud-starter-stream-processor-grpc/README.adoc[tags=ref-doc]
-
-[[spring-cloud-stream-modules-header-enricher-processor]]
-include::{app-starters-root}/header-enricher/{branch}/spring-cloud-starter-stream-processor-header-enricher/README.adoc[tags=ref-doc]
-
-[[spring-cloud-stream-modules-httpclient-processor]]
-include::{app-starters-root}/httpclient/{branch}/spring-cloud-starter-stream-processor-httpclient/README.adoc[tags=ref-doc]
-
-[[spring-cloud-stream-modules-pmml-processor]]
-include::{app-starters-root}/pmml/{branch}/spring-cloud-starter-stream-processor-pmml/README.adoc[tags=ref-doc]
-
-[[spring-cloud-stream-modules-python-http-processor]]
-include::{app-starters-root}/python/{branch}/spring-cloud-starter-stream-processor-python-http/README.adoc[tags=ref-doc]
-
-[[spring-cloud-stream-modules-python-jython-processor]]
-include::{app-starters-root}/python/{branch}/spring-cloud-starter-stream-processor-python-jython/README.adoc[tags=ref-doc]
-
-[[spring-cloud-stream-modules-scriptable-transform]]
-include::{app-starters-root}/scriptable-transform/{branch}/spring-cloud-starter-stream-processor-scriptable-transform/README.adoc[tags=ref-doc]
-
 [[spring-cloud-stream-modules-splitter]]
-include::{app-starters-root}/splitter/{branch}/spring-cloud-starter-stream-processor-splitter/README.adoc[tags=ref-doc]
-
-[[spring-cloud-stream-modules-tasklaunchrequest-transform]]
-include::{app-starters-root}/tasklaunchrequest-transform/{branch}/spring-cloud-starter-stream-processor-tasklaunchrequest-transform/README.adoc[tags=ref-doc]
-
-[[spring-cloud-stream-modules-tcp-client-processor]]
-include::{app-starters-root}/tcp/{branch}/spring-cloud-starter-stream-processor-tcp-client/README.adoc[tags=ref-doc]
-
-[[spring-clound-stream-modules-transform-processor]]
-include::{app-starters-root}/transform/{branch}/spring-cloud-starter-stream-processor-transform/README.adoc[tags=ref-doc]
-
-[[spring-cloud-stream-modules-tensorflow-processor]]
-include::{app-starters-root}/tensorflow/{branch}/spring-cloud-starter-stream-processor-tensorflow/README.adoc[tags=ref-doc]
-
-[[spring-cloud-stream-modules-twitter-sentiment-processor]]
-include::{app-starters-root}/tensorflow/{branch}/spring-cloud-starter-stream-processor-twitter-sentiment/README.adoc[tags=ref-doc]
-
-[[spring-cloud-stream-modules-image-recognition-processor]]
-include::{app-starters-root}/tensorflow/{branch}/spring-cloud-starter-stream-processor-image-recognition/README.adoc[tags=ref-doc]
-
-[[spring-cloud-stream-modules-object-detection-processor]]
-include::{app-starters-root}/tensorflow/{branch}/spring-cloud-starter-stream-processor-object-detection/README.adoc[tags=ref-doc]
-
-[[spring-cloud-stream-modules-pose-estimation-processor]]
-include::{app-starters-root}/tensorflow/{branch}/spring-cloud-starter-stream-processor-pose-estimation/README.adoc[tags=ref-doc]
-
+include::{app-starters-root}/stream-apps/{branch}/processor/splitter-processor-apps/README.adoc[tags=ref-doc]
 
 :leveloffset: -2
 
