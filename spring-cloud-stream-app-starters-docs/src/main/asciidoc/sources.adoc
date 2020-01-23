@@ -66,9 +66,6 @@ include::{app-starters-root}/time/{branch}/spring-cloud-starter-stream-source-ti
 [[spring-cloud-stream-modules-trigger-source]]
 include::{app-starters-root}/trigger/{branch}/spring-cloud-starter-stream-source-trigger/README.adoc[tags=ref-doc]
 
-[[spring-cloud-stream-modules-triggertask-source]]
-include::{app-starters-root}/triggertask/{branch}/spring-cloud-starter-stream-source-triggertask/README.adoc[tags=ref-doc]
-
 [[spring-cloud-stream-modules-twitterstream-source]]
 include::{app-starters-root}/twitter/{branch}/spring-cloud-starter-stream-source-twitterstream/README.adoc[tags=ref-doc]
 
