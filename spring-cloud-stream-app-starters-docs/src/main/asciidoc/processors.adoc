@@ -45,9 +45,6 @@ include::{app-starters-root}/scriptable-transform/{branch}/spring-cloud-starter-
 [[spring-cloud-stream-modules-splitter]]
 include::{app-starters-root}/splitter/{branch}/spring-cloud-starter-stream-processor-splitter/README.adoc[tags=ref-doc]
 
-[[spring-cloud-stream-modules-tasklaunchrequest-transform]]
-include::{app-starters-root}/tasklaunchrequest-transform/{branch}/spring-cloud-starter-stream-processor-tasklaunchrequest-transform/README.adoc[tags=ref-doc]
-
 [[spring-cloud-stream-modules-tcp-client-processor]]
 include::{app-starters-root}/tcp/{branch}/spring-cloud-starter-stream-processor-tcp-client/README.adoc[tags=ref-doc]
 
