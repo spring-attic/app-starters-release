@@ -10,5 +10,8 @@ include::{app-starters-root}/stream-apps/{branch}/source/http-source-apps/README
 [[spring-cloud-stream-modules-jdbc-source]]
 include::{app-starters-root}/stream-apps/{branch}/source/jdbc-source-apps/README.adoc[tags=ref-doc]
 
+[[spring-cloud-stream-modules-time-source]]
+include::{app-starters-root}/stream-apps/{branch}/source/time-source-apps/README.adoc[tags=ref-doc]
+
 :leveloffset: -2
 

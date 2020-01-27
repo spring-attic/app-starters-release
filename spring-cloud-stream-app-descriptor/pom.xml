@@ -17,6 +17,8 @@
         <rabbit-sink.version>3.0.0.BUILD-SNAPSHOT</rabbit-sink.version>
         <http-source.version>3.0.0.BUILD-SNAPSHOT</http-source.version>
         <jdbc-source.version>3.0.0.BUILD-SNAPSHOT</jdbc-source.version>
+        <time-source.version>3.0.0.BUILD-SNAPSHOT</time-source.version>
+        <log-sink.version>3.0.0.BUILD-SNAPSHOT</log-sink.version>
     </properties>
 
     <build>
@@ -60,6 +62,10 @@
                 "${rabbit-sink.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${rabbit-sink.version}";
         pom.properties['splitter-processor-docker.tag']=
                 "${splitter-processor.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${splitter-processor.version}";
+        pom.properties['time-source-docker.tag']=
+                "${time-source.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${time-source.version}";
+        pom.properties['log-sink-docker.tag']=
+                "${log-sink.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${log-sink.version}";
                                 ]]></source>
                         </configuration>
                     </execution>

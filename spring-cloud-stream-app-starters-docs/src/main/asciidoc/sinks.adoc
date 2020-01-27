@@ -5,5 +5,7 @@
 
 [[spring-cloud-stream-modules-rabbit-sink]]
 include::{app-starters-root}/stream-apps/{branch}/sink/rabbit-sink-apps/README.adoc[tags=ref-doc]
+[[spring-cloud-stream-modules-log-sink]]
+include::{app-starters-root}/stream-apps/{branch}/sink/log-sink-apps/README.adoc[tags=ref-doc]
 
 :leveloffset: -2
