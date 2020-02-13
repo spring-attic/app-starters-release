@@ -3,7 +3,7 @@
 
 Following diagram highlights some of the important `Stream App` and `Stream App Starter` POM dependencies.
 
-image::{app-starters-asciidoc}/images/starters-pom-dependencies.png[PomDependencies, scaledwidth="100%"]
+image::{stream-apps-asciidoc}/images/starters-pom-dependencies.png[PomDependencies, scaledwidth="100%"]
 
 The dependencies are grouped in three categories:
 

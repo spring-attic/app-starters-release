@@ -4,7 +4,7 @@
 :leveloffset: +2
 
 [[spring-cloud-stream-modules-splitter]]
-include::{app-starters-root}/stream-apps/{branch}/processor/splitter-processor-apps/README.adoc[tags=ref-doc]
+include::{stream-apps-root}/stream-apps/{branch}/processor/splitter-processor-apps/README.adoc[tags=ref-doc]
 
 :leveloffset: -2
 

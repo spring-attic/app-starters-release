@@ -1,54 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.springframework.cloud.stream.app</groupId>
-		<artifactId>app-starters-release-train-build</artifactId>
-		<version>Fahrenheit.BUILD-SNAPSHOT</version>
-	</parent>
 	<artifactId>spring-cloud-stream-app-starters-docs</artifactId>
 	<name>spring-cloud-stream-app-starters-docs</name>
 	<description>Spring Cloud Stream App Starters Docs</description>
-
-	<properties>
-		<splitter-function.version>1.0.0.BUILD-SNAPSHOT</splitter-function.version>
-		<rabbit-consumer.version>1.0.0.BUILD-SNAPSHOT</rabbit-consumer.version>
-		<log-consumer.version>1.0.0.BUILD-SNAPSHOT</log-consumer.version>
-		<http-supplier.version>1.0.0.BUILD-SNAPSHOT</http-supplier.version>
-		<jdb-supplier.version>1.0.0.BUILD-SNAPSHOT</jdb-supplier.version>
-		<time-supplier.version>1.0.0.BUILD-SNAPSHOT</time-supplier.version>
-	</properties>
+	<parent>
+		<groupId>org.springframework.cloud.stream.app</groupId>
+		<artifactId>stream-apps-release-train</artifactId>
+		<version>Fahrenheit.BUILD-SNAPSHOT</version>
+	</parent>
 
 	<dependencies>
 		<dependency>
 			<groupId>io.pivotal.java.function</groupId>
 			<artifactId>splitter-function</artifactId>
-			<version>${splitter-function.version}</version>
+			<version>${java-functions.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.pivotal.java.function</groupId>
 			<artifactId>jdbc-supplier</artifactId>
-			<version>${jdb-supplier.version}</version>
+			<version>${java-functions.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.pivotal.java.function</groupId>
 			<artifactId>http-supplier</artifactId>
-			<version>${http-supplier.version}</version>
+			<version>${java-functions.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.pivotal.java.function</groupId>
 			<artifactId>rabbit-consumer</artifactId>
-			<version>${rabbit-consumer.version}</version>
+			<version>${java-functions.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.pivotal.java.function</groupId>
 			<artifactId>log-consumer</artifactId>
-			<version>${log-consumer.version}</version>
+			<version>${java-functions.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.pivotal.java.function</groupId>
 			<artifactId>time-supplier</artifactId>
-			<version>${time-supplier.version}</version>
+			<version>${java-functions.version}</version>
 		</dependency>
 	</dependencies>
 	<profiles>

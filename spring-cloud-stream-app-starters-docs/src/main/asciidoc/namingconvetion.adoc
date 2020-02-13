@@ -6,7 +6,7 @@ certain starter's resources.
 
 Following diagram describes which resources are involved and how the convention is applied to them.
 
-image::{app-starters-asciidoc}/images/app-starter-naming-conventions.png[NamingConvention, scaledwidth="100%"]
+image::{stream-apps-asciidoc}/images/app-starter-naming-conventions.png[NamingConvention, scaledwidth="100%"]
 
 The `[type]` placeholder represents the application type and must be either `Source`, `Processor` or `Sink` values.
 The `[my-app-name]` placeholder represents the name of your app starter project.

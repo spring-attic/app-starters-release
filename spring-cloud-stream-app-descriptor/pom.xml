@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>app-starters-release-train-build</artifactId>
+        <artifactId>stream-apps-release-train</artifactId>
         <groupId>org.springframework.cloud.stream.app</groupId>
         <version>Fahrenheit.BUILD-SNAPSHOT</version>
     </parent>
@@ -12,7 +12,6 @@
     <packaging>jar</packaging>
 
     <properties>
-        <app-starters-build.version>3.0.0.BUILD-SNAPSHOT</app-starters-build.version>
         <splitter-processor.version>3.0.0.BUILD-SNAPSHOT</splitter-processor.version>
         <rabbit-sink.version>3.0.0.BUILD-SNAPSHOT</rabbit-sink.version>
         <http-source.version>3.0.0.BUILD-SNAPSHOT</http-source.version>
