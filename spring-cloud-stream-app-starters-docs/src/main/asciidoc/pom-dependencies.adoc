@@ -1,7 +1,7 @@
 [[pom-dependencies]]
-== App Starter POM Dependencies
+== Stream Apps POM Dependencies
 
-Following diagram highlights some of the important `Stream App` and `Stream App Starter` POM dependencies.
+Following diagram highlights some of the important `Stream Apps` POM dependencies.
 
 image::{stream-apps-asciidoc}/images/starters-pom-dependencies.png[PomDependencies, scaledwidth="100%"]
 

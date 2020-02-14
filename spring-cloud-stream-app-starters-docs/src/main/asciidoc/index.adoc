@@ -46,11 +46,8 @@ include::sinks.adoc[]
 
 = Appendices
 [appendix]
-include::building.adoc[]
-[appendix]
 include::pom-dependencies.adoc[]
 [appendix]
-include::namingconvetion.adoc[]
 include::contributing.adoc[]
 
 // ======================================================================================
