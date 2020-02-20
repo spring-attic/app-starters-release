@@ -90,7 +90,7 @@ If you're looking to patch the pre-built applications to accommodate the additio
 Let's review the steps to add `mysql` driver to `jdbc-sink` application.
 
 * Clone the GitHub repository https://github.com/spring-cloud-stream-app-starters/stream-applications
-* Open it in an IDE and make the necessary changes in the right generator proejct. The repository is orgnized as `source`, `sink` and `processor`.
+* Open it in an IDE and make the necessary changes in the right generator proejct. The repository is organized as `source-apps-generator`, `sink-apps-generator` and `processor-apps-generator`.
   Find the module that you want to patch and make the changes. For e.g. add the following to the generator plugin's configuration in the pom.xml
 
 [source,xml]
