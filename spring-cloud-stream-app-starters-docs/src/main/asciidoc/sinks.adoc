@@ -4,8 +4,8 @@
 :leveloffset: +2
 
 [[spring-cloud-stream-modules-rabbit-sink]]
-include::{stream-apps-root}/stream-apps/{branch}/sink/rabbit-sink-apps/README.adoc[tags=ref-doc]
+include::{stream-apps-root}/stream-applications/{branch}/sink-apps-geneartor/rabbit-sink-apps-generator/README.adoc[tags=ref-doc]
 [[spring-cloud-stream-modules-log-sink]]
-include::{stream-apps-root}/stream-apps/{branch}/sink/log-sink-apps/README.adoc[tags=ref-doc]
+include::{stream-apps-root}/stream-applications/{branch}/sink-apps-generator/log-sink-apps-generator/README.adoc[tags=ref-doc]
 
 :leveloffset: -2
