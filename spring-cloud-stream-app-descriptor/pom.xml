@@ -3,7 +3,7 @@
     <parent>
         <artifactId>stream-apps-release-train</artifactId>
         <groupId>org.springframework.cloud.stream.app</groupId>
-        <version>Fahrenheit.BUILD-SNAPSHOT</version>
+        <version>Fahrenheit.M1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -12,12 +12,12 @@
     <packaging>jar</packaging>
 
     <properties>
-        <splitter-processor.version>3.0.0.BUILD-SNAPSHOT</splitter-processor.version>
-        <rabbit-sink.version>3.0.0.BUILD-SNAPSHOT</rabbit-sink.version>
-        <http-source.version>3.0.0.BUILD-SNAPSHOT</http-source.version>
-        <jdbc-source.version>3.0.0.BUILD-SNAPSHOT</jdbc-source.version>
-        <time-source.version>3.0.0.BUILD-SNAPSHOT</time-source.version>
-        <log-sink.version>3.0.0.BUILD-SNAPSHOT</log-sink.version>
+        <splitter-processor.version>3.0.0.M1</splitter-processor.version>
+        <rabbit-sink.version>3.0.0.M1</rabbit-sink.version>
+        <http-source.version>3.0.0.M1</http-source.version>
+        <jdbc-source.version>3.0.0.M1</jdbc-source.version>
+        <time-source.version>3.0.0.M1</time-source.version>
+        <log-sink.version>3.0.0.M1</log-sink.version>
     </properties>
 
     <build>

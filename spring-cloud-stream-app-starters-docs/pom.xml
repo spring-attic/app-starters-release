@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>org.springframework.cloud.stream.app</groupId>
 		<artifactId>stream-apps-release-train</artifactId>
-		<version>Fahrenheit.BUILD-SNAPSHOT</version>
+		<version>Fahrenheit.M1</version>
 	</parent>
 
 	<dependencies>
