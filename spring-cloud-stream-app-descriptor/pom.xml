@@ -43,100 +43,53 @@
         pom.properties['repo-spring-io']=
                 "${spring-cloud-starter-stream-time.version}".contains('BUILD-SNAPSHOT') ? 'repo.spring.io/snapshot' :
                         "${spring-cloud-starter-stream-time.version}".contains('RELEASE') ? 'repo.spring.io/release' : 'repo.spring.io/milestone';
-//        pom.properties['aggregate-counter-docker.tag']=
-//                "${spring-cloud-starter-stream-aggregatecounter.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-aggregatecounter.version}";
-        pom.properties['aws-s3-docker.tag']=
-                "${spring-cloud-starter-stream-aws-s3.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-aws-s3.version}";
-        pom.properties['bridge-docker.tag']=
-                "${spring-cloud-starter-stream-bridge.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-bridge.version}";
-        pom.properties['cassandra-docker.tag']=
-                "${spring-cloud-starter-stream-cassandra.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-cassandra.version}";
-        pom.properties['counter-docker.tag']=
-                "${spring-cloud-starter-stream-counter.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-counter.version}";
-//        pom.properties['field-value-counter-docker.tag']=
-//                "${spring-cloud-starter-stream-fieldvaluecounter.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-fieldvaluecounter.version}";
-        pom.properties['file-docker.tag']=
-                "${spring-cloud-starter-stream-file.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-file.version}";
-        pom.properties['filter-docker.tag']=
-                "${spring-cloud-starter-stream-filter.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-filter.version}";
-        pom.properties['ftp-docker.tag']=
-                "${spring-cloud-starter-stream-ftp.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-ftp.version}";
-        pom.properties['gemfire-docker.tag']=
-                "${spring-cloud-starter-stream-gemfire.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-gemfire.version}";
-        pom.properties['groovy-filter-docker.tag']=
-                "${spring-cloud-starter-stream-groovy-filter.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-groovy-filter.version}";
-        pom.properties['groovy-transform-docker.tag']=
-                "${spring-cloud-starter-stream-groovy-transform.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-groovy-transform.version}";
-        pom.properties['hdfs-docker.tag']=
-                "${spring-cloud-starter-stream-hdfs.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-hdfs.version}";
-        pom.properties['http-docker.tag']=
-                "${spring-cloud-starter-stream-http.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-http.version}";
-        pom.properties['httpclient-docker.tag']=
-                "${spring-cloud-starter-stream-httpclient.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-httpclient.version}";
-        pom.properties['jdbc-docker.tag']=
-                "${spring-cloud-starter-stream-jdbc.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-jdbc.version}";
-        pom.properties['jms-docker.tag']=
-                "${spring-cloud-starter-stream-jms.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-jms.version}";
-        pom.properties['load-generator-docker.tag']=
-                "${spring-cloud-starter-stream-loadgenerator.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-loadgenerator.version}";
-        pom.properties['log-docker.tag']=
-                "${spring-cloud-starter-stream-log.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-log.version}";
-        pom.properties['loggregator-docker.tag']=
-                "${spring-cloud-starter-stream-loggregator.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-loggregator.version}";
-        pom.properties['mail-docker.tag']=
-                "${spring-cloud-starter-stream-mail.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-mail.version}";
-        pom.properties['mongodb-docker.tag']=
-                "${spring-cloud-starter-stream-mongodb.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-mongodb.version}";
-        pom.properties['pmml-docker.tag']=
-                "${spring-cloud-starter-stream-pmml.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-pmml.version}";
-        pom.properties['rabbit-docker.tag']=
-                "${spring-cloud-starter-stream-rabbit.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-rabbit.version}";
-        pom.properties['redis-pubsub-docker.tag']=
-                "${spring-cloud-starter-stream-redis.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-redis.version}";
-        pom.properties['router-docker.tag']=
-                "${spring-cloud-starter-stream-router.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-router.version}";
-        pom.properties['scriptable-transform-docker.tag']=
-                "${spring-cloud-starter-stream-scriptable-transform.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-scriptable-transform.version}";
-        pom.properties['sftp-docker.tag']=
-                "${spring-cloud-starter-stream-sftp.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-sftp.version}";
-        pom.properties['splitter-docker.tag']=
-                "${spring-cloud-starter-stream-splitter.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-splitter.version}";
-        pom.properties['syslog-docker.tag']=
-                "${spring-cloud-starter-stream-syslog.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-syslog.version}";
-        pom.properties['tasklauncher-dataflow-docker.tag']=
-                "${spring-cloud-starter-stream-tasklauncher-dataflow.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-tasklauncher-dataflow.version}";
-        pom.properties['tasklaunchrequest-transform-docker.tag']=
-                "${spring-cloud-starter-stream-tasklaunchrequest-transform.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-tasklaunchrequest-transform.version}";
-        pom.properties['tcp-docker.tag']=
-                "${spring-cloud-starter-stream-tcp.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-tcp.version}";
-        pom.properties['throughput-docker.tag']=
-                "${spring-cloud-starter-stream-throughput.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-throughput.version}";
-        pom.properties['time-docker.tag']=
-                "${spring-cloud-starter-stream-time.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-time.version}";
-        pom.properties['transform-docker.tag']=
-                "${spring-cloud-starter-stream-transform.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-transform.version}";
-        pom.properties['trigger-docker.tag']=
-                "${spring-cloud-starter-stream-trigger.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-trigger.version}";
-        pom.properties['triggertask-docker.tag']=
-                "${spring-cloud-starter-stream-triggertask.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-triggertask.version}";
-        pom.properties['twitter-docker.tag']=
-                "${spring-cloud-starter-stream-twitterstream.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-twitterstream.version}";
-        pom.properties['websocket-docker.tag']=
-                "${spring-cloud-starter-stream-websocket.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-websocket.version}";
-        pom.properties['aggregator-docker.tag']=
-                "${spring-cloud-starter-stream-aggregator.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-aggregator.version}";
-        pom.properties['header-enricher-docker.tag']=
-                "${spring-cloud-starter-stream-processor-header-enricher.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-processor-header-enricher.version}";
-        pom.properties['pgcopy-sink-docker.tag']=
-                "${spring-cloud-starter-stream-jdbc.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-jdbc.version}";
-        pom.properties['tensorflow-docker.tag']=
-                "${spring-cloud-starter-stream-tensorflow.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-tensorflow.version}";
-        pom.properties['mqtt-docker.tag']=
-                "${spring-cloud-starter-stream-mqtt.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-mqtt.version}";
-        pom.properties['python-docker.tag']=
-                "${spring-cloud-starter-stream-python.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-python.version}";
-        pom.properties['grpc-docker.tag']=
-                "${spring-cloud-starter-stream-grpc.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${spring-cloud-starter-stream-grpc.version}";
+//        pom.properties['aggregate-counter-docker.tag']= "${spring-cloud-starter-stream-aggregatecounter.version}";
+        pom.properties['aws-s3-docker.tag']= "${spring-cloud-starter-stream-aws-s3.version}";
+        pom.properties['bridge-docker.tag']= "${spring-cloud-starter-stream-bridge.version}";
+        pom.properties['cassandra-docker.tag']= "${spring-cloud-starter-stream-cassandra.version}";
+        pom.properties['counter-docker.tag']= "${spring-cloud-starter-stream-counter.version}";
+//        pom.properties['field-value-counter-docker.tag']= "${spring-cloud-starter-stream-fieldvaluecounter.version}";
+        pom.properties['file-docker.tag']= "${spring-cloud-starter-stream-file.version}";
+        pom.properties['filter-docker.tag']= "${spring-cloud-starter-stream-filter.version}";
+        pom.properties['ftp-docker.tag']= "${spring-cloud-starter-stream-ftp.version}";
+        pom.properties['gemfire-docker.tag']= "${spring-cloud-starter-stream-gemfire.version}";
+        pom.properties['groovy-filter-docker.tag']= "${spring-cloud-starter-stream-groovy-filter.version}";
+        pom.properties['groovy-transform-docker.tag']= "${spring-cloud-starter-stream-groovy-transform.version}";
+        pom.properties['hdfs-docker.tag']= "${spring-cloud-starter-stream-hdfs.version}";
+        pom.properties['http-docker.tag']= "${spring-cloud-starter-stream-http.version}";
+        pom.properties['httpclient-docker.tag']= "${spring-cloud-starter-stream-httpclient.version}";
+        pom.properties['jdbc-docker.tag']= "${spring-cloud-starter-stream-jdbc.version}";
+        pom.properties['jms-docker.tag']= "${spring-cloud-starter-stream-jms.version}";
+        pom.properties['load-generator-docker.tag']= "${spring-cloud-starter-stream-loadgenerator.version}";
+        pom.properties['log-docker.tag']= "${spring-cloud-starter-stream-log.version}";
+        pom.properties['loggregator-docker.tag']= "${spring-cloud-starter-stream-loggregator.version}";
+        pom.properties['mail-docker.tag']= "${spring-cloud-starter-stream-mail.version}";
+        pom.properties['mongodb-docker.tag']= "${spring-cloud-starter-stream-mongodb.version}";
+        pom.properties['pmml-docker.tag']= "${spring-cloud-starter-stream-pmml.version}";
+        pom.properties['rabbit-docker.tag']= "${spring-cloud-starter-stream-rabbit.version}";
+        pom.properties['redis-pubsub-docker.tag']= "${spring-cloud-starter-stream-redis.version}";
+        pom.properties['router-docker.tag']= "${spring-cloud-starter-stream-router.version}";
+        pom.properties['scriptable-transform-docker.tag']= "${spring-cloud-starter-stream-scriptable-transform.version}";
+        pom.properties['sftp-docker.tag']= "${spring-cloud-starter-stream-sftp.version}";
+        pom.properties['splitter-docker.tag']= "${spring-cloud-starter-stream-splitter.version}";
+        pom.properties['syslog-docker.tag']= "${spring-cloud-starter-stream-syslog.version}";
+        pom.properties['tasklauncher-dataflow-docker.tag']= "${spring-cloud-starter-stream-tasklauncher-dataflow.version}";
+        pom.properties['tasklaunchrequest-transform-docker.tag']= "${spring-cloud-starter-stream-tasklaunchrequest-transform.version}";
+        pom.properties['tcp-docker.tag']= "${spring-cloud-starter-stream-tcp.version}";
+        pom.properties['throughput-docker.tag']= "${spring-cloud-starter-stream-throughput.version}";
+        pom.properties['time-docker.tag']= "${spring-cloud-starter-stream-time.version}";
+        pom.properties['transform-docker.tag']= "${spring-cloud-starter-stream-transform.version}";
+        pom.properties['trigger-docker.tag']= "${spring-cloud-starter-stream-trigger.version}";
+        pom.properties['triggertask-docker.tag']= "${spring-cloud-starter-stream-triggertask.version}";
+        pom.properties['twitter-docker.tag']= "${spring-cloud-starter-stream-twitterstream.version}";
+        pom.properties['websocket-docker.tag']= "${spring-cloud-starter-stream-websocket.version}";
+        pom.properties['aggregator-docker.tag']= "${spring-cloud-starter-stream-aggregator.version}";
+        pom.properties['header-enricher-docker.tag']= "${spring-cloud-starter-stream-processor-header-enricher.version}";
+        pom.properties['pgcopy-sink-docker.tag']= "${spring-cloud-starter-stream-jdbc.version}";
+        pom.properties['tensorflow-docker.tag']= "${spring-cloud-starter-stream-tensorflow.version}";
+        pom.properties['mqtt-docker.tag']= "${spring-cloud-starter-stream-mqtt.version}";
+        pom.properties['python-docker.tag']= "${spring-cloud-starter-stream-python.version}";
+        pom.properties['grpc-docker.tag']= "${spring-cloud-starter-stream-grpc.version}";
                 ]]></source>
                         </configuration>
                     </execution>
