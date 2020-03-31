@@ -3,7 +3,7 @@
     <parent>
         <artifactId>app-starters-release-train-build</artifactId>
         <groupId>org.springframework.cloud.stream.app</groupId>
-        <version>Einstein.BUILD-SNAPSHOT</version>
+        <version>Einstein.SR6</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -90,6 +90,7 @@
         pom.properties['mqtt-docker.tag']= "${spring-cloud-starter-stream-mqtt.version}";
         pom.properties['python-docker.tag']= "${spring-cloud-starter-stream-python.version}";
         pom.properties['grpc-docker.tag']= "${spring-cloud-starter-stream-grpc.version}";
+        pom.properties['cdc-debezium-docker.tag']= "${spring-cloud-starter-stream-cdc-debezium.version}";
                 ]]></source>
                         </configuration>
                     </execution>

@@ -69,5 +69,8 @@ include::{app-starters-root}/trigger/{branch}/spring-cloud-starter-stream-source
 [[spring-cloud-stream-modules-twitterstream-source]]
 include::{app-starters-root}/twitter/{branch}/spring-cloud-starter-stream-source-twitterstream/README.adoc[tags=ref-doc]
 
+[[spring-cloud-stream-modules-cdc-debezium-source]]
+include::{app-starters-root}/twitter/{branch}/spring-cloud-starter-stream-cdc-debezium/README.adoc[tags=ref-doc]
+
 :leveloffset: -2
 
