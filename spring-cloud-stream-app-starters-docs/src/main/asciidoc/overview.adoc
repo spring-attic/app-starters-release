@@ -38,17 +38,7 @@ The prebuilt applications follow a naming convention: `<functionality>-<type>-<b
 ==== Maven and Docker access
 
 Core functionality of the apps are available as functions.
-They are provided as Maven artifacts in the https://github.com/spring-projects/spring-framework/wiki/Spring-Artifactory[Spring repositories]. You can add them as dependencies to your application, as follows:
-
-[source,xml]
-----
-<dependency>
-  <groupId>io.pivotal.java.function</groupId>
-  <artifactId>jdbc-supplier</artifactId>
-  <version>1.0.0.BUILD-SNAPSHOT</version>
-</dependency>
-----
-
+See the https://github.com/pivotal/java-functions[Java Functions] repository for more details.
 Prebuilt applications are available as Maven artifacts.
 You can download the executable jar artifacts from the Spring Maven repositories.
 The root directory of the Maven repository that hosts release versions is https://repo.spring.io/release/org/springframework/cloud/stream/app/.
@@ -69,11 +59,7 @@ will pull the _latest_ Docker image of the _Cassandra sink_ with the Kafka binde
 
 You can build the project and generate the artifacts (including the prebuilt applications) on your own.
 This is useful if you want to deploy the artifacts locally or add additional features.
-
-First, you need to generate the prebuilt applications.
-This is done by running the application generation Maven plugin.
-You can do so by simply invoking the maven build.
-If you are at the root of the repository, [steam-applications](https://github.com/spring-cloud-stream-app-starters/stream-applications), then doing a maven build will generate the entire binder based apps.
+If you are at the root of the repository, https://github.com/spring-cloud-stream-app-starters/stream-applications[steam-applications], then doing a maven build will generate the entire binder based apps.
 If you don't want to do that and instead only are interested in a certain app, then cd into the right module and invoke the build from there.
 
 [source,bash]
