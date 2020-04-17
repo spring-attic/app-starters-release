@@ -3,13 +3,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <artifactId>stream-apps-release-train</artifactId>
-    <version>Fahrenheit.BUILD-SNAPSHOT</version>
+    <version>Fahrenheit.M2</version>
     <packaging>pom</packaging>
 
     <parent>
         <groupId>org.springframework.cloud.stream.app</groupId>
         <artifactId>stream-apps-parent</artifactId>
-        <version>3.0.0.BUILD-SNAPSHOT</version>
+        <version>3.0.0.M2</version>
         <relativePath/>
     </parent>
 

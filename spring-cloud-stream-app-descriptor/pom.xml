@@ -3,7 +3,7 @@
     <parent>
         <artifactId>stream-apps-release-train</artifactId>
         <groupId>org.springframework.cloud.stream.app</groupId>
-        <version>Fahrenheit.BUILD-SNAPSHOT</version>
+        <version>Fahrenheit.M2</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -12,12 +12,19 @@
     <packaging>jar</packaging>
 
     <properties>
-        <splitter-processor.version>3.0.0.M1</splitter-processor.version>
-        <rabbit-sink.version>3.0.0.M1</rabbit-sink.version>
-        <http-source.version>3.0.0.M1</http-source.version>
-        <jdbc-source.version>3.0.0.M1</jdbc-source.version>
-        <time-source.version>3.0.0.M1</time-source.version>
-        <log-sink.version>3.0.0.M1</log-sink.version>
+        <cassandra-sink.version>3.0.0.M2</cassandra-sink.version>
+        <counter-sink.version>3.0.0.M2</counter-sink.version>
+        <jdbc-sink.version>3.0.0.M2</jdbc-sink.version>
+        <log-sink.version>3.0.0.M2</log-sink.version>
+        <mongodb-sink.version>3.0.0.M2</mongodb-sink.version>
+        <rabbit-sink.version>3.0.0.M2</rabbit-sink.version>
+        <http-source.version>3.0.0.M2</http-source.version>
+        <jdbc-source.version>3.0.0.M2</jdbc-source.version>
+        <mongodb-source.version>3.0.0.M2</mongodb-source.version>
+        <time-source.version>3.0.0.M2</time-source.version>
+        <filter-processor.version>3.0.0.M2</filter-processor.version>
+        <splitter-processor.version>3.0.0.M2</splitter-processor.version>
+        <transform-processor.version>3.0.0.M2</transform-processor.version>
     </properties>
 
     <build>
@@ -53,18 +60,32 @@
                 "${jdbc-source.version}".contains('BUILD-SNAPSHOT') ? 'repo.spring.io/snapshot' :
                         "${jdbc-source.version}".contains('RELEASE') ? 'repo.spring.io/release' : 'repo.spring.io/milestone';
 
+        pom.properties['cassandra-sink-docker.tag']=
+                "${cassandra-sink.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${cassandra-sink.version}";
+        pom.properties['counter-sink-docker.tag']=
+                "${counter-sink.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${counter-sink.version}";
+        pom.properties['jdbc-sink-docker.tag']=
+                "${jdbc-sink.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${jdbc-sink.version}";
+        pom.properties['log-sink-docker.tag']=
+                "${log-sink.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${log-sink.version}";
+        pom.properties['mongodb-sink-docker.tag']=
+                "${mongodb-sink.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${mongodb-sink.version}";
+        pom.properties['rabbit-sink-docker.tag']=
+                "${rabbit-sink.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${rabbit-sink.version}";
         pom.properties['http-source-docker.tag']=
                 "${http-source.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${http-source.version}";
         pom.properties['jdbc-source-docker.tag']=
                 "${jdbc-source.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${jdbc-source.version}";
-        pom.properties['rabbit-sink-docker.tag']=
-                "${rabbit-sink.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${rabbit-sink.version}";
-        pom.properties['splitter-processor-docker.tag']=
-                "${splitter-processor.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${splitter-processor.version}";
+        pom.properties['mongodb-source-docker.tag']=
+                "${mongodb-source.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${mongodb-source.version}";
         pom.properties['time-source-docker.tag']=
                 "${time-source.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${time-source.version}";
-        pom.properties['log-sink-docker.tag']=
-                "${log-sink.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${log-sink.version}";
+        pom.properties['filter-processor-docker.tag']=
+                "${filter-processor.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${filter-processor.version}";
+        pom.properties['splitter-processor-docker.tag']=
+                "${splitter-processor.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${splitter-processor.version}";
+        pom.properties['transform-processor-docker.tag']=
+                "${transform-processor.version}".contains('BUILD-SNAPSHOT') ? 'latest' : "${transform-processor.version}";
                                 ]]></source>
                         </configuration>
                     </execution>

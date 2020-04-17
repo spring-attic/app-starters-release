@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>org.springframework.cloud.stream.app</groupId>
 		<artifactId>stream-apps-release-train</artifactId>
-		<version>Fahrenheit.BUILD-SNAPSHOT</version>
+		<version>Fahrenheit.M2</version>
 	</parent>
 
 	<properties>
@@ -29,12 +29,27 @@
 		</dependency>
 		<dependency>
 			<groupId>io.pivotal.java.function</groupId>
-			<artifactId>jdbc-supplier</artifactId>
+			<artifactId>spel-function</artifactId>
 			<version>${java-functions.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.pivotal.java.function</groupId>
-			<artifactId>http-supplier</artifactId>
+			<artifactId>counter-consumer</artifactId>
+			<version>${java-functions.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.pivotal.java.function</groupId>
+			<artifactId>jdbc-consumer</artifactId>
+			<version>${java-functions.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.pivotal.java.function</groupId>
+			<artifactId>mongodb-consumer</artifactId>
+			<version>${java-functions.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.pivotal.java.function</groupId>
+			<artifactId>cassandra-consumer</artifactId>
 			<version>${java-functions.version}</version>
 		</dependency>
 		<dependency>
@@ -50,6 +65,21 @@
 		<dependency>
 			<groupId>io.pivotal.java.function</groupId>
 			<artifactId>time-supplier</artifactId>
+			<version>${java-functions.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.pivotal.java.function</groupId>
+			<artifactId>jdbc-supplier</artifactId>
+			<version>${java-functions.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.pivotal.java.function</groupId>
+			<artifactId>http-supplier</artifactId>
+			<version>${java-functions.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.pivotal.java.function</groupId>
+			<artifactId>mongodb-supplier</artifactId>
 			<version>${java-functions.version}</version>
 		</dependency>
 	</dependencies>
