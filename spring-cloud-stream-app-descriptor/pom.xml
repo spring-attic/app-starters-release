@@ -3,7 +3,7 @@
     <parent>
         <artifactId>stream-apps-release-train</artifactId>
         <groupId>org.springframework.cloud.stream.app</groupId>
-        <version>Fahrenheit.M2</version>
+        <version>Fahrenheit.BUILD-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -12,19 +12,19 @@
     <packaging>jar</packaging>
 
     <properties>
-        <cassandra-sink.version>3.0.0.M2</cassandra-sink.version>
-        <counter-sink.version>3.0.0.M2</counter-sink.version>
-        <jdbc-sink.version>3.0.0.M2</jdbc-sink.version>
-        <log-sink.version>3.0.0.M2</log-sink.version>
-        <mongodb-sink.version>3.0.0.M2</mongodb-sink.version>
-        <rabbit-sink.version>3.0.0.M2</rabbit-sink.version>
-        <http-source.version>3.0.0.M2</http-source.version>
-        <jdbc-source.version>3.0.0.M2</jdbc-source.version>
-        <mongodb-source.version>3.0.0.M2</mongodb-source.version>
-        <time-source.version>3.0.0.M2</time-source.version>
-        <filter-processor.version>3.0.0.M2</filter-processor.version>
-        <splitter-processor.version>3.0.0.M2</splitter-processor.version>
-        <transform-processor.version>3.0.0.M2</transform-processor.version>
+        <cassandra-sink.version>3.0.0.BUILD-SNAPSHOT</cassandra-sink.version>
+        <counter-sink.version>3.0.0.BUILD-SNAPSHOT</counter-sink.version>
+        <jdbc-sink.version>3.0.0.BUILD-SNAPSHOT</jdbc-sink.version>
+        <log-sink.version>3.0.0.BUILD-SNAPSHOT</log-sink.version>
+        <mongodb-sink.version>3.0.0.BUILD-SNAPSHOT</mongodb-sink.version>
+        <rabbit-sink.version>3.0.0.BUILD-SNAPSHOT</rabbit-sink.version>
+        <http-source.version>3.0.0.BUILD-SNAPSHOT</http-source.version>
+        <jdbc-source.version>3.0.0.BUILD-SNAPSHOT</jdbc-source.version>
+        <mongodb-source.version>3.0.0.BUILD-SNAPSHOT</mongodb-source.version>
+        <time-source.version>3.0.0.BUILD-SNAPSHOT</time-source.version>
+        <filter-processor.version>3.0.0.BUILD-SNAPSHOT</filter-processor.version>
+        <splitter-processor.version>3.0.0.BUILD-SNAPSHOT</splitter-processor.version>
+        <transform-processor.version>3.0.0.BUILD-SNAPSHOT</transform-processor.version>
     </properties>
 
     <build>
